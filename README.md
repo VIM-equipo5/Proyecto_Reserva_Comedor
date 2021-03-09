@@ -12,7 +12,7 @@
 
 #### 2. Descripción
 ```
-Proyecto
+
 ```
 
 ##### Enunciado de la actividad
