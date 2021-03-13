@@ -12,7 +12,7 @@
 
 ### 2. Descripción
 ```
-Proyecto
+Proyecto final para el curso de Fullstack con Java, Angular y MySQL.
 ```
 
 #### Enunciado de la actividad
