@@ -15,7 +15,7 @@ import com.ReservaComedor.service.implementacion.UsuarioServiceImpl;
 
 
 /**
- * @author viach
+ * @author Vyacheslav Khaydorov
  * @author Miguel A. Sastre
  * @author Ingrid Dominguez
  */

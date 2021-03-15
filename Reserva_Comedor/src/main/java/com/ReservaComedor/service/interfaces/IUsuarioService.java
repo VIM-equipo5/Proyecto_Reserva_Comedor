@@ -10,8 +10,9 @@ import com.ReservaComedor.dto.Usuario;
 
 
 /**
- * @author viach
- *
+ * @author Vyacheslav Khaydorov
+ * @author Miguel A. Sastre
+ * @author Ingrid Dominguez
  */
 public interface IUsuarioService {
 

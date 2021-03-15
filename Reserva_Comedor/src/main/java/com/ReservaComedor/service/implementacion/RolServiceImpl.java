@@ -14,8 +14,9 @@ import com.ReservaComedor.service.interfaces.IRolService;
 
 
 /**
- * @author viach
- *
+ * @author Vyacheslav Khaydorov
+ * @author Miguel A. Sastre
+ * @author Ingrid Dominguez
  */
 
 @Service

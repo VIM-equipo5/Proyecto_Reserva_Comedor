@@ -3,7 +3,7 @@ package com.ReservaComedor.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.ReservaComedor.dto.FranjaHoraria;
+import com.ReservaComedor.dto.OfrecerBebida;
 
 
 /**
@@ -11,6 +11,7 @@ import com.ReservaComedor.dto.FranjaHoraria;
  * @author Miguel A. Sastre
  * @author Ingrid Dominguez
  */
-public interface IFranjaHorariaDAO extends JpaRepository<FranjaHoraria, Integer> {
+
+public interface IOfrecerBebidaDAO extends JpaRepository<OfrecerBebida, Long> {
 
 }

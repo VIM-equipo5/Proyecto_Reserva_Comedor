@@ -9,8 +9,9 @@ import com.ReservaComedor.dto.FranjaHoraria;
 
 
 /**
- * @author viach
- *
+ * @author Vyacheslav Khaydorov
+ * @author Miguel A. Sastre
+ * @author Ingrid Dominguez
  */
 public interface IFranjaHorariaService {
 	
