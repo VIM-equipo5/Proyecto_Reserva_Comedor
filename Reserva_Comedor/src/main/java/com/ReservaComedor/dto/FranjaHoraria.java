@@ -20,10 +20,10 @@ import javax.persistence.TemporalType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
- * @author viach
- *
+ * @author Vyacheslav Khaydorov
+ * @author Miguel A. Sastre
+ * @author Ingrid Dominguez
  */
-
 @Entity
 @Table(name = "franjahoraria")
 public class FranjaHoraria {

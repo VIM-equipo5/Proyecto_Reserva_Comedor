@@ -10,7 +10,7 @@ import com.ReservaComedor.dto.FranjaHoraria;
 import com.ReservaComedor.service.implementacion.FranjaHorariaServiceImpl;
 
 /**
- * @author viach
+ * @author Vyacheslav Khaydorov
  * @author Miguel A. Sastre
  * @author Ingrid Dominguez
  */

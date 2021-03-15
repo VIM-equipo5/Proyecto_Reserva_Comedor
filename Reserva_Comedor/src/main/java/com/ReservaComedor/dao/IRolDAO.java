@@ -6,9 +6,11 @@ import com.ReservaComedor.dto.Rol;
 
 
 /**
- * @author viach
- *
+ * @author Vyacheslav Khaydorov
+ * @author Miguel A. Sastre
+ * @author Ingrid Dominguez
  */
+
 public interface IRolDAO extends JpaRepository<Rol, Integer> {
 
 }
