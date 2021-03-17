@@ -3,7 +3,7 @@ package com.ReservaComedor.service.interfaces;
 
 import java.util.List;
 
-import com.ReservaComedor.dto.PedirPlatos;
+import com.ReservaComedor.dto.PedirPlato;
 
 
 
@@ -15,13 +15,13 @@ import com.ReservaComedor.dto.PedirPlatos;
 public interface IPedirPlatosService {
 
 	//Metodos del CRUD
-	public List<PedirPlatos> listarPedirPlatos();	
+	public List<PedirPlato> listarPedirPlatos();	
 	
-	public PedirPlatos guardarPedirPlatos(PedirPlatos pedirPlatos);	
+	public PedirPlato guardarPedirPlatos(PedirPlato pedirPlatos);	
 	
-	public PedirPlatos pedirPlatosXID(int IdPrepararPlatos);	
+	public PedirPlato pedirPlatosXID(int IdPrepararPlatos);	
 	
-	public PedirPlatos actualizarPedirPlatos(PedirPlatos pedirPlatos);	
+	public PedirPlato actualizarPedirPlatos(PedirPlato pedirPlatos);	
 	
 	public void eliminarPedirPlatos(int IdPrepararPlatos);	
 	

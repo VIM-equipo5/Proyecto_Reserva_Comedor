@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import com.ReservaComedor.dto.PedirPlatos;
+import com.ReservaComedor.dto.PedirPlato;
 import com.ReservaComedor.service.implementacion.PedirPlatosServiceImpl;
 
 
@@ -26,27 +26,27 @@ public class PedirPlatosController {
 
 	//End-points
 	@GetMapping("/pedirPlatos")
-	public List<PedirPlatos> listarPedirPlatos(){
+	public List<PedirPlato> listarPedirPlatos(){
 		return pedirPlatosServiceImpl.listarPedirPlatos();
 	}
 	
 	@PostMapping("/pedirPlatos")
-	public PedirPlatos guardarPedirPlatos(@RequestBody PedirPlatos pedirPlatos) {
+	public PedirPlato guardarPedirPlatos(@RequestBody PedirPlato pedirPlatos) {
 		return pedirPlatosServiceImpl.guardarPedirPlatos(pedirPlatos);
 	}
 	
 	@GetMapping("/pedirPlatos/{id}")
-	public PedirPlatos pedirPlatosXID(@PathVariable(name="id") int IdPedirPlatos) {
-		PedirPlatos pedirPlatosBuscado = new PedirPlatos();	
+	public PedirPlato pedirPlatosXID(@PathVariable(name="id") int IdPedirPlatos) {
+		PedirPlato pedirPlatosBuscado = new PedirPlato();	
 		pedirPlatosBuscado = pedirPlatosServiceImpl.pedirPlatosXID(IdPedirPlatos);
 		System.out.println("Pedir Platos: " + pedirPlatosBuscado);
 		return pedirPlatosBuscado;
 	}
 	
 	@PutMapping("/pedirPlatos/{id}")
-	public PedirPlatos actualizarPedirPlatos(@PathVariable(name="id")int IdPedirPlatos,@RequestBody PedirPlatos pedirPlatos) {
+	public PedirPlato actualizarPedirPlatos(@PathVariable(name="id")int IdPedirPlatos,@RequestBody PedirPlato pedirPlatos) {
 		//Creamos dos pedirPlatos
-		PedirPlatos ptPedirPlatos = new PedirPlatos();
+		PedirPlato ptPedirPlatos = new PedirPlato();
 		
 		//El ofrecerBebidaSeleccionado copia los datos del ofrecerBebida que esta en la BD, buscando por el ID
 		ptPedirPlatos = pedirPlatosServiceImpl.pedirPlatosXID(IdPedirPlatos);

@@ -4,7 +4,7 @@ package com.ReservaComedor.service.interfaces;
 
 import java.util.List;
 
-import com.ReservaComedor.dto.Platos;
+import com.ReservaComedor.dto.Plato;
 
 
 /**
@@ -14,13 +14,13 @@ import com.ReservaComedor.dto.Platos;
  */
 public interface IPlatosService {
 	//Metodos del CRUD
-	public List<Platos> listarPlatos();	//Listar All 
+	public List<Plato> listarPlatos();	//Listar All 
 	
-	public Platos guardarPlato(Platos plato);	//Guarda un plato (CREATE)
+	public Plato guardarPlato(Plato plato);	//Guarda un plato (CREATE)
 	
-	public Platos platoXID(int IdPlato);	//Leer datos de un plato (READ)
+	public Plato platoXID(int IdPlato);	//Leer datos de un plato (READ)
 	
-	public Platos actualizarPlato(Platos plato);	//Actualiza datos del plato (UPDATE)
+	public Plato actualizarPlato(Plato plato);	//Actualiza datos del plato (UPDATE)
 	
 	public void eliminarPlato(int IdPlato);	//Elimina el plato (DELETE)
 	

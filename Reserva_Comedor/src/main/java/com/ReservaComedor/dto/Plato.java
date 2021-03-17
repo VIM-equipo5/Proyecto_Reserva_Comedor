@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "platos")
-public class Platos {
+public class Plato {
 	//Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,10 +30,10 @@ public class Platos {
 	@JoinColumn(name = "IdCategoria")	//Conexion a la clave foranea en la tabla Usuario
 	private List<Categoria> categoria;
 	
-	public Platos(){}
+	public Plato(){}
 	
 	//Constructor
-	public Platos(int idPlato, String nombre, String descripcion, Blob imagen, double precioUnitario, String tipo,
+	public Plato(int idPlato, String nombre, String descripcion, Blob imagen, double precioUnitario, String tipo,
 			String idCategoria) {
 		super();
 		IdPlato = idPlato;

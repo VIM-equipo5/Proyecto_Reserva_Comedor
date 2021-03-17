@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import com.ReservaComedor.dto.Platos;
+import com.ReservaComedor.dto.Plato;
 import com.ReservaComedor.service.implementacion.PlatosServiceImpl;
 
 
@@ -28,28 +28,28 @@ public class PlatosController {
 
 	//End-points
 	@GetMapping("/platos")
-	public List<Platos> listarPlatos(){
+	public List<Plato> listarPlatos(){
 		return platosServiceImpl.listarPlatos();
 	}
 	
 	@PostMapping("/platos")
-	public Platos guardarPlato(@RequestBody Platos plato) {
+	public Plato guardarPlato(@RequestBody Plato plato) {
 		return platosServiceImpl.guardarPlato(plato);
 	}
 	
 	@GetMapping("/plato/{id}")
-	public Platos platoXID(@PathVariable(name="idPlato") int IdPlato) {
-		Platos platoBuscado = new Platos();	
+	public Plato platoXID(@PathVariable(name="idPlato") int IdPlato) {
+		Plato platoBuscado = new Plato();	
 		platoBuscado = platosServiceImpl.platoXID(IdPlato);
 		System.out.println("Plato: " + platoBuscado);
 		return platoBuscado;
 	}
 	
 	@PutMapping("/platos/{id}")
-	public Platos actualizarPlato(@PathVariable(name="idPlato")int IdPlato,@RequestBody Platos plato) {
+	public Plato actualizarPlato(@PathVariable(name="idPlato")int IdPlato,@RequestBody Plato plato) {
 		//Creamos dos platos
-		Platos platoSeleccionado = new Platos();
-		Platos platoActualizado = new Platos();
+		Plato platoSeleccionado = new Plato();
+		Plato platoActualizado = new Plato();
 		
 		//El platoSeleccionado copia los datos del usuario que esta en la BD, buscando por el ID
 		platoSeleccionado = platosServiceImpl.platoXID(IdPlato);

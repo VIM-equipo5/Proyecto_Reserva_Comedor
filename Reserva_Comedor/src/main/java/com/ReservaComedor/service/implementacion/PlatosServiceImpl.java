@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ReservaComedor.dao.IPlatosDAO;
-import com.ReservaComedor.dto.Platos;
+import com.ReservaComedor.dto.Plato;
 import com.ReservaComedor.service.interfaces.IPlatosService;
 
 
@@ -28,22 +28,22 @@ public class PlatosServiceImpl implements IPlatosService {
 
 	//Metodos de la interfaz implementados
 	@Override
-	public List<Platos> listarPlatos() {
+	public List<Plato> listarPlatos() {
 		return iPlatosDAO.findAll();
 	}
 
 	@Override
-	public Platos guardarPlato(Platos plato) {
+	public Plato guardarPlato(Plato plato) {
 		return iPlatosDAO.save(plato);
 	}
 
 	@Override
-	public Platos platoXID(int IdPlato) {
+	public Plato platoXID(int IdPlato) {
 		return iPlatosDAO.findById(IdPlato).get();
 	}
 
 	@Override
-	public Platos actualizarPlato(Platos plato) {
+	public Plato actualizarPlato(Plato plato) {
 		return iPlatosDAO.save(plato);
 	}
 
