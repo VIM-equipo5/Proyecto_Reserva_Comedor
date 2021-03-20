@@ -11,11 +11,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+
 /**
  * @author Vyacheslav Khaydorov
  * @author Miguel A. Sastre
  * @author Ingrid Dominguez
  */
+
 
 
 @Entity

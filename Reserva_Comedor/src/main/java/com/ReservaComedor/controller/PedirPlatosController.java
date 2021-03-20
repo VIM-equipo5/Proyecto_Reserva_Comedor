@@ -47,6 +47,7 @@ public class PedirPlatosController {
 	public PedirPlato actualizarPedirPlatos(@PathVariable(name="id")int IdPedirPlatos,@RequestBody PedirPlato pedirPlato) {
 		//Creamos dos pedirPlatos
 		PedirPlato ptPedirPlatos = new PedirPlato();
+
 		
 		//El ofrecerBebidaSeleccionado copia los datos del ofrecerBebida que esta en la BD, buscando por el ID
 		ptPedirPlatos = pedirPlatosServiceImpl.pedirPlatosXID(IdPedirPlatos);

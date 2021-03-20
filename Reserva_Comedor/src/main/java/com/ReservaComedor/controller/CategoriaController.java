@@ -72,6 +72,7 @@ public class CategoriaController {
 		return categoriaActualizada;
 	}
 	
+
 	@DeleteMapping("/categorias/{id}")
 	public void eliminarCategoria(@PathVariable(name="idCategoria")int IdCategoria) {
 		categoriaServiceImpl.eliminarCategoria(IdCategoria);
