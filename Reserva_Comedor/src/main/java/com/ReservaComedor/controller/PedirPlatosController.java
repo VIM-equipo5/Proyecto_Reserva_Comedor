@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import com.ReservaComedor.dto.PedirPlatos;
+import com.ReservaComedor.dto.PedirPlato;
 import com.ReservaComedor.service.implementacion.PedirPlatosServiceImpl;
 
 
@@ -26,37 +26,37 @@ public class PedirPlatosController {
 
 	//End-points
 	@GetMapping("/pedirPlatos")
-	public List<PedirPlatos> listarPedirPlatos(){
+	public List<PedirPlato> listarPedirPlatos(){
 		return pedirPlatosServiceImpl.listarPedirPlatos();
 	}
 	
 	@PostMapping("/pedirPlatos")
-	public PedirPlatos guardarPedirPlatos(@RequestBody PedirPlatos pedirPlatos) {
-		return pedirPlatosServiceImpl.guardarPedirPlatos(pedirPlatos);
+	public PedirPlato guardarPedirPlatos(@RequestBody PedirPlato pedirPlato) {
+		return pedirPlatosServiceImpl.guardarPedirPlatos(pedirPlato);
 	}
 	
 	@GetMapping("/pedirPlatos/{id}")
-	public PedirPlatos pedirPlatosXID(@PathVariable(name="id") int IdPedirPlatos) {
-		PedirPlatos pedirPlatosBuscado = new PedirPlatos();	
+	public PedirPlato pedirPlatosXID(@PathVariable(name="id") int IdPedirPlatos) {
+		PedirPlato pedirPlatosBuscado = new PedirPlato();	
 		pedirPlatosBuscado = pedirPlatosServiceImpl.pedirPlatosXID(IdPedirPlatos);
 		System.out.println("Pedir Platos: " + pedirPlatosBuscado);
 		return pedirPlatosBuscado;
 	}
 	
 	@PutMapping("/pedirPlatos/{id}")
-	public PedirPlatos actualizarPedirPlatos(@PathVariable(name="id")int IdPedirPlatos,@RequestBody PedirPlatos pedirPlatos) {
+	public PedirPlato actualizarPedirPlatos(@PathVariable(name="id")int IdPedirPlatos,@RequestBody PedirPlato pedirPlato) {
 		//Creamos dos pedirPlatos
-		PedirPlatos ptPedirPlatos = new PedirPlatos();
+		PedirPlato ptPedirPlatos = new PedirPlato();
 		
 		//El ofrecerBebidaSeleccionado copia los datos del ofrecerBebida que esta en la BD, buscando por el ID
 		ptPedirPlatos = pedirPlatosServiceImpl.pedirPlatosXID(IdPedirPlatos);
 		
 		//Actualizamos valores
-		ptPedirPlatos.setIdReserva(pedirPlatos.getIdReserva());
-		ptPedirPlatos.setIdPlato(pedirPlatos.getIdPlato());
-		ptPedirPlatos.setCantidadPlatos(pedirPlatos.getCantidadPlatos());
+		ptPedirPlatos.setIdReserva(pedirPlato.getIdReserva());
+		ptPedirPlatos.setIdPlato(pedirPlato.getIdPlato());
+		ptPedirPlatos.setCantidadPlatos(pedirPlato.getCantidadPlatos());
 		
-		System.out.println("PedirPlatos actualizado: " + ptPedirPlatos);
+		System.out.println("PedirPlato actualizado: " + ptPedirPlatos);
 		return ptPedirPlatos;
 	}
 	

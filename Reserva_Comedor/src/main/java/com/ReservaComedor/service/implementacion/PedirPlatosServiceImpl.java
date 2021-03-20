@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ReservaComedor.dao.IPedirPlatosDAO;
-import com.ReservaComedor.dto.PedirPlatos;
+import com.ReservaComedor.dto.PedirPlato;
 import com.ReservaComedor.service.interfaces.IPedirPlatosService;
 
 
@@ -28,23 +28,23 @@ public class PedirPlatosServiceImpl implements IPedirPlatosService {
 
 	//Metodos de la interfaz implementados
 	@Override
-	public List<PedirPlatos> listarPedirPlatos() {
+	public List<PedirPlato> listarPedirPlatos() {
 		return iPedirPlatosDAO.findAll();
 	}
 
 	@Override
-	public PedirPlatos guardarPedirPlatos(PedirPlatos pedirPlatos) {
-		return iPedirPlatosDAO.save(pedirPlatos);
+	public PedirPlato guardarPedirPlatos(PedirPlato pedirPlato) {
+		return iPedirPlatosDAO.save(pedirPlato);
 	}
 
 	@Override
-	public PedirPlatos pedirPlatosXID(int IdPedirPlatos) {
+	public PedirPlato pedirPlatosXID(int IdPedirPlatos) {
 		return iPedirPlatosDAO.findById(IdPedirPlatos).get();
 	}
 
 	@Override
-	public PedirPlatos actualizarPedirPlatos(PedirPlatos pedirPlatos) {
-		return iPedirPlatosDAO.save(pedirPlatos);
+	public PedirPlato actualizarPedirPlatos(PedirPlato pedirPlato) {
+		return iPedirPlatosDAO.save(pedirPlato);
 	}
 
 	@Override

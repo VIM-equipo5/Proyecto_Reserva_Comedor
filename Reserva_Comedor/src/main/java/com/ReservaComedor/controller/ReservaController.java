@@ -29,17 +29,17 @@ public class ReservaController {
 	ReservaServiceImpl reservaServiceImpl;
 
 	//End-points
-	@GetMapping("/reserva")
+	@GetMapping("/reservas")
 	public List<Reserva> listarReserva(){
 		return reservaServiceImpl.listarReserva();
 	}
 	
-	@PostMapping("/reserva")
+	@PostMapping("/reservas")
 	public Reserva guardarReserva(@RequestBody Reserva reserva) {
 		return reservaServiceImpl.guardarReserva(reserva);
 	}
 	
-	@GetMapping("/reserva/{id}")
+	@GetMapping("/reservas/{id}")
 	public Reserva reservaXID(@PathVariable(name="idReserva") Long idReserva) {
 		Reserva reservaBuscado = new Reserva();	
 		reservaBuscado = reservaServiceImpl.reservaXID(idReserva);
@@ -47,7 +47,7 @@ public class ReservaController {
 		return reservaBuscado;
 	}
 	
-	@PutMapping("/reserva/{id}")
+	@PutMapping("/reservas/{id}")
 	public Reserva actualizarReserva(@PathVariable(name="idReserva")Long idReserva,@RequestBody Reserva reserva) {
 		//Creamos dos reservas
 		Reserva ptReserva = new Reserva();
@@ -72,7 +72,7 @@ public class ReservaController {
 		return ptReserva;
 	}
 	
-	@DeleteMapping("/reserva/{id}")
+	@DeleteMapping("/reservas/{id}")
 	public void eliminarReserva(@PathVariable(name="idReserva")Long idReserva) {
 		reservaServiceImpl.eliminarReserva(idReserva);
 	}

@@ -33,17 +33,17 @@ public class OfrecerBebidaController {
 	OfrecerBebidaServiceImpl ofrecerBebidaServiceImpl;
 
 	//End-points
-	@GetMapping("/ofrecerBebida")
+	@GetMapping("/ofrecerBebidas")
 	public List<OfrecerBebida> listarOfrecerBebida(){
 		return ofrecerBebidaServiceImpl.listarOfrecerBebida();
 	}
 	
-	@PostMapping("/ofrecerBebida")
+	@PostMapping("/ofrecerBebidas")
 	public OfrecerBebida guardarOfrecerBebida(@RequestBody OfrecerBebida ofrecerBebida) {
 		return ofrecerBebidaServiceImpl.guardarOfrecerBebida(ofrecerBebida);
 	}
 	
-	@GetMapping("/ofrecerBebida/{id}")
+	@GetMapping("/ofrecerBebidas/{id}")
 	public OfrecerBebida ofrecerBebidaXID(@PathVariable(name="id") Long idOfrecerBebida) {
 		OfrecerBebida ofrecerBebidaBuscado = new OfrecerBebida();	
 		ofrecerBebidaBuscado = ofrecerBebidaServiceImpl.ofrecerBebidaXID(idOfrecerBebida);
@@ -51,7 +51,7 @@ public class OfrecerBebidaController {
 		return ofrecerBebidaBuscado;
 	}
 	
-	@PutMapping("/ofrecerBebida/{id}")
+	@PutMapping("/ofrecerBebidas/{id}")
 	public OfrecerBebida actualizarOfrecerBebida(@PathVariable(name="id")Long idOfrecerBebida,@RequestBody OfrecerBebida ofrecerBebida) {
 		//Creamos dos ofrecerBebidas
 		OfrecerBebida ptOfrecerBebida = new OfrecerBebida();
@@ -72,7 +72,7 @@ public class OfrecerBebidaController {
 		return ptOfrecerBebida;
 	}
 	
-	@DeleteMapping("/ofrecerBebida/{id}")
+	@DeleteMapping("/ofrecerBebidas/{id}")
 	public void eliminarOfrecerBebida(@PathVariable(name="id")Long idOfrecerBebida) {
 		ofrecerBebidaServiceImpl.eliminarOfrecerBebida(idOfrecerBebida);
 	}

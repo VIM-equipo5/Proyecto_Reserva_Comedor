@@ -34,7 +34,7 @@ public class Usuario {
 	//Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "IdUsuario")
+	@Column(name = "Idusuario")
 	private int idUsuario;
 	@Column(name = "NombreUsuario")
 	private String nombreUsuario;	//100 caracteres en la BD
