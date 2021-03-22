@@ -99,9 +99,11 @@ CREATE TABLE IF NOT EXISTS `reserva` (
 
 DROP TABLE IF EXISTS `pedirplatos`;
 CREATE TABLE IF NOT EXISTS `pedirplatos` (
+	id INT AUTO_INCREMENT,
   `IdReserva` int(11) NOT NULL,
   `IdPlato` int(11) NOT NULL,
   `CantidadPlatos` int(11) NOT NULL,
+  PRIMARY KEY(id,IdReserva,IdPlato),
   FOREIGN KEY (`IdReserva`) REFERENCES  `reserva` (`IdReserva`)
   ON UPDATE CASCADE
   ON DELETE CASCADE,
@@ -112,9 +114,11 @@ CREATE TABLE IF NOT EXISTS `pedirplatos` (
 
 DROP TABLE IF EXISTS `ofrecerbebidas`;
 CREATE TABLE IF NOT EXISTS `ofrecerbebidas` (
+	id INT AUTO_INCREMENT,
   `IdReserva` int(11) NOT NULL,
   `IdBebida` int(11) NOT NULL,
   `CantidadBebidas` int(11) NOT NULL,
+  PRIMARY KEY(id,IdReserva,IdBebida),
   FOREIGN KEY (`IdReserva`) REFERENCES  `reserva` (`IdReserva`)
   ON UPDATE CASCADE
   ON DELETE CASCADE,
