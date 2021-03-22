@@ -66,4 +66,77 @@ Els possibles punts d’extensió d’aquesta pràctica són permetre la generac
 #### Esquema EER
 ![EER](https://user-images.githubusercontent.com/22893383/110511925-0bef8c00-8105-11eb-9949-833c2dc4fa2d.png)
 
+#### 4. URIs endpoints.
+```
+Usuario
+GET       /api/usuarios
+POST      /api/usuarios
+GET       /api/usuarios/{id}
+PUT       /api/usuarios/{id}
+DELETE    /api/usuarios/{id}
+
+UsuarioApi
+GET       /api/users
+POST      /api/users
+GET       /api/users/{id}
+PUT       /api/users/{id}
+DELETE    /api/users/{id}
+
+Bebida
+GET       /api/bebidas
+POST      /api/bebidas
+GET       /api/bebidas/{id}
+PUT       /api/bebidas/{id}
+DELETE    /api/bebidas/{id}
+
+Categoria
+GET       /api/categorias
+POST      /api/categorias
+GET       /api/categorias/{id}
+PUT       /api/categorias/{id}
+DELETE    /api/categorias/{id}
+
+FranjaHoraria
+GET       /api/franjashorarias
+POST      /api/franjashorarias
+GET       /api/franjashorarias/{id}
+PUT       /api/franjashorarias/{id}
+DELETE    /api/franjashorarias/{id}
+
+OfrecerBebida
+GET       /api/ofrecerBebidas
+POST      /api/ofrecerBebidas
+GET       /api/ofrecerBebidas/{id}
+PUT       /api/ofrecerBebidas/{id}
+DELETE    /api/ofrecerBebidas/{id}
+
+PedirPlatos
+GET       /api/pedirPlatos
+POST      /api/pedirPlatos
+GET       /api/pedirPlatos/{id}
+PUT       /api/pedirPlatos/{id}
+DELETE    /api/pedirPlatos/{id}
+
+Platos
+GET       /api/platos
+POST      /api/platos
+GET       /api/platos/{id}
+PUT       /api/platos/{id}
+DELETE    /api/platos/{id}
+
+Reserva
+GET       /api/reservas
+POST      /api/reservas
+GET       /api/reservas/{id}
+PUT       /api/reservas/{id}
+DELETE    /api/reservas/{id}
+
+Rol
+GET       /api/roles
+POST      /api/roles
+GET       /api/roles/{id}
+PUT       /api/roles/{id}
+DELETE    /api/roles/{id}
+```
+
 
