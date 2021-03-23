@@ -34,7 +34,7 @@ public class FranjaHorariaController {
 		return franjaHorariaServiceImpl.guardarFranjaHoraria(franjaHoraria);
 	}
 	
-	@GetMapping("/franjashorarias/{id}")
+	@GetMapping("/franjashorarias/{idFranja}")
 	public FranjaHoraria franjaHorariaXID(@PathVariable(name="idFranja") int idFranja) {
 		FranjaHoraria franjaHorariaBuscada = new FranjaHoraria();	
 		franjaHorariaBuscada = franjaHorariaServiceImpl.franjaHorariaXID(idFranja);
@@ -42,7 +42,7 @@ public class FranjaHorariaController {
 		return franjaHorariaBuscada;
 	}
 	
-	@PutMapping("/franjashorarias/{id}")
+	@PutMapping("/franjashorarias/{idFranja}")
 	public FranjaHoraria actualizarFranjaHoraria(@PathVariable(name="idFranja")int idFranja,@RequestBody FranjaHoraria franjaHoraria) {
 		//Creamos dos franjas horarias
 		FranjaHoraria franjaHorariaSeleccionada = new FranjaHoraria();
@@ -64,7 +64,7 @@ public class FranjaHorariaController {
 		return franjaHorariaActualizada;
 	}
 	
-	@DeleteMapping("/franjashorarias/{id}")
+	@DeleteMapping("/franjashorarias/{idFranja}")
 	public void eliminarFranjaHoraria(@PathVariable(name="idFranja")int idFranja) {
 		franjaHorariaServiceImpl.eliminarFranjaHoraria(idFranja);
 	}

@@ -7,8 +7,6 @@ import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-
-
 /**
  * @author Vyacheslav Khaydorov
  * @author Miguel A. Sastre
@@ -16,9 +14,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  */
 
 @Entity
-@Table(name="reserva")
+@Table(name = "reserva")
 public class Reserva {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idReserva;
@@ -29,42 +27,55 @@ public class Reserva {
 	private Date fechaReserva;
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechaReservada;
-	
+
 	@OneToMany
 	@JoinColumn(name = "idReserva")
 	private List<PedirPlato> pedirPlato;
-	
+
+	@OneToMany
+	@JoinColumn(name = "idReserva")
+	private List<OfrecerBebida> ofrecerBebida;
+
 	@ManyToOne
-    @JoinColumn(name = "idUsuario")
-    Usuario usuario;
- 
-    @ManyToOne
-    @JoinColumn(name = "idFranja")
-    FranjaHoraria franjaHoraria;
-    
-    public Reserva() {}
-    
+	@JoinColumn(name = "idUsuario")
+	Usuario usuario;
+
+	@ManyToOne
+	@JoinColumn(name = "idFranja")
+	FranjaHoraria franjaHoraria;
+
+	public Reserva() {
+	}	
+	
+	
+
 	/**
-	 * @param idUsuario
+	 * @param idReserva
 	 * @param cantidadComensales
 	 * @param precioTotal
 	 * @param fechaReserva
 	 * @param fechaReservada
 	 * @param pedirPlato
+	 * @param ofrecerBebida
 	 * @param usuario
 	 * @param franjaHoraria
 	 */
-	public Reserva(Long idUsuario, Long cantidadComensales, Double precioTotal, Date fechaReserva, Date fechaReservada,
-			List<PedirPlato> pedirPlato, Usuario usuario, FranjaHoraria franjaHoraria) {
-		this.idReserva = idUsuario;
+	public Reserva(Long idReserva, Long cantidadComensales, Double precioTotal, Date fechaReserva, Date fechaReservada,
+			List<PedirPlato> pedirPlato, List<OfrecerBebida> ofrecerBebida, Usuario usuario,
+			FranjaHoraria franjaHoraria) {
+		super();
+		this.idReserva = idReserva;
 		this.cantidadComensales = cantidadComensales;
 		this.precioTotal = precioTotal;
 		this.fechaReserva = fechaReserva;
 		this.fechaReservada = fechaReservada;
 		this.pedirPlato = pedirPlato;
+		this.ofrecerBebida = ofrecerBebida;
 		this.usuario = usuario;
 		this.franjaHoraria = franjaHoraria;
 	}
+
+
 
 	/**
 	 * @return the idUsuario
@@ -152,6 +163,24 @@ public class Reserva {
 		this.pedirPlato = pedirPlato;
 	}
 
+	
+	
+	/**
+	 * @return the ofrecerBebida
+	 */
+	@JsonIgnore
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "ofrecerbebidas")
+	public List<OfrecerBebida> getOfrecerBebida() {
+		return ofrecerBebida;
+	}
+
+	/**
+	 * @param ofrecerBebida the ofrecerBebida to set
+	 */
+	public void setOfrecerBebida(List<OfrecerBebida> ofrecerBebida) {
+		this.ofrecerBebida = ofrecerBebida;
+	}
+
 	/**
 	 * @return the usuario
 	 */
@@ -180,10 +209,15 @@ public class Reserva {
 		this.franjaHoraria = franjaHoraria;
 	}
 
+
+
 	@Override
 	public String toString() {
-		return "Reserva [idUsuario=" + idReserva + ", cantidadComensales=" + cantidadComensales + ", precioTotal="
+		return "Reserva [idReserva=" + idReserva + ", cantidadComensales=" + cantidadComensales + ", precioTotal="
 				+ precioTotal + ", fechaReserva=" + fechaReserva + ", fechaReservada=" + fechaReservada
-				+ ", pedirPlato=" + pedirPlato + ", usuario=" + usuario + ", franjaHoraria=" + franjaHoraria + "]";
+				+ ", pedirPlato=" + pedirPlato + ", ofrecerBebida=" + ofrecerBebida + ", usuario=" + usuario
+				+ ", franjaHoraria=" + franjaHoraria + "]";
 	}
+
+	
 }

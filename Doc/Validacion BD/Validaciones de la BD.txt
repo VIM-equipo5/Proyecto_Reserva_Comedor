@@ -1,0 +1,43 @@
+Validacion BD:
+
+Problemas identificados:
+
+	1.
+	Update: Si nos pasa un valor vacio.
+	Ejemplo update/categorias/1
+		{
+			"descripcion": "Pica-pica, tablas de queso y embutidos, crudité con mucho hummus"
+		}
+		En este caso nombre sería null, y eso no puede ocurrir. Habría que implementar un método que controlará cuantos parametros no pasa y de esa manera hacer la actualización de los campos.
+		Es decir, si campo == null, se queda como esta.
+
+	2.Identificador del endpoint.
+		He tenido que ir modificando cada uri.
+		/franjashorarias/{id} --> /franjashorarias/{idFranja} 
+		Esto se debe a que usamos @PathVariable(name="idFranja").
+		Ocurre en multiples controller.
+
+
+
+Bebida:
+getOne: Falla obtener 1 por id
+
+OfrecerBebida:
+getOne: Falla obtener 1 por id. StackOverFlow
+
+
+Categoria:
+Update funciona, pero indicando todos los campos.
+Delete no funciona debido a que tiene la clave compartida con reservas.
+
+Platos: (En este caso debe funcionar todos los endpoints, es un requisito)
+Delete: No funciona debido a que parece intentar eliminar la categoría
+
+Reserva: 
+getOne: Falla obtener 1 por id. StackOverFlow
+
+Rol:
+Delete: No se puede borrar por integridad referencial
+
+Usuario:
+Todo correcto. Me permite hasta eliminar un usuario.

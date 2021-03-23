@@ -39,7 +39,7 @@ public class UsuarioController {
 		return usuarioServiceImpl.guardarUsuario(usuario);
 	}
 	
-	@GetMapping("/usuarios/{id}")
+	@GetMapping("/usuarios/{idUsuario}")
 	public Usuario usuarioXID(@PathVariable(name="idUsuario") int idUsuario) {
 		Usuario usuarioBuscado = new Usuario();	
 		usuarioBuscado = usuarioServiceImpl.usuarioXID(idUsuario);
@@ -47,7 +47,7 @@ public class UsuarioController {
 		return usuarioBuscado;
 	}
 	
-	@PutMapping("/usuarios/{id}")
+	@PutMapping("/usuarios/{idUsuario}")
 	public Usuario actualizarUsuario(@PathVariable(name="idUsuario")int idUsuario,@RequestBody Usuario usuario) {
 		//Creamos dos usuarios
 		Usuario usuarioSeleccionado = new Usuario();
@@ -73,7 +73,7 @@ public class UsuarioController {
 		return usuarioActualizado;
 	}
 	
-	@DeleteMapping("/usuarios/{id}")
+	@DeleteMapping("/usuarios/{idUsuario}")
 	public void eliminarUsuario(@PathVariable(name="idUsuario")int idUsuario) {
 		usuarioServiceImpl.eliminarUsuario(idUsuario);
 	}

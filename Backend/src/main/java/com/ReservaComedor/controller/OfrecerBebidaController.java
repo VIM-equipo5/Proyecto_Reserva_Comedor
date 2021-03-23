@@ -60,7 +60,6 @@ public class OfrecerBebidaController {
 		ptOfrecerBebida = ofrecerBebidaServiceImpl.ofrecerBebidaXID(idOfrecerBebida);
 		
 		//Actualizamos valores
-		ptOfrecerBebida.setId(ofrecerBebida.getId());
 		ptOfrecerBebida.setCantidadBebidas(ofrecerBebida.getCantidadBebidas());
 		ptOfrecerBebida.setReserva(ofrecerBebida.getReserva());
 		ptOfrecerBebida.setBebida(ofrecerBebida.getBebida());

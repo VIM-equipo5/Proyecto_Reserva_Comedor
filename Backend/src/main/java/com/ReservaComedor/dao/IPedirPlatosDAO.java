@@ -12,6 +12,6 @@ import com.ReservaComedor.dto.PedirPlato;
  * @author Ingrid Dominguez
  */
 
-public interface IPedirPlatosDAO extends JpaRepository<PedirPlato, Integer>{
+public interface IPedirPlatosDAO extends JpaRepository<PedirPlato, Long>{
 
 }

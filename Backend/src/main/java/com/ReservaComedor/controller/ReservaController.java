@@ -39,7 +39,7 @@ public class ReservaController {
 		return reservaServiceImpl.guardarReserva(reserva);
 	}
 	
-	@GetMapping("/reservas/{id}")
+	@GetMapping("/reservas/{idReserva}")
 	public Reserva reservaXID(@PathVariable(name="idReserva") Long idReserva) {
 		Reserva reservaBuscado = new Reserva();	
 		reservaBuscado = reservaServiceImpl.reservaXID(idReserva);
@@ -47,23 +47,20 @@ public class ReservaController {
 		return reservaBuscado;
 	}
 	
-	@PutMapping("/reservas/{id}")
+	@PutMapping("/reservas/{idReserva}")
 	public Reserva actualizarReserva(@PathVariable(name="idReserva")Long idReserva,@RequestBody Reserva reserva) {
 		//Creamos dos reservas
 		Reserva ptReserva = new Reserva();
 		
-		//El reservaSeleccionado copia los datos del reserva que esta en la BD, buscando por el ID
 		ptReserva = reservaServiceImpl.reservaXID(idReserva);
 		
 		//Actualizamos valores
-		ptReserva.setIdReserva(reserva.getIdReserva());
 		ptReserva.setCantidadComensales(reserva.getCantidadComensales());
 		ptReserva.setPrecioTotal(reserva.getPrecioTotal());
 		ptReserva.setFechaReserva(reserva.getFechaReserva());
 		ptReserva.setFechaReservada(reserva.getFechaReservada());
 		ptReserva.setUsuario(reserva.getUsuario());
 		ptReserva.setFranjaHoraria(reserva.getFranjaHoraria());
-		
 		
 		//...
 		ptReserva = reservaServiceImpl.actualizarReserva(ptReserva);
@@ -72,7 +69,7 @@ public class ReservaController {
 		return ptReserva;
 	}
 	
-	@DeleteMapping("/reservas/{id}")
+	@DeleteMapping("/reservas/{idReserva}")
 	public void eliminarReserva(@PathVariable(name="idReserva")Long idReserva) {
 		reservaServiceImpl.eliminarReserva(idReserva);
 	}

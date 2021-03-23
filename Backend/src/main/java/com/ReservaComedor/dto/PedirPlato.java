@@ -19,11 +19,12 @@ public class PedirPlato {
 	private Long id;
 	
 	//Atributos
+	@ManyToOne
 	@JoinColumn(name = "idReserva")
-    @ManyToOne
     private Reserva IdReserva;
+	
+	@ManyToOne
 	@JoinColumn(name = "IdPlato")
-    @ManyToOne
     private Platos IdPlato;
 	@Column(name = "CantidadPlatos")
 	private int CantidadPlatos;

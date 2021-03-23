@@ -36,7 +36,7 @@ public class PedirPlatosController {
 	}
 	
 	@GetMapping("/pedirPlatos/{id}")
-	public PedirPlato pedirPlatosXID(@PathVariable(name="id") int IdPedirPlatos) {
+	public PedirPlato pedirPlatosXID(@PathVariable(name="id") Long IdPedirPlatos) {
 		PedirPlato pedirPlatosBuscado = new PedirPlato();	
 		pedirPlatosBuscado = pedirPlatosServiceImpl.pedirPlatosXID(IdPedirPlatos);
 		System.out.println("Pedir Platos: " + pedirPlatosBuscado);
@@ -44,7 +44,7 @@ public class PedirPlatosController {
 	}
 	
 	@PutMapping("/pedirPlatos/{id}")
-	public PedirPlato actualizarPedirPlatos(@PathVariable(name="id")int IdPedirPlatos,@RequestBody PedirPlato pedirPlato) {
+	public PedirPlato actualizarPedirPlatos(@PathVariable(name="id")Long IdPedirPlatos,@RequestBody PedirPlato pedirPlato) {
 		//Creamos dos pedirPlatos
 		PedirPlato ptPedirPlatos = new PedirPlato();
 		
@@ -61,7 +61,7 @@ public class PedirPlatosController {
 	}
 	
 	@DeleteMapping("/pedirPlatos/{id}")
-	public void eliminarPedirPlatos(@PathVariable(name="id")int IdPedirPlato) {
+	public void eliminarPedirPlatos(@PathVariable(name="id")Long IdPedirPlato) {
 		pedirPlatosServiceImpl.eliminarPedirPlatos(IdPedirPlato);
 	}
 }

@@ -19,10 +19,10 @@ public interface IPedirPlatosService {
 	
 	public PedirPlato guardarPedirPlatos(PedirPlato pedirPlato);	
 	
-	public PedirPlato pedirPlatosXID(int IdPrepararPlatos);	
+	public PedirPlato pedirPlatosXID(Long IdPrepararPlatos);	
 	
 	public PedirPlato actualizarPedirPlatos(PedirPlato pedirPlato);	
 	
-	public void eliminarPedirPlatos(int IdPrepararPlatos);	
+	public void eliminarPedirPlatos(Long IdPrepararPlatos);	
 	
 }

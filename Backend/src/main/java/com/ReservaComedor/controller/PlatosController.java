@@ -37,7 +37,7 @@ public class PlatosController {
 		return platosServiceImpl.guardarPlato(plato);
 	}
 	
-	@GetMapping("/plato/{id}")
+	@GetMapping("/platos/{idPlato}")
 	public Platos platoXID(@PathVariable(name="idPlato") int IdPlato) {
 		Platos platoBuscado = new Platos();	
 		platoBuscado = platosServiceImpl.platoXID(IdPlato);
@@ -45,7 +45,7 @@ public class PlatosController {
 		return platoBuscado;
 	}
 	
-	@PutMapping("/platos/{id}")
+	@PutMapping("/platos/{idPlato}")
 	public Platos actualizarPlato(@PathVariable(name="idPlato")int IdPlato,@RequestBody Platos plato) {
 		//Creamos dos platos
 		Platos platoSeleccionado = new Platos();
@@ -68,7 +68,7 @@ public class PlatosController {
 		return platoActualizado;
 	}
 	
-	@DeleteMapping("/platos/{id}")
+	@DeleteMapping("/platos/{idPlato}")
 	public void eliminarPlato(@PathVariable(name="idPlato")int IdPlato) {
 		platosServiceImpl.eliminarPlato(IdPlato);
 	}

@@ -44,7 +44,7 @@ public class CategoriaController {
 		return categoriaServiceImpl.guardarCategoria(categoria);
 	}
 	
-	@GetMapping("/categorias/{id}")
+	@GetMapping("/categorias/{idCategoria}")
 	public Categoria categoriaXID(@PathVariable(name="idCategoria") int IdCategoria) {
 		Categoria categoriaBuscada = new Categoria();	
 		categoriaBuscada = categoriaServiceImpl.categoriaXID(IdCategoria);
@@ -52,7 +52,7 @@ public class CategoriaController {
 		return categoriaBuscada;
 	}
 	
-	@PutMapping("/categorias/{id}")
+	@PutMapping("/categorias/{idCategoria}")
 	public Categoria actualizarCategoria(@PathVariable(name="idCategoria")int IdCategoria,@RequestBody Categoria categoria) {
 		//Creamos dos platos
 		Categoria categoriaSeleccionada = new Categoria();
@@ -62,7 +62,6 @@ public class CategoriaController {
 		categoriaSeleccionada = categoriaServiceImpl.categoriaXID(IdCategoria);
 		
 		//Actualizamos valores
-		categoriaSeleccionada.setIdCategoria(categoria.getIdCategoria());
 		categoriaSeleccionada.setNombre(categoria.getNombre());
 		categoriaSeleccionada.setDescripcion(categoria.getDescripcion());
 		
@@ -72,7 +71,7 @@ public class CategoriaController {
 		return categoriaActualizada;
 	}
 	
-	@DeleteMapping("/categorias/{id}")
+	@DeleteMapping("/categorias/{idCategoria}")
 	public void eliminarCategoria(@PathVariable(name="idCategoria")int IdCategoria) {
 		categoriaServiceImpl.eliminarCategoria(IdCategoria);
 	}

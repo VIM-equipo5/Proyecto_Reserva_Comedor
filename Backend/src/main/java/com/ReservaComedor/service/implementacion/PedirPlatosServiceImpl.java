@@ -38,8 +38,8 @@ public class PedirPlatosServiceImpl implements IPedirPlatosService {
 	}
 
 	@Override
-	public PedirPlato pedirPlatosXID(int IdPedirPlatos) {
-		return iPedirPlatosDAO.findById(IdPedirPlatos).get();
+	public PedirPlato pedirPlatosXID(Long idPedirPlatos) {
+		return iPedirPlatosDAO.findById(idPedirPlatos).get();
 	}
 
 	@Override
@@ -48,7 +48,7 @@ public class PedirPlatosServiceImpl implements IPedirPlatosService {
 	}
 
 	@Override
-	public void eliminarPedirPlatos(int IdPedirPlatos) {
+	public void eliminarPedirPlatos(Long IdPedirPlatos) {
 		iPedirPlatosDAO.deleteById(IdPedirPlatos);
 	}
 	

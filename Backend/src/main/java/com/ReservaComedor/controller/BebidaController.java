@@ -42,7 +42,7 @@ public class BebidaController {
 		return bebidaServiceImpl.guardarBebida(bebida);
 	}
 	
-	@GetMapping("/bebidas/{id}")
+	@GetMapping("/bebidas/{idBebida}")
 	public Bebida bebidaXID(@PathVariable(name="idBebida") Long idBebida) {
 		Bebida bebidaBuscado = new Bebida();	
 		bebidaBuscado = bebidaServiceImpl.bebidaXID(idBebida);
@@ -50,7 +50,7 @@ public class BebidaController {
 		return bebidaBuscado;
 	}
 	
-	@PutMapping("/bebidas/{id}")
+	@PutMapping("/bebidas/{idBebida}")
 	public Bebida actualizarBebida(@PathVariable(name="idBebida")Long idBebida,@RequestBody Bebida bebida) {
 		//Creamos dos bebidas
 		Bebida ptBebida = new Bebida();
@@ -59,7 +59,6 @@ public class BebidaController {
 		ptBebida = bebidaServiceImpl.bebidaXID(idBebida);
 		
 		//Actualizamos valores
-		ptBebida.setIdBebida(bebida.getIdBebida());
 		ptBebida.setNombre(bebida.getNombre());
 		ptBebida.setPrecioUnitario(bebida.getPrecioUnitario());
 		ptBebida.setImagen(bebida.getImagen());
@@ -73,7 +72,7 @@ public class BebidaController {
 		return ptBebida;
 	}
 	
-	@DeleteMapping("/bebidas/{id}")
+	@DeleteMapping("/bebidas/{idBebida}")
 	public void eliminarBebida(@PathVariable(name="idBebida")Long idBebida) {
 		bebidaServiceImpl.eliminarBebida(idBebida);
 	}

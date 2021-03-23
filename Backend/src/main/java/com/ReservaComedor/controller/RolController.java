@@ -37,7 +37,7 @@ public class RolController {
 		return rolServiceImpl.guardarRol(rol);
 	}
 	
-	@GetMapping("/roles/{id}")
+	@GetMapping("/roles/{idRol}")
 	public Rol rolXID(@PathVariable(name="idRol") int idRol) {
 		Rol rolBuscado = new Rol();	
 		rolBuscado = rolServiceImpl.rolXID(idRol);
@@ -45,7 +45,7 @@ public class RolController {
 		return rolBuscado;
 	}
 	
-	@PutMapping("/roles/{id}")
+	@PutMapping("/roles/{idRol}")
 	public Rol actualizarRol(@PathVariable(name="idRol")int idRol,@RequestBody Rol rol) {
 		//Creamos dos roles
 		Rol rolSeleccionado = new Rol();
@@ -65,7 +65,7 @@ public class RolController {
 		return rolActualizado;
 	}
 	
-	@DeleteMapping("/roles/{id}")
+	@DeleteMapping("/roles/{idRol}")
 	public void eliminarRol(@PathVariable(name="idRol")int idRol) {
 		rolServiceImpl.eliminarRol(idRol);
 	}

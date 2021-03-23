@@ -48,8 +48,8 @@ public class PlatosServiceImpl implements IPlatosService {
 	}
 
 	@Override
-	public void eliminarPlato(int IdUsuario) {
-		iPlatosDAO.deleteById(IdUsuario);
+	public void eliminarPlato(int idPlato) {
+		iPlatosDAO.deleteById(idPlato);
 	}
 	
 }
