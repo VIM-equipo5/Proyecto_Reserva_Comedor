@@ -8,6 +8,10 @@ import { ModalProductoComponent } from './home/Modal/modal-producto/modal-produc
 import { NavbarComponent } from './home/navbar/navbar.component';
 import { LoginComponent } from './Login/login/login.component';
 import { RegisterComponent } from './Login/register/register.component';
+import { Slider1Component } from './home/slider/slider1/slider1.component';
+import { Slider2Component } from './home/slider/slider2/slider2.component';
+import { Slider3Component } from './home/slider/slider3/slider3.component';
+import { Slider4Component } from './home/slider/slider4/slider4.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { RegisterComponent } from './Login/register/register.component';
     LoginComponent,
     RegisterComponent,
     NavbarComponent,
-    ModalProductoComponent
+    ModalProductoComponent,
+    Slider1Component,
+    Slider2Component,
+    Slider3Component,
+    Slider4Component
   ],
   imports: [
     BrowserModule,
