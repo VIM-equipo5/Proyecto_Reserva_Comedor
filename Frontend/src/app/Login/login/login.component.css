@@ -1,3 +1,15 @@
-.body-login{
+.body-login {
   padding-top: 20vh;
 }
+
+.imagen {
+  background: url(https://us.emedemujer.com/wp-content/uploads/sites/3/2016/09/dieta-de-las-horas-1.jpg);
+  background-position: center;
+  background-size: 115%;
+}
+
+.titular{
+  color: white;
+  font-family: sans-serif;
+}
+
