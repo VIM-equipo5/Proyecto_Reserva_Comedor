@@ -1,0 +1,6 @@
+.main-body{
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  height: 100vh !important;
+  background-image: linear-gradient( 180deg, #e50076 10%, white 100%, transparent);
+}

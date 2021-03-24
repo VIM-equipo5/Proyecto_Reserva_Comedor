@@ -1,0 +1,1807 @@
+{
+	"info": {
+		"_postman_id": "715de266-5ec9-4715-93f3-371af61246e9",
+		"name": "Proyecto Reserva comedor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "getTokenUser",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "NoMeRobes",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "rolUsuario",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Nimda\",\r\n    \"password\": \"Sup3rC0ntrAs3ñA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTokenAdmin",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"rolUsuario\",\r\n    \"password\": \"NoMeRobes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Bebida",
+			"item": [
+				{
+					"name": "getAllBebidas",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaW1kYSIsImV4cCI6MTYxNjQ5OTU1OX0.nS8cohDiH7Slutgxv660637KQLqVM3e383hvrZcGXI9JYqQe0qfPmAnfBDty2t6d-DE0kj3QRIucHDLWLB2fGA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"root\",\r\n    \"password\": \"root\",\r\n    \"roles\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/bebidas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"bebidas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOneBebida",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaW1kYSIsImV4cCI6MTYxNjQ5OTU1OX0.nS8cohDiH7Slutgxv660637KQLqVM3e383hvrZcGXI9JYqQe0qfPmAnfBDty2t6d-DE0kj3QRIucHDLWLB2fGA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"root\",\r\n    \"password\": \"root\",\r\n    \"roles\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/bebidas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"bebidas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateBebidaId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaW1kYSIsImV4cCI6MTYxNjQ5OTU1OX0.nS8cohDiH7Slutgxv660637KQLqVM3e383hvrZcGXI9JYqQe0qfPmAnfBDty2t6d-DE0kj3QRIucHDLWLB2fGA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"nuka-cola\",\r\n    \"precioUnitario\": \"200\",\r\n    \"descripcion\": \"Esta muy fresca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/bebidas/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"bebidas",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postBebida",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaW1kYSIsImV4cCI6MTYxNjQ5OTU1OX0.nS8cohDiH7Slutgxv660637KQLqVM3e383hvrZcGXI9JYqQe0qfPmAnfBDty2t6d-DE0kj3QRIucHDLWLB2fGA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"nuka-cola\",\r\n    \"precioUnitario\":\"200\",\r\n    \"descripcion\":\"Esta muy fresca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/bebidas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"bebidas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteBebida",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaW1kYSIsImV4cCI6MTYxNjQ5OTU1OX0.nS8cohDiH7Slutgxv660637KQLqVM3e383hvrZcGXI9JYqQe0qfPmAnfBDty2t6d-DE0kj3QRIucHDLWLB2fGA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "imagen",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/bebidas/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"bebidas",
+								"10"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "OfrecerBebida",
+			"item": [
+				{
+					"name": "getAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaW1kYSIsImV4cCI6MTYxNjQ5OTU1OX0.nS8cohDiH7Slutgxv660637KQLqVM3e383hvrZcGXI9JYqQe0qfPmAnfBDty2t6d-DE0kj3QRIucHDLWLB2fGA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"root\",\r\n    \"password\": \"root\",\r\n    \"roles\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/ofrecerBebidas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"ofrecerBebidas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOne",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaW1kYSIsImV4cCI6MTYxNjQ5OTU1OX0.nS8cohDiH7Slutgxv660637KQLqVM3e383hvrZcGXI9JYqQe0qfPmAnfBDty2t6d-DE0kj3QRIucHDLWLB2fGA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"root\",\r\n    \"password\": \"root\",\r\n    \"roles\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/ofrecerBebidas/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"ofrecerBebidas",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Categoria",
+			"item": [
+				{
+					"name": "getAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaW1kYSIsImV4cCI6MTYxNjQ5OTU1OX0.nS8cohDiH7Slutgxv660637KQLqVM3e383hvrZcGXI9JYqQe0qfPmAnfBDty2t6d-DE0kj3QRIucHDLWLB2fGA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"root\",\r\n    \"password\": \"root\",\r\n    \"roles\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/categorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"categorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOne",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaW1kYSIsImV4cCI6MTYxNjQ5OTU1OX0.nS8cohDiH7Slutgxv660637KQLqVM3e383hvrZcGXI9JYqQe0qfPmAnfBDty2t6d-DE0kj3QRIucHDLWLB2fGA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"root\",\r\n    \"password\": \"root\",\r\n    \"roles\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/categorias/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"categorias",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaW1kYSIsImV4cCI6MTYxNjQ5OTU1OX0.nS8cohDiH7Slutgxv660637KQLqVM3e383hvrZcGXI9JYqQe0qfPmAnfBDty2t6d-DE0kj3QRIucHDLWLB2fGA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Entrante\",\r\n    \"descripcion\": \"Pica-pica, tablas de queso y embutidos, crudité con mucho hummus\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/categorias/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"categorias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaW1kYSIsImV4cCI6MTYxNjQ5OTU1OX0.nS8cohDiH7Slutgxv660637KQLqVM3e383hvrZcGXI9JYqQe0qfPmAnfBDty2t6d-DE0kj3QRIucHDLWLB2fGA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cantidadBebidas\": 10,\r\n    \"reserva\": {\r\n        \"idReserva\": 3,\r\n        \"cantidadComensales\": 2,\r\n        \"precioTotal\": 28.5,\r\n        \"fechaReserva\": \"2021-03-18T19:17:22.000+00:00\",\r\n        \"fechaReservada\": \"2021-03-31T22:00:00.000+00:00\",\r\n        \"usuario\": {\r\n            \"idUsuario\": 8,\r\n            \"nombreUsuario\": \"Usuario6\",\r\n            \"contraseña\": \"NoMeRobesPorFavor\",\r\n            \"nombre\": \"Héctor\",\r\n            \"apellido\": \"Hernández\",\r\n            \"fechaNacimiento\": \"1969-03-07\",\r\n            \"telefono\": 607548652,\r\n            \"rol\": {\r\n                \"idRol\": 2,\r\n                \"nombreRol\": \"usuario\",\r\n                \"descripcion\": \"Usuario llano, con autorizacion solo para realizar reservas\"\r\n            },\r\n            \"dni\": \"H0000008\"\r\n        },\r\n        \"franjaHoraria\": {\r\n            \"idFranja\": 10,\r\n            \"capacidadMax\": 10,\r\n            \"ocupacionTotal\": 0,\r\n            \"franjaInicio\": \"001415\",\r\n            \"franjaFin\": \"001430\"\r\n        }\r\n    },\r\n    \"bebida\": {\r\n        \"idBebida\": 1,\r\n        \"nombre\": \"Refresco\",\r\n        \"precioUnitario\": 1.0,\r\n        \"imagen\": null,\r\n        \"descripcion\": \"Coca-cola, Coca-cola Zero, Fanta naranja, Fanta limón, Sprite\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/categorias/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"categorias",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaW1kYSIsImV4cCI6MTYxNjQ5OTU1OX0.nS8cohDiH7Slutgxv660637KQLqVM3e383hvrZcGXI9JYqQe0qfPmAnfBDty2t6d-DE0kj3QRIucHDLWLB2fGA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "imagen",
+									"type": "file",
+									"src": "/H:/Curso Programación/Java/Workspace/Proyecto/2.jpgbee2cf63-269c-4f6a-8f45-55b75716b147Large.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/categorias/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"categorias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "FranjaHoraria",
+			"item": [
+				{
+					"name": "getAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"root\",\r\n    \"password\": \"root\",\r\n    \"roles\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/franjashorarias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"franjashorarias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOne",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"root\",\r\n    \"password\": \"root\",\r\n    \"roles\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/franjashorarias/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"franjashorarias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descripcion\": \"Pica-pica, tablas de queso y embutidos, crudité con mucho hummus\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/franjashorarias/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"franjashorarias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cantidadBebidas\": 10,\r\n    \"reserva\": {\r\n        \"idReserva\": 3,\r\n        \"cantidadComensales\": 2,\r\n        \"precioTotal\": 28.5,\r\n        \"fechaReserva\": \"2021-03-18T19:17:22.000+00:00\",\r\n        \"fechaReservada\": \"2021-03-31T22:00:00.000+00:00\",\r\n        \"usuario\": {\r\n            \"idUsuario\": 8,\r\n            \"nombreUsuario\": \"Usuario6\",\r\n            \"contraseña\": \"NoMeRobesPorFavor\",\r\n            \"nombre\": \"Héctor\",\r\n            \"apellido\": \"Hernández\",\r\n            \"fechaNacimiento\": \"1969-03-07\",\r\n            \"telefono\": 607548652,\r\n            \"rol\": {\r\n                \"idRol\": 2,\r\n                \"nombreRol\": \"usuario\",\r\n                \"descripcion\": \"Usuario llano, con autorizacion solo para realizar reservas\"\r\n            },\r\n            \"dni\": \"H0000008\"\r\n        },\r\n        \"franjaHoraria\": {\r\n            \"idFranja\": 10,\r\n            \"capacidadMax\": 10,\r\n            \"ocupacionTotal\": 0,\r\n            \"franjaInicio\": \"001415\",\r\n            \"franjaFin\": \"001430\"\r\n        }\r\n    },\r\n    \"bebida\": {\r\n        \"idBebida\": 1,\r\n        \"nombre\": \"Refresco\",\r\n        \"precioUnitario\": 1.0,\r\n        \"imagen\": null,\r\n        \"descripcion\": \"Coca-cola, Coca-cola Zero, Fanta naranja, Fanta limón, Sprite\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/franjashorarias/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"franjashorarias",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "imagen",
+									"type": "file",
+									"src": "/H:/Curso Programación/Java/Workspace/Proyecto/2.jpgbee2cf63-269c-4f6a-8f45-55b75716b147Large.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/franjashorarias/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"franjashorarias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "pedirPlatos",
+			"item": [
+				{
+					"name": "getAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"root\",\r\n    \"password\": \"root\",\r\n    \"roles\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/pedirPlatos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pedirPlatos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOne",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"root\",\r\n    \"password\": \"root\",\r\n    \"roles\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/pedirPlatos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pedirPlatos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descripcion\": \"Pica-pica, tablas de queso y embutidos, crudité con mucho hummus\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/pedirPlatos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pedirPlatos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cantidadBebidas\": 10,\r\n    \"reserva\": {\r\n        \"idReserva\": 3,\r\n        \"cantidadComensales\": 2,\r\n        \"precioTotal\": 28.5,\r\n        \"fechaReserva\": \"2021-03-18T19:17:22.000+00:00\",\r\n        \"fechaReservada\": \"2021-03-31T22:00:00.000+00:00\",\r\n        \"usuario\": {\r\n            \"idUsuario\": 8,\r\n            \"nombreUsuario\": \"Usuario6\",\r\n            \"contraseña\": \"NoMeRobesPorFavor\",\r\n            \"nombre\": \"Héctor\",\r\n            \"apellido\": \"Hernández\",\r\n            \"fechaNacimiento\": \"1969-03-07\",\r\n            \"telefono\": 607548652,\r\n            \"rol\": {\r\n                \"idRol\": 2,\r\n                \"nombreRol\": \"usuario\",\r\n                \"descripcion\": \"Usuario llano, con autorizacion solo para realizar reservas\"\r\n            },\r\n            \"dni\": \"H0000008\"\r\n        },\r\n        \"franjaHoraria\": {\r\n            \"idFranja\": 10,\r\n            \"capacidadMax\": 10,\r\n            \"ocupacionTotal\": 0,\r\n            \"franjaInicio\": \"001415\",\r\n            \"franjaFin\": \"001430\"\r\n        }\r\n    },\r\n    \"bebida\": {\r\n        \"idBebida\": 1,\r\n        \"nombre\": \"Refresco\",\r\n        \"precioUnitario\": 1.0,\r\n        \"imagen\": null,\r\n        \"descripcion\": \"Coca-cola, Coca-cola Zero, Fanta naranja, Fanta limón, Sprite\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/pedirPlatos/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pedirPlatos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "imagen",
+									"type": "file",
+									"src": "/H:/Curso Programación/Java/Workspace/Proyecto/2.jpgbee2cf63-269c-4f6a-8f45-55b75716b147Large.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/pedirPlatos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pedirPlatos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Platos",
+			"item": [
+				{
+					"name": "getAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"root\",\r\n    \"password\": \"root\",\r\n    \"roles\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/platos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"platos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOne",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"root\",\r\n    \"password\": \"root\",\r\n    \"roles\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/platos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"platos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descripcion\": \"Pica-pica, tablas de queso y embutidos, crudité con mucho hummus\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/platos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"platos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cantidadBebidas\": 10,\r\n    \"reserva\": {\r\n        \"idReserva\": 3,\r\n        \"cantidadComensales\": 2,\r\n        \"precioTotal\": 28.5,\r\n        \"fechaReserva\": \"2021-03-18T19:17:22.000+00:00\",\r\n        \"fechaReservada\": \"2021-03-31T22:00:00.000+00:00\",\r\n        \"usuario\": {\r\n            \"idUsuario\": 8,\r\n            \"nombreUsuario\": \"Usuario6\",\r\n            \"contraseña\": \"NoMeRobesPorFavor\",\r\n            \"nombre\": \"Héctor\",\r\n            \"apellido\": \"Hernández\",\r\n            \"fechaNacimiento\": \"1969-03-07\",\r\n            \"telefono\": 607548652,\r\n            \"rol\": {\r\n                \"idRol\": 2,\r\n                \"nombreRol\": \"usuario\",\r\n                \"descripcion\": \"Usuario llano, con autorizacion solo para realizar reservas\"\r\n            },\r\n            \"dni\": \"H0000008\"\r\n        },\r\n        \"franjaHoraria\": {\r\n            \"idFranja\": 10,\r\n            \"capacidadMax\": 10,\r\n            \"ocupacionTotal\": 0,\r\n            \"franjaInicio\": \"001415\",\r\n            \"franjaFin\": \"001430\"\r\n        }\r\n    },\r\n    \"bebida\": {\r\n        \"idBebida\": 1,\r\n        \"nombre\": \"Refresco\",\r\n        \"precioUnitario\": 1.0,\r\n        \"imagen\": null,\r\n        \"descripcion\": \"Coca-cola, Coca-cola Zero, Fanta naranja, Fanta limón, Sprite\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/platos/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"platos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "imagen",
+									"type": "file",
+									"src": "/H:/Curso Programación/Java/Workspace/Proyecto/2.jpgbee2cf63-269c-4f6a-8f45-55b75716b147Large.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/platos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"platos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Reservas",
+			"item": [
+				{
+					"name": "getAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"root\",\r\n    \"password\": \"root\",\r\n    \"roles\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/reservas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"reservas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOne",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"root\",\r\n    \"password\": \"root\",\r\n    \"roles\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/reservas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"reservas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descripcion\": \"Pica-pica, tablas de queso y embutidos, crudité con mucho hummus\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/reservas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"reservas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cantidadBebidas\": 10,\r\n    \"reserva\": {\r\n        \"idReserva\": 3,\r\n        \"cantidadComensales\": 2,\r\n        \"precioTotal\": 28.5,\r\n        \"fechaReserva\": \"2021-03-18T19:17:22.000+00:00\",\r\n        \"fechaReservada\": \"2021-03-31T22:00:00.000+00:00\",\r\n        \"usuario\": {\r\n            \"idUsuario\": 8,\r\n            \"nombreUsuario\": \"Usuario6\",\r\n            \"contraseña\": \"NoMeRobesPorFavor\",\r\n            \"nombre\": \"Héctor\",\r\n            \"apellido\": \"Hernández\",\r\n            \"fechaNacimiento\": \"1969-03-07\",\r\n            \"telefono\": 607548652,\r\n            \"rol\": {\r\n                \"idRol\": 2,\r\n                \"nombreRol\": \"usuario\",\r\n                \"descripcion\": \"Usuario llano, con autorizacion solo para realizar reservas\"\r\n            },\r\n            \"dni\": \"H0000008\"\r\n        },\r\n        \"franjaHoraria\": {\r\n            \"idFranja\": 10,\r\n            \"capacidadMax\": 10,\r\n            \"ocupacionTotal\": 0,\r\n            \"franjaInicio\": \"001415\",\r\n            \"franjaFin\": \"001430\"\r\n        }\r\n    },\r\n    \"bebida\": {\r\n        \"idBebida\": 1,\r\n        \"nombre\": \"Refresco\",\r\n        \"precioUnitario\": 1.0,\r\n        \"imagen\": null,\r\n        \"descripcion\": \"Coca-cola, Coca-cola Zero, Fanta naranja, Fanta limón, Sprite\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/reservas/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"reservas",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "imagen",
+									"type": "file",
+									"src": "/H:/Curso Programación/Java/Workspace/Proyecto/2.jpgbee2cf63-269c-4f6a-8f45-55b75716b147Large.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/reservas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"reservas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Rol",
+			"item": [
+				{
+					"name": "getAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"root\",\r\n    \"password\": \"root\",\r\n    \"roles\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/roles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOne",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"root\",\r\n    \"password\": \"root\",\r\n    \"roles\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/roles/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"roles",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descripcion\": \"Pica-pica, tablas de queso y embutidos, crudité con mucho hummus\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/roles/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"roles",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cantidadBebidas\": 10,\r\n    \"reserva\": {\r\n        \"idReserva\": 3,\r\n        \"cantidadComensales\": 2,\r\n        \"precioTotal\": 28.5,\r\n        \"fechaReserva\": \"2021-03-18T19:17:22.000+00:00\",\r\n        \"fechaReservada\": \"2021-03-31T22:00:00.000+00:00\",\r\n        \"usuario\": {\r\n            \"idUsuario\": 8,\r\n            \"nombreUsuario\": \"Usuario6\",\r\n            \"contraseña\": \"NoMeRobesPorFavor\",\r\n            \"nombre\": \"Héctor\",\r\n            \"apellido\": \"Hernández\",\r\n            \"fechaNacimiento\": \"1969-03-07\",\r\n            \"telefono\": 607548652,\r\n            \"rol\": {\r\n                \"idRol\": 2,\r\n                \"nombreRol\": \"usuario\",\r\n                \"descripcion\": \"Usuario llano, con autorizacion solo para realizar reservas\"\r\n            },\r\n            \"dni\": \"H0000008\"\r\n        },\r\n        \"franjaHoraria\": {\r\n            \"idFranja\": 10,\r\n            \"capacidadMax\": 10,\r\n            \"ocupacionTotal\": 0,\r\n            \"franjaInicio\": \"001415\",\r\n            \"franjaFin\": \"001430\"\r\n        }\r\n    },\r\n    \"bebida\": {\r\n        \"idBebida\": 1,\r\n        \"nombre\": \"Refresco\",\r\n        \"precioUnitario\": 1.0,\r\n        \"imagen\": null,\r\n        \"descripcion\": \"Coca-cola, Coca-cola Zero, Fanta naranja, Fanta limón, Sprite\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/roles/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"roles",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "imagen",
+									"type": "file",
+									"src": "/H:/Curso Programación/Java/Workspace/Proyecto/2.jpgbee2cf63-269c-4f6a-8f45-55b75716b147Large.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/roles/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"roles",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "getAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"root\",\r\n    \"password\": \"root\",\r\n    \"roles\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/pedirPlatos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pedirPlatos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOne",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"root\",\r\n    \"password\": \"root\",\r\n    \"roles\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/pedirPlatos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pedirPlatos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descripcion\": \"Pica-pica, tablas de queso y embutidos, crudité con mucho hummus\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/pedirPlatos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pedirPlatos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cantidadBebidas\": 10,\r\n    \"reserva\": {\r\n        \"idReserva\": 3,\r\n        \"cantidadComensales\": 2,\r\n        \"precioTotal\": 28.5,\r\n        \"fechaReserva\": \"2021-03-18T19:17:22.000+00:00\",\r\n        \"fechaReservada\": \"2021-03-31T22:00:00.000+00:00\",\r\n        \"usuario\": {\r\n            \"idUsuario\": 8,\r\n            \"nombreUsuario\": \"Usuario6\",\r\n            \"contraseña\": \"NoMeRobesPorFavor\",\r\n            \"nombre\": \"Héctor\",\r\n            \"apellido\": \"Hernández\",\r\n            \"fechaNacimiento\": \"1969-03-07\",\r\n            \"telefono\": 607548652,\r\n            \"rol\": {\r\n                \"idRol\": 2,\r\n                \"nombreRol\": \"usuario\",\r\n                \"descripcion\": \"Usuario llano, con autorizacion solo para realizar reservas\"\r\n            },\r\n            \"dni\": \"H0000008\"\r\n        },\r\n        \"franjaHoraria\": {\r\n            \"idFranja\": 10,\r\n            \"capacidadMax\": 10,\r\n            \"ocupacionTotal\": 0,\r\n            \"franjaInicio\": \"001415\",\r\n            \"franjaFin\": \"001430\"\r\n        }\r\n    },\r\n    \"bebida\": {\r\n        \"idBebida\": 1,\r\n        \"nombre\": \"Refresco\",\r\n        \"precioUnitario\": 1.0,\r\n        \"imagen\": null,\r\n        \"descripcion\": \"Coca-cola, Coca-cola Zero, Fanta naranja, Fanta limón, Sprite\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/pedirPlatos/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pedirPlatos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "imagen",
+									"type": "file",
+									"src": "/H:/Curso Programación/Java/Workspace/Proyecto/2.jpgbee2cf63-269c-4f6a-8f45-55b75716b147Large.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/pedirPlatos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pedirPlatos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaW1kYSIsImV4cCI6MTYxNjUxNTI0N30.VmvzDlsdwlnzHPe9Z8oiBlWBCkHdQ89CRpONb7uNoHUBSRrIkfSCpnOfMzZgzsdCHmuqjqCXwiLJ_3pXVKfdVw",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
