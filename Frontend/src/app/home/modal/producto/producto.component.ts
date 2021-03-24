@@ -1,33 +1,33 @@
-import { Component} from '@angular/core';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-
+import { Component, ViewEncapsulation } from "@angular/core";
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
-  selector: 'app-producto',
-  templateUrl: './producto.component.html',
-  styleUrls: ['./producto.component.css']
+  selector: "app-producto",
+  templateUrl: "./producto.component.html",
+  styleUrls: ["./producto.component.css"],
+  encapsulation: ViewEncapsulation.None,
+  styles: [
+    `
+      .dark-modal .modal-content {
+        background-color: #292b2c;
+        color: white;
+      }
+      .dark-modal .close {
+        color: white;
+      }
+      .backdrop {
+        background-color: #5cb3fd;
+      }
+    `,
+  ],
 })
 export class ProductoComponent {
-
-  closeResult = '';
-
   constructor(private modalService: NgbModal) {}
 
-  open(content: any) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+  openXl(content: any) {
+    this.modalService.open(content, {
+      backdropClass: "backdrop",
+      size: "xl",
     });
-  }
-
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return `with: ${reason}`;
-    }
   }
 }
