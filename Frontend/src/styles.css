@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+.btn-principal{
+  font-weight: bolder;
+  background-color: #e50076;
+  color: white;
+  border-color: #e50076;
+}
+
+.btn-principal:hover{
+  color:#e50076;
+  background-color: white;
+  border-color: #e50076;
+}
+
+.btn-principal:active{
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.enlace{
+  font-size: 20px;
+  font-size: 15px;
+  color: black;
+}
+

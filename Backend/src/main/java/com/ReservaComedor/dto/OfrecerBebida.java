@@ -7,6 +7,7 @@ import javax.persistence.*;
 
 
 
+
 /**
  * @author Vyacheslav Khaydorov
  * @author Miguel A. Sastre
@@ -21,13 +22,15 @@ public class OfrecerBebida {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private Long id;
-	
+	@Column(name="cantidadBebidas")
 	private Long cantidadBebidas;
+	
 	
 	@ManyToOne
     @JoinColumn(name = "idReserva")
     Reserva reserva;
  
+	
     @ManyToOne
     @JoinColumn(name = "idBebida")
     Bebida bebida;
