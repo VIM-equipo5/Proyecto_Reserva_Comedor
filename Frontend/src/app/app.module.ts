@@ -23,6 +23,7 @@ import { FooterComponent } from './home/footer/footer.component';
 import { GestionPlatosComponent } from './Admin/gestion-platos/gestion-platos.component';
 import { GestionReservasComponent } from './Admin/gestion-reservas/gestion-reservas.component';
 import { GestionUsuariosComponent } from './Admin/gestion-usuarios/gestion-usuarios.component';
+import { CestoComponent } from './home/modal/cesto/cesto.component';
 
 
 
@@ -46,7 +47,8 @@ import { GestionUsuariosComponent } from './Admin/gestion-usuarios/gestion-usuar
     FooterComponent,
     GestionPlatosComponent,
     GestionReservasComponent,
-    GestionUsuariosComponent
+    GestionUsuariosComponent,
+    CestoComponent
   ],
   imports: [
     BrowserModule,
