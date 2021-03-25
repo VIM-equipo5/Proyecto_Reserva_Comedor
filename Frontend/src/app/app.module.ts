@@ -1,5 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -11,18 +12,21 @@ import { LoginComponent } from './Login/login/login.component';
 import { RegisterComponent } from './Login/register/register.component';
 
 
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductoComponent } from './home/modal/producto/producto.component';
 import { Slider1Component } from './home/slider/slider1/slider1.component';
 import { Slider2Component } from './home/slider/slider2/slider2.component';
 import { Slider3Component } from './home/slider/slider3/slider3.component';
 import { Slider4Component } from './home/slider/slider4/slider4.component';
+import { Slider5Component } from './home/slider/slider5/slider5.component';
 import { AdminComponent } from './Admin/admin/admin.component';
-import { GestionUsuariosComponent } from './Admin/gestion-usuarios/gestion-usuarios.component';
+import { FooterComponent } from './home/footer/footer.component';
 import { GestionPlatosComponent } from './Admin/gestion-platos/gestion-platos.component';
 import { GestionReservasComponent } from './Admin/gestion-reservas/gestion-reservas.component';
-import { Slider5Component } from './home/slider/slider5/slider5.component';
-import { FooterComponent } from './home/footer/footer.component';
+import { GestionUsuariosComponent } from './Admin/gestion-usuarios/gestion-usuarios.component';
+import { SidebarComponent } from './Admin/sidebar/sidebar.component';
+
+
+
 
 
 
@@ -38,12 +42,13 @@ import { FooterComponent } from './home/footer/footer.component';
     Slider2Component,
     Slider3Component,
     Slider4Component,
+    Slider5Component,
     AdminComponent,
-    GestionUsuariosComponent,
+    FooterComponent,
     GestionPlatosComponent,
     GestionReservasComponent,
-    Slider5Component
-    FooterComponent
+    GestionUsuariosComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
