@@ -9,25 +9,23 @@ import * as jQuery from 'jquery';
 })
 export class AdminComponent implements OnInit {
 
+  platos = false;
+  reservas = false;
+  usuarios = false;
+
+  estados = [false,false,false];
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
   
+  negarTodos(): void {
+    this.estados = [false,false,false];
+  }
   
-  gestionPlatos(): void{
-    let gestion = jQuery('#gestion');
-    gestion.html("<app-gestion-platos></app-gestion-platos>");
- 
+  mostrar(idx: number): void{
+    this.negarTodos();
+    this.estados[idx] = true;
   }
-
-  gestionReservas(): void{
-    this.router.navigate(["gestionReservas"]);
-  }
-
-  gestionUsuarios(): void{
-    this.router.navigate(["gestionReservas"]);
-  }
-
 }
