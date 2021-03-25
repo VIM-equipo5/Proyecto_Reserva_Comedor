@@ -8,13 +8,6 @@ import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
   encapsulation: ViewEncapsulation.None,
   styles: [
     `
-      .dark-modal .modal-content {
-        background-color: #292b2c;
-        color: white;
-      }
-      .dark-modal .close {
-        color: white;
-      }
       .backdrop {
         background-color: #5cb3fd;
       }
@@ -28,6 +21,8 @@ export class ProductoComponent {
     this.modalService.open(content, {
       backdropClass: "backdrop",
       size: "xl",
+      centered: true,
+      scrollable: true
     });
   }
 }

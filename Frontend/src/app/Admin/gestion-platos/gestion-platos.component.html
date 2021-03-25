@@ -1,1 +1,59 @@
-<p>gestion-platos works!</p>
+<div class="panel panel-primary body-gestion-platos">
+  <div class="panel-heading">
+    <div class="container"><h2>Lista de platos</h2></div>
+  </div>
+  <div class="panel-body">
+    <!-- Inicio table -->
+    <div class="container contenedor-tabla">
+      <div class="row">
+        <div class="col-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre Plato</th>
+                <th scope="col">Precio Unitario</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+                <!-- Hay que implementar que de manera recursiva
+                se obtengan los datos y se pinten n veces-->
+              <tr>
+                <th scope="row">1</th>
+                <td>Plato 1</td>
+                <td>2</td>
+                <td>Carne</td>
+                <button class="btn btn-danger">Borrar</button>
+                <button class="btn btn-info" style="margin-left: 10px">
+                  Actualizar
+                </button>
+                <button class="btn btn-info" style="margin-left: 10px">
+                  Detalles
+                </button>
+              </tr>
+
+              <!-- Esto es un ejemplo, deberá borrarse lo de abajo-->
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>fat</td>
+                <button class="btn btn-danger">Borrar</button>
+                <button class="btn btn-info" style="margin-left: 10px">
+                  Actualizar
+                </button>
+                <button class="btn btn-info" style="margin-left: 10px">
+                  Detalles
+                </button>
+              </tr>
+              <!-- Fin de ejemplo -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- Fin table -->
+  </div>
+</div>

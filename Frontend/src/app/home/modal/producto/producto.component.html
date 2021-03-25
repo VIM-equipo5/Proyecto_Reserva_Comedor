@@ -1,7 +1,10 @@
+
+<!-- Todos los datos deben ser sacados de la base de datos -->
+
 <ng-template #content let-modal>
   <div class="modal-header">
     <h4 class="modal-title" id="modal-basic-title">
-      AQUI VA EL NOMBRE DEL PLATO
+      Arroz Japones
     </h4>
     <button
       type="button"
@@ -20,10 +23,32 @@
             <img src="https://cdn6.recetasdeescandalo.com/wp-content/uploads/2020/06/Yakimeshi-o-arroz-frito-al-estilo-japones-con-pollo-y-verduras.jpg" class="img-fluid" alt="Responsive image">
           </div>
         </div>
-        <div class="col-6">
+        <div class="col-7">
           <div class="row">
-
+            <div class="col-6">
+              <h5>Nombre</h5>
+              <p>Arroz Japonés</p>
+            </div>
+            <div class="col-6">
+              <h5>Tipo</h5>
+              <p>Carne</p>
+              
+            </div>
           </div>
+          <div class="row">
+            <div class="col-12 ">
+              <h5>Precio Unitario</h5>
+              <p>6'75€</p>
+            </div>
+  
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-12">
+              <h5>Descripción</h5>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias consectetur at voluptas, aliquam eveniet dolores dicta similique maiores iusto explicabo quo libero voluptate deleniti quod, optio inventore veritatis recusandae? Cupiditate!</p>
+            </div>            
+          </div>    
         </div> 
       </div>
     </div>
@@ -37,6 +62,7 @@
       Hay que implementar funcionalidad de los botones
     -->
 
+    <!-- Este boton debe añadir producto al carro -->
     <button
       type="button"
       class="btn btn-principal"
@@ -44,6 +70,8 @@
     >
       Añadir
     </button>
+
+    <!-- Este boton debe cerrar el modal -->
     <button
       type="button"
       class="btn btn-principal"
@@ -54,7 +82,8 @@
   </div>
 </ng-template>
 
+
+<!-- BOTON PARA TESTEO -->
 <button class="btn btn-outline-primary mb-2 mr-2" (click)="openXl(content)">
   BOTON DE PRUEBA MODAL
 </button>
-<hr />

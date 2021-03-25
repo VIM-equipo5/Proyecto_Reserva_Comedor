@@ -22,6 +22,8 @@ import { GestionUsuariosComponent } from './Admin/gestion-usuarios/gestion-usuar
 import { GestionPlatosComponent } from './Admin/gestion-platos/gestion-platos.component';
 import { GestionReservasComponent } from './Admin/gestion-reservas/gestion-reservas.component';
 import { Slider5Component } from './home/slider/slider5/slider5.component';
+import { FooterComponent } from './home/footer/footer.component';
+
 
 
 @NgModule({
@@ -41,6 +43,7 @@ import { Slider5Component } from './home/slider/slider5/slider5.component';
     GestionPlatosComponent,
     GestionReservasComponent,
     Slider5Component
+    FooterComponent
   ],
   imports: [
     BrowserModule,
