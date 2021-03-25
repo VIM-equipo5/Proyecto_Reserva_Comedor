@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import * as jQuery from 'jquery';
 
 @Component({
   selector: 'app-admin',
@@ -8,21 +9,23 @@ import { Router } from '@angular/router';
 })
 export class AdminComponent implements OnInit {
 
+  platos = false;
+  reservas = false;
+  usuarios = false;
+
+  estados = [false,false,false];
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
   
-  gestionPlatos(): void{
-    this.router.navigate(["gestionPlatos"]);
+  negarTodos(): void {
+    this.estados = [false,false,false];
   }
-
-  gestionReservas(): void{
-    this.router.navigate(["gestionReservas"]);
+  
+  mostrar(idx: number): void{
+    this.negarTodos();
+    this.estados[idx] = true;
   }
-
-  gestionUsuarios(): void{
-    this.router.navigate(["gestionUsuarios"]);
-  }
-
 }
