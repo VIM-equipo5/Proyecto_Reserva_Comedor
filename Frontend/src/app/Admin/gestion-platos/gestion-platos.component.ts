@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { isConstructorDeclaration } from 'typescript';
 
 @Component({
   selector: 'app-gestion-platos',
@@ -12,4 +13,7 @@ export class GestionPlatosComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  crearPlato(): void {
+    console.log("Hola, te hago tus platos");
+  }
 }
