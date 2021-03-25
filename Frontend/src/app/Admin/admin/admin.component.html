@@ -2,9 +2,9 @@
   <div class="row justify-content-center">
     <div class="container-fluid">
       <div class="sidenav">
-        <a (click)="gestionPlatos()">Gestion Platos</a>
-        <a (click)="gestionReservas()">Gestion Reservas</a>
-        <a (click)="gestionUsuarios()">Gestion Usuarios</a>
+        <a (click)="mostrar(0)">Gestion Platos</a>
+        <a (click)="mostrar(1)">Gestion Reservas</a>
+        <a (click)="mostrar(2)">Gestion Usuarios</a>
       </div>
 
       <div class="main">
@@ -12,10 +12,11 @@
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row principal">
-              <div class="col-lg-12 d-block tablas">
-
+              <div class="col-lg-12 d-block" id='gestion'>
                 <!-- Aqui tienen que venir los componentes de gestion -->
-
+                <div  *ngIf="estados[0]"> <app-gestion-platos></app-gestion-platos></div>
+                <div  *ngIf="estados[1]"> <app-gestion-reservas></app-gestion-reservas></div>
+                <div  *ngIf="estados[2]"> <app-gestion-usuarios></app-gestion-usuarios></div>
               </div>
             </div>
           </div>
