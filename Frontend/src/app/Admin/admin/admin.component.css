@@ -1,0 +1,23 @@
+.gestion {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: none;
+    border-style: outset;
+    background-color: #ABB2B9;
+    text-align: center;
+    color: black;
+}
+
+.tablas {
+    padding: 20px;
+}
+
+/*No consigo que los botones se hagan grandes*/
+@media (max-width: 992px) {
+    .grupo-gestion {
+        width:100%;
+    }
+    .principal {
+        justify-content: center;
+    }
+}
