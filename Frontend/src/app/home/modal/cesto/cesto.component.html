@@ -1,0 +1,229 @@
+<!-- Todos los datos deben ser sacados de la base de datos -->
+
+<ng-template #content let-modal>
+  <div class="row">
+    <div class="col-6 sixteen columns cart-section oflow">
+      <!-- Cart -->
+      <table class="table cart-table responsive-table">
+        <tbody>
+          <tr class="cabecera">
+            <th>Imagen</th>
+            <th>Ítem</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Total</th>
+            <th></th>
+          </tr>
+
+          <!-- Item #1 -->
+          <tr>
+            <td>
+              <img src="plato1.jpg" alt="" />
+            </td>
+            <td class="cart-title">
+              <a href="#">Plato1</a>
+            </td>
+            <td>Descripción</td>
+            <td>14€</td>
+            <td>
+              <form action="#">
+                <div class="qtyminus"></div>
+                <input
+                  type="number"
+                  id="quantity"
+                  name="quantity"
+                  value="1"
+                  min="1"
+                  max="10"
+                />
+                <div class="qtyplus"></div>
+              </form>
+            </td>
+            <td class="cart-total">14€</td>
+            <td>
+              <button type="button" class="btn btn-danger">Eliminar</button>
+            </td>
+          </tr>
+          <!-- Item #2 -->
+          <tr>
+            <td>
+              <img src="plato2.jpg" alt="" />
+            </td>
+            <td class="cart-title">
+              <a href="#">Plato2</a>
+            </td>
+            <td>Descripción</td>
+            <td>20€</td>
+            <td>
+              <form action="#">
+                <div class="qtyminus"></div>
+                <input
+                  type="number"
+                  id="quantity"
+                  name="quantity"
+                  value="1"
+                  min="1"
+                  max="10"
+                />
+                <div class="qtyplus"></div>
+              </form>
+            </td>
+            <td class="cart-total">20€</td>
+            <td>
+              <button type="button" class="btn btn-danger">Eliminar</button>
+            </td>
+          </tr>
+          <!-- Item #3 -->
+          <tr>
+            <td>
+              <img src="plato3.jpg" alt="" />
+            </td>
+            <td class="cart-title">
+              <a href="#">Postre</a>
+            </td>
+            <td>Descripción</td>
+            <td>10,20€</td>
+            <td>
+              <form action="#">
+                <div class="qtyminus"></div>
+                <input
+                  type="number"
+                  id="quantity"
+                  name="quantity"
+                  value="1"
+                  min="1"
+                  max="10"
+                />
+                <div class="qtyplus"></div>
+              </form>
+            </td>
+            <td class="cart-total">10,20€</td>
+            <td>
+              <button type="button" class="btn btn-danger">Eliminar</button>
+            </td>
+          </tr>
+          <!-- Item #4 -->
+          <tr>
+            <td>
+              <img src="bebida.jpg" alt="" />
+            </td>
+            <td class="cart-title">
+              <a href="#">Bebida</a>
+            </td>
+            <td>Descripción</td>
+            <td>2€</td>
+            <td>
+              <form action="#">
+                <div class="qtyminus"></div>
+                <input
+                  type="number"
+                  id="quantity"
+                  name="quantity"
+                  value="1"
+                  min="1"
+                  max="10"
+                />
+                <div class="qtyplus"></div>
+              </form>
+            </td>
+            <td class="cart-total">2€</td>
+            <td>
+              <button type="button" class="btn btn-danger">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-6 columns cart-totals">
+      <div class="check-title she-clearfix">
+        <h4>Resumen del pedido</h4>
+      </div>
+      <table class="table cart-table test">
+        <tbody>
+          <tr>
+            <th>Fecha de Reserva</th>
+            <td>
+              <input
+                id="date"
+                class="form-control"
+                type="date"
+                name="fechaReservada"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th>Selecciona franja horaria:</th>
+            <td>
+              <select id="franjaHoraria">
+                <option value="12:00-12:15">12:00-12:15</option>
+                <option value="12:15-12:30">12:15-12:30</option>
+                <option value="12:30-12:45">12:30-12:45</option>
+                <option value="12:45-13:00">12:45-13:00</option>
+                <option value="13:00-13:15">13:00-13:15</option>
+                <option value="13:15-13:30">13:15-13:30</option>
+                <option value="13:30-13:45">13:30-13:45</option>
+                <option value="13:45-14:00">13:45-14:00</option>
+                <option value="14:00-14:15">14:00-14:15</option>
+                <option value="14:15-14:30">14:15-14:30</option>
+                <option value="14:30-14:45">14:30-14:45</option>
+                <option value="14:45-15:00">14:45-15:00</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th>Precio total:</th>
+            <td>46,20€</td>
+          </tr>
+          <tr>
+            <th>Comensales:</th>
+            <td>
+              <form action="#">
+                <div class="qtyminus"></div>
+                <input
+                  type="number"
+                  id="quantity"
+                  name="quantity"
+                  value="1"
+                  min="1"
+                  max="20"
+                />
+                <div class="qtyplus"></div>
+              </form>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <!-- TO DO
+        Hay que implementar funcionalidad de los botones
+      -->
+
+    <!-- Este boton debe añadir producto al carro -->
+    <button
+      type="button"
+      class="btn btn-principal"
+      (click)="modal.close('Save click')"
+    >
+      Finalizar pedido
+    </button>
+
+    <!-- Este boton debe cerrar el modal -->
+    <button
+      type="button"
+      class="btn btn-principal"
+      (click)="modal.close('Save click')"
+    >
+      Cancelar
+    </button>
+  </div>
+</ng-template>
+
+<!-- BOTON PARA TESTEO -->
+<button class="btn btn-outline-primary mb-2 mr-2" (click)="openXl(content)">
+  BOTON DE PRUEBA MODAL
+</button>
