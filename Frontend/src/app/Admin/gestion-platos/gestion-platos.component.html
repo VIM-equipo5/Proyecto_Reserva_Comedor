@@ -1,7 +1,8 @@
+<app-admin></app-admin>
 <div class="panel panel-primary body-gestion-platos">
   <div class="panel-heading">
     <div class="container"><h2>Lista de platos</h2></div>
-    <button class="btn btn-info" style="margin-left: 10px">
+    <button class="btn btn-info" (click)="crearPlato()" style="margin-left: 10px">
       Crear nuevo plato
     </button>
     <button class="btn btn-info" style="margin-left: 10px">
@@ -31,13 +32,15 @@
                 <td>Plato 1</td>
                 <td>2</td>
                 <td>Carne</td>
-                <button class="btn btn-danger">Borrar</button>
+                <td>
+                  <button class="btn btn-danger">Borrar</button>
                 <button class="btn btn-info" style="margin-left: 10px">
                   Actualizar
                 </button>
                 <button class="btn btn-info" style="margin-left: 10px">
                   Detalles
                 </button>
+                </td>
               </tr>
 
               <!-- Esto es un ejemplo, deberá borrarse lo de abajo-->

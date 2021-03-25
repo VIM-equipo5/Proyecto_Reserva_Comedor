@@ -1,1 +1,56 @@
-<p>gestion-reservas works!</p>
+<app-admin></app-admin>
+<div class="panel panel-primary body-gestion-reservas">
+  <div class="panel-heading">
+    <div class="container"><h2>Lista de reservas</h2></div>
+    <button class="btn btn-info" style="margin-left: 10px">
+      Buscar reserva por ID
+    </button>
+  </div>
+  <div class="panel-body">
+    <!-- Inicio table -->
+    <div class="container contenedor-tabla">
+      <div class="row">
+        <div class="col-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Cantidad Comensales</th>
+                <th scope="col">Precio total</th>
+                <th scope="col">Fecha Reserva</th>
+                <th scope="col">Fecha Reservada</th>
+                <th scope="col">Id Usuarios</th>
+                <th scope="col">Id Franja</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Hay que implementar que de manera recursiva
+                  se obtengan los datos y se pinten n veces-->
+              <tr>
+                <th scope="row">1</th>
+                <td>10</td>
+                <td>20</td>
+                <td>10/02/2020</td>
+                <td>11/02/2020</td>
+                <td>13</td>
+                <td>4</td>
+                <td>
+                  <button class="btn btn-danger">Borrar</button>
+                <button class="btn btn-info" style="margin-left: 10px">
+                  Actualizar
+                </button>
+                <button class="btn btn-info" style="margin-left: 10px">
+                  Detalles
+                </button>
+                </td>
+              
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- Fin table -->
+  </div>
+</div>

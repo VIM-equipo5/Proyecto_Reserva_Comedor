@@ -1,1 +1,55 @@
-<p>gestion-usuarios works!</p>
+<app-admin></app-admin>
+<div class="panel panel-primary body-gestion-usuarios">
+  <div class="panel-heading">
+    <div class="container"><h2>Lista de usuarios</h2></div>
+    <button class="btn btn-info" style="margin-left: 10px">
+      Buscar usuario por ID
+    </button>
+  </div>
+  <div class="panel-body">
+    <!-- Inicio table -->
+    <div class="container contenedor-tabla">
+      <div class="row">
+        <div class="col-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Usuario</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Fecha nacimiento</th>
+                <th scope="col">DNI</th>
+                <th scope="col">Teléfono</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Hay que implementar que de manera recursiva
+                  se obtengan los datos y se pinten n veces-->
+              <tr>
+                <th scope="row">1</th>
+                <td>Michael</td>
+                <td>Miguel</td>
+                <td>Sastre</td>
+                <td>18/02/1993</td>
+                <td>123456789T</td>
+                <td>12346666</td>
+                <td>
+                  <button class="btn btn-danger">Borrar</button>
+                  <button class="btn btn-info" style="margin-left: 10px">
+                    Actualizar
+                  </button>
+                  <button class="btn btn-info" style="margin-left: 10px">
+                    Detalles
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- Fin table -->
+  </div>
+</div>
