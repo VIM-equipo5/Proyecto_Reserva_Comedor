@@ -3,7 +3,7 @@ $(document).ready(function() {
       var $e = $(e.relatedTarget);
       var idx = $e.index();
       var itemsPerSlide = 3;
-      var totalItems = $("#slider1.carousel-item").length; 
+      var totalItems = $("#slider4.carousel-item").length; 
   
       if (idx >= totalItems - (itemsPerSlide - 1)) {
         var it = itemsPerSlide - (totalItems - idx);

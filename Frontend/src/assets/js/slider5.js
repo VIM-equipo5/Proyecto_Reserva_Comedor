@@ -1,9 +1,9 @@
 $(document).ready(function() {
-    $("#slider2").on("slide.bs.carousel", function(e) {
+    $("#slider5").on("slide.bs.carousel", function(e) {
       var $e = $(e.relatedTarget);
       var idx = $e.index();
       var itemsPerSlide = 3;
-      var totalItems = $("#slider2.carousel-item").length; 
+      var totalItems = $("#slider5 .carousel-item").length;
   
       if (idx >= totalItems - (itemsPerSlide - 1)) {
         var it = itemsPerSlide - (totalItems - idx);
