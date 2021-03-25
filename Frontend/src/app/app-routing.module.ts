@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home/home.component';
 import { ProductoComponent } from './home/modal/producto/producto.component';
 import { LoginComponent } from './Login/login/login.component';
 import { RegisterComponent } from './Login/register/register.component';
+import { AdminComponent} from './Admin/admin/admin.component';
 
 const routes: Routes = [
   {path:'', pathMatch:'full',redirectTo:'login' },
