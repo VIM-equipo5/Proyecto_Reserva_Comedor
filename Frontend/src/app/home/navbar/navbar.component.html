@@ -1,58 +1,31 @@
-<div class="sb-nav-fixed sb-sidenav-toggled">
-  <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-    <a class="navbar-brand" href="index.html">Hola Usuario!</a>
-    <!--Iconos-->
-    <ul class="navbar-nav ml-auto nav-flex-icons">
-      <li class="nav-item">
-        <a class="nav-link"
-          >1
-          <i class="fas fa-shopping-cart"></i>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link">
-          <i class="fas fa-columns"></i>
-        </a>
-      </li>
-      <li class="nav-item dropdown">
-        <a
-          class="nav-link dropdown-toggle"
-          id="navbarDropdownMenuLink"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          <i class="fas fa-user"></i>
-        </a>
-        <div
-          class="dropdown-menu dropdown-menu-right dropdown-default"
-          aria-labelledby="navbarDropdownMenuLink"
-        >
-          <a class="dropdown-item"><i class="fas fa-cog"></i> Ajustes</a>
-          <a class="dropdown-item" href="login.html"
-            ><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a
-          >
-        </div>
-      </li>
-    </ul>
-    <!--Barra de navegación-->
-    <form class="form-inline my-2 my-lg-0">
-      <div class="input-group">
-        <input
-          class="form-control"
-          type="text"
-          placeholder="Buscar"
-          aria-label="Search"
-          aria-describedby="basic-addon2"
-        />
-        <div class="input-group-append">
-          <button class="btn btn-primary" type="button">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light body-nav">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Cesto</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Cuenta
+            </a>
+            <ul class="dropdown-menu desplegable" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Detalles de cuenta</a></li>
+              <li><a class="dropdown-item" href="#">Reservas</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Buscar plato" aria-label="Search">
+          <button class="btn  btn-principal" type="submit">Buscar</button>
+        </form>
       </div>
-    </form>
+    </div>
   </nav>
-</div>
-
-
+  

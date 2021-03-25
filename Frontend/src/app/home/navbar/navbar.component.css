@@ -1,0 +1,17 @@
+.body-nav{
+  background-color: #262626!important;
+}
+
+ul > li > a{
+  font-size: 20px;
+  color:white;
+}
+
+ul > li > .active{
+  color:#e50076;
+  font-weight: bolder;
+}
+
+.desplegable > li > a {
+  color:#262626;
+}
