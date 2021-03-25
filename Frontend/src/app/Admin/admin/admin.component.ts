@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import * as jQuery from 'jquery';
 
 @Component({
   selector: 'app-admin',
@@ -8,13 +9,17 @@ import { Router } from '@angular/router';
 })
 export class AdminComponent implements OnInit {
 
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
   
+  
   gestionPlatos(): void{
-    this.router.navigate(["gestionPlatos"]);
+    let gestion = jQuery('#gestion');
+    gestion.html("<app-gestion-platos></app-gestion-platos>");
+ 
   }
 
   gestionReservas(): void{
@@ -22,7 +27,7 @@ export class AdminComponent implements OnInit {
   }
 
   gestionUsuarios(): void{
-    this.router.navigate(["gestionUsuarios"]);
+    this.router.navigate(["gestionReservas"]);
   }
 
 }
