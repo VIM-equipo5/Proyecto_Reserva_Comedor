@@ -20,6 +20,10 @@ ul > li > .active{
   color:#262626;
 }
 
+.dropdown-item {
+  color: black;
+}
+
 #navbarDropdown:hover{
   color:#e50076;
 }
