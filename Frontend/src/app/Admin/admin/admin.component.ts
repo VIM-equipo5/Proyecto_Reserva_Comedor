@@ -9,15 +9,19 @@ import * as jQuery from 'jquery';
 })
 export class AdminComponent implements OnInit {
 
-  platos = false;
-  reservas = false;
-  usuarios = false;
-
+  main!: HTMLDivElement;
+  mySidebar!: HTMLDivElement;
+  openNav!: HTMLButtonElement;
   estados = [false,false,false];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    
+  }
 
   ngOnInit(): void {
+    this.main = document.getElementById("main") as HTMLDivElement;
+    this.mySidebar = document.getElementById("mySidebar") as HTMLDivElement;
+    this.openNav = document.getElementById("openNav") as HTMLButtonElement;
   }
   
   negarTodos(): void {
@@ -28,4 +32,18 @@ export class AdminComponent implements OnInit {
     this.negarTodos();
     this.estados[idx] = true;
   }
+
+  w3_close() {
+    this.main.style.marginLeft = "0%";
+    this.mySidebar.style.display = "none";
+    this.openNav.style.display = "inline-block";
+  }
+
+  w3_open() {
+    this.main.style.marginLeft = "25%";
+    this.mySidebar.style.width = "25%";
+    this.mySidebar.style.display = "block";
+    this.openNav.style.display = "none";
+  }
+  
 }

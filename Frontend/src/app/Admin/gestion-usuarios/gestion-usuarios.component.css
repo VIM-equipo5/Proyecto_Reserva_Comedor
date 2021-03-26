@@ -1,3 +1,6 @@
+.body-gestion-usuarios{
+    background-color: white;
+}
 th,td{
     /*use this property to disbale soft wrap*/
     white-space: nowrap;

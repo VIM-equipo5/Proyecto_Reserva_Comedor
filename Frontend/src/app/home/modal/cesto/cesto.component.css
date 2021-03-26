@@ -47,3 +47,15 @@ img {
     border-bottom: 1px gray solid;
     margin-bottom: 20px;
 }
+
+
+.btn-nav {
+    font-size: 20px;
+    color:white;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .btn-nav:hover{
+    color:#e50076;
+  }
