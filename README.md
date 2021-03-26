@@ -75,13 +75,6 @@ GET       /api/usuarios/{id}
 PUT       /api/usuarios/{id}
 DELETE    /api/usuarios/{id}
 
-UsuarioApi
-GET       /api/users
-POST      /api/users
-GET       /api/users/{id}
-PUT       /api/users/{id}
-DELETE    /api/users/{id}
-
 Bebida
 GET       /api/bebidas
 POST      /api/bebidas
