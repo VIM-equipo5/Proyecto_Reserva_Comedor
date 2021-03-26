@@ -36,7 +36,7 @@ ul {
   }
 
   .btn-cerrar {
-    height: 7vh;
+    height: 1.65cm;
     width: 26vw;
     text-align: center;
     background-color: #e50076!important;
@@ -56,7 +56,6 @@ ul {
   .navbar-titular{
     display: flex;
     background-color: #262626;
-    height: 7vh;
     overflow: auto;
     margin-left: 15px;
   }

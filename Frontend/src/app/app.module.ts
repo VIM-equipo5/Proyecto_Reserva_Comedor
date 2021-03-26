@@ -24,6 +24,9 @@ import { GestionPlatosComponent } from './Admin/gestion-platos/gestion-platos.co
 import { GestionReservasComponent } from './Admin/gestion-reservas/gestion-reservas.component';
 import { GestionUsuariosComponent } from './Admin/gestion-usuarios/gestion-usuarios.component';
 import { CestoComponent } from './home/modal/cesto/cesto.component';
+import { DetallesCuentaComponent } from './home/modal/detalles-cuenta/detalles-cuenta.component';
+import { ReservasUsuarioComponent } from './home/modal/reservas-usuario/reservas-usuario.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 
@@ -48,7 +51,10 @@ import { CestoComponent } from './home/modal/cesto/cesto.component';
     GestionPlatosComponent,
     GestionReservasComponent,
     GestionUsuariosComponent,
-    CestoComponent
+    CestoComponent,
+    DetallesCuentaComponent,
+    ReservasUsuarioComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
