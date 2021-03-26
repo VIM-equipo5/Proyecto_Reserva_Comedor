@@ -20,12 +20,15 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.getToken());
+    const token = this.getToken();
 
+    console.log(token);
   }
   
   getToken() {
     this.loginService
+    /* Crendeciales para obtener el token de nivel de usuario basico 
+      En teoría, estas credenciales no son accesible para el usuario */
     .peticionToken("rolUsuario","NoMeRobes").subscribe(data => {
       console.log(data);
     },
