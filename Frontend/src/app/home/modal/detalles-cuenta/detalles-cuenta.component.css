@@ -5,6 +5,17 @@ th,td{
     word-break: keep-all;
 }
 
+td{
+  width: 100px;  
+}
+tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+    width: 50%;
+    height: 20px;
+}
+
 .btn-nav-desplegable{
     color: black!important;
 }
