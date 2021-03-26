@@ -1,0 +1,126 @@
+<div class="body-register">
+  <div class="container">
+    <div class="card o-hidden border-0 shadow-lg">
+      <div class="card-body p-0">
+        <!-- Nested Row within Card Body -->
+        <div class="row">
+          <div
+            class="col-lg-5 d-none d-lg-block bg-register-image imagen"
+          ></div>
+          <div class="col-lg-7">
+            <div class="p-5">
+              <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">Crear una cuenta</h1>
+              </div>
+
+              <form
+                class="row g-3 nuevo-usuario"
+                id="datos-registro"
+                (ngSubmit)="onSubmit()"
+              >
+                <div class="col-md-6">
+                  <label for="inputUsername" class="form-label"
+                    >Nombre Usuario</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputUsername"
+                    required [(ngModel)]="usuario.nombreUsuario"
+                    name="nombreUsuario"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="inputPassword" class="form-label">
+                    Contraseña</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="inputPassword"
+                    required
+                    [(ngModel)]="usuario.pass"
+                    name="pass"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="inputNombre" class="form-label">Nombre</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputNombre"
+                    required
+                    [(ngModel)] ="usuario.nombre"
+                    name="nombre"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="inputApellido" class="form-label"
+                    >Apellidos</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputApellido"
+                    required
+                    [(ngModel)]="usuario.apellido"
+                    name="apellido"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="inputDNI" class="form-label">DNI</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputDNI"
+                    required
+                    [(ngModel)]="usuario.dni"
+                    name="dni"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="inputTeléfono" class="form-label"
+                    >Teléfono de contacto</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputTeléfono"
+                    required
+                    [(ngModel)]="usuario.telefono"
+                    name="telefono"
+                  />
+                </div>
+                <div class="col-12">
+                  <label for="inputAddress" class="form-label"
+                    >Fecha de nacimiento</label
+                  >
+                  <input
+                    id="date"
+                    class="form-control"
+                    type="date"
+                    required
+                    [(ngModel)]="usuario.fechaNacimiento"
+                    name="fechaNacimiento"
+                  />
+                </div>
+
+                <div class="col-12">
+                  <hr />
+                  <button class="btn btn-block btn-principal" type="submit">
+                    Registrar cuenta
+                  </button>
+                </div>
+              </form>
+              <div class="text-center">
+                <a class="small enlace" href="/login"
+                  >¿Tienes cuenta ya? Inicia sesión</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
