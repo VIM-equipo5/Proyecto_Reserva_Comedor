@@ -1,0 +1,14 @@
+Modelo Relacional:
+
+Rol(PK_idRol, NombreRol, Descripción)
+Usuario(PK_idUsuario, nombreUsuario, contraseña, nombre, apellido, fechaNacimiento, DNI, tlfContacto, FK_idRol)
+FranjaHoraria(PK_idFraja, capacidadMax, ocupacionActual,FranjaInicio, FranjaFin)
+Reserva(PK_idReserva, cantidadComensales, precioTotal, 
+	FechaReserva, fechaReservada, 
+	FK_idUsuario, FK_idFranja)
+Bebidas(PK_idBebida, nombre, precioUnitario, imagen, descripción)
+Platos(PK_idPlato, nombre, descripcion, imagen, precioUnitario, tipo, 
+	FK_idCategoria)
+Ofrecer(FK_idReserva,Fk_idBebida, cantidadBebidas)
+Pedir(PK_idReserva, PK_idPlato, cantidadPlatos)
+Categoria(PK_idCategoria, nombre, descripcion)

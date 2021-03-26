@@ -1,0 +1,16 @@
+th,td{
+    /*use this property to disbale soft wrap*/
+    white-space: nowrap;
+    /*To make extra certain,add this css property*/
+    word-break: keep-all;
+}
+td{
+  width: 100px;  
+}
+tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+    width: 50%;
+    height: 20px;
+}
