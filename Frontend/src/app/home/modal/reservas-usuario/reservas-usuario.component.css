@@ -4,3 +4,12 @@ th,td{
     /*To make extra certain,add this css property*/
     word-break: keep-all;
 }
+
+.btn-nav-desplegable{
+    color: black!important;
+}
+
+.btn-nav-desplegable:hover{
+    color: #e50076 !important;
+    cursor: pointer;
+}
