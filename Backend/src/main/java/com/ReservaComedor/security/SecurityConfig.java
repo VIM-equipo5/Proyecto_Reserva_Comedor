@@ -9,6 +9,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 
 /**
@@ -19,10 +21,11 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 @EnableWebSecurity
+@CrossOrigin(origins = "http://localhost:8080")
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable().authorizeRequests()
+        http.cors().and().csrf().disable().authorizeRequests()
             .antMatchers("/login").permitAll() //permitimos el acceso a /login a cualquiera
             .anyRequest().authenticated() //cualquier otra peticion requiere autenticacion
             .and()
@@ -33,7 +36,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             // Las demás peticiones pasarán por este filtro para validar el token
             .addFilterBefore(new JwtFilter(),
                     UsernamePasswordAuthenticationFilter.class);
-        	
     }
 
    @Override
