@@ -5,9 +5,7 @@ import { ProductoComponent } from './home/modal/producto/producto.component';
 import { LoginComponent } from './Login/login/login.component';
 import { RegisterComponent } from './Login/register/register.component';
 import { AdminComponent} from './Admin/admin/admin.component';
-import { GestionPlatosComponent } from './Admin/gestion-platos/gestion-platos.component';
-import { GestionReservasComponent } from './Admin/gestion-reservas/gestion-reservas.component';
-import { GestionUsuariosComponent } from './Admin/gestion-usuarios/gestion-usuarios.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   {path:'', pathMatch:'full',redirectTo:'login' },
@@ -16,9 +14,7 @@ const routes: Routes = [
   {path:'logup',component:RegisterComponent},
   {path:'modal',component:ProductoComponent},
   {path:'admin',component:AdminComponent},
-  {path:'gestionPlatos', component:GestionPlatosComponent},
-  {path:'gestionReservas',component:GestionReservasComponent},
-  {path:'gestionUsuarios', component:GestionUsuariosComponent}
+  {path: '**',component: NotFoundComponent}
 ];
 
 @NgModule({

@@ -4,20 +4,23 @@ import { LoginService } from '../login.service';
 import { Usuario } from '../usuario/model/usuarios';
 import { UsuarioService } from '../usuario/service/usuario.service';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+ 
 
   constructor(private loginService: LoginService, private router: Router) { 
   }
 
+
   ngOnInit(): void {
 
   }
+
 
   onSubmit(){
     console.log(this.getToken());
