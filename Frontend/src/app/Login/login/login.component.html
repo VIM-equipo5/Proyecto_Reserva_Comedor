@@ -14,7 +14,12 @@
                 <div class="text-center">
                   <h1 class="h4 text-gray-900 mb-4">Bienvenido de nuevo</h1>
                 </div>
-                <form class="user" id="datos-usuario" action="/home" method="GET">
+                <form class="user" 
+                  id="datos-usuario"
+                  method="GET"
+                  (ngSubmit)="onSubmit()"
+                >
+
                   <div class="form-group">
                     <input
                       type="username"

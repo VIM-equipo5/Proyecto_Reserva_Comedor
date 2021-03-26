@@ -8,11 +8,12 @@ import { Observable } from 'rxjs';
 
 export class UsuarioService {
 
-  private baseUrl = 'http://localhost:8080/api/usuarios';
+  private baseUrl = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
 
+
   crearUsuario(usuario: Object): Observable<Object>{
-    return this.http.post(`${this.baseUrl}`,usuario);
+    return this.http.post(`${this.baseUrl}/api/usuarios`,usuario);
   }
 }
