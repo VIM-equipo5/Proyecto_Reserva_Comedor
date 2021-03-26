@@ -15,3 +15,26 @@ ul > li > .active{
 .desplegable > li > a {
   color:#262626;
 }
+
+.desplegable > li > a:hover{
+  color:#e50076;
+}
+
+#navbarDropdown:hover{
+  color:#e50076;
+}
+
+#navbarDropdown[aria-expanded="true"]{
+  color: #e50076;
+}
+
+
+
+.btn-cesto{
+  align-self: center;
+}
+
+.equipo{
+  margin-right: 20px;
+  font-size: 30px;
+}
