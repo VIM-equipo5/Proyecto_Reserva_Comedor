@@ -12,12 +12,12 @@ ul > li > .active{
   font-weight: bolder;
 }
 
-.desplegable > li > a {
-  color:#262626;
-}
-
 .desplegable > li > a:hover{
   color:#e50076;
+}
+
+.desplegable > li > a {
+  color:#262626;
 }
 
 #navbarDropdown:hover{
