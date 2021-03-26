@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -21,6 +23,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
  * @author Miguel A. Sastre
  * @author Ingrid Dominguez
  */
+
 
 public class JwtUtil {
 
@@ -32,8 +35,7 @@ public class JwtUtil {
 
             // Vamos a asignar un tiempo de expiracion de 1 minuto
             // solo con fines demostrativos en el video que hay al final
-            .setExpiration(new Date(System.currentTimeMillis() + 6000000))
-
+            //.setExpiration(new Date(System.currentTimeMillis() + 6000000))
             // Hash con el que firmaremos la clave
             .signWith(SignatureAlgorithm.HS512, "P@tit0")
             .compact();
