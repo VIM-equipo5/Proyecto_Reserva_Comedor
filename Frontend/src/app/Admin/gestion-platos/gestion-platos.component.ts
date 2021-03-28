@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { isConstructorDeclaration } from 'typescript';
+import { Observable } from 'rxjs/internal/Observable';
+import { GestionService } from '../service/gestion.service';
+import { Plato } from '../models/Plato';
 
 @Component({
   selector: 'app-gestion-platos',
@@ -7,13 +9,19 @@ import { isConstructorDeclaration } from 'typescript';
   styleUrls: ['./gestion-platos.component.css']
 })
 export class GestionPlatosComponent implements OnInit {
+  platos!: Observable<Plato[]>;
 
-  constructor() { }
-
+  constructor(private platosServices: GestionService) {}
   ngOnInit(): void {
+    this.getAllPlatos();
   }
 
-  crearPlato(): void {
-    console.log("Hola, te hago tus platos");
+  getAllPlatos(){
+    this.platos = this.platosServices.getPlatos();
   }
+
+  crearPlato(){
+    console.log("crear platos")
+  }
+  
 }

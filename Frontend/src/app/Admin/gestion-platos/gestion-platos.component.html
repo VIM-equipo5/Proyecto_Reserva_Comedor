@@ -28,11 +28,11 @@
               <tbody>
                   <!-- Hay que implementar que de manera recursiva
                   se obtengan los datos y se pinten n veces-->
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Plato 1</td>
-                  <td>2</td>
-                  <td>Carne</td>
+                <tr *ngFor="let plato of platos | async"> 
+                  <th scope="row">{{plato.idPlato}}</th>
+                  <td>{{plato.nombre}}</td>
+                  <td>{{plato.precioUnitario}}</td>
+                  <td>{{plato.tipo}}</td>
                   <td>
                     <button class="btn btn-danger">Borrar</button>
                   <button class="btn btn-info" style="margin-left: 10px">
@@ -45,129 +45,7 @@
                 </tr>
 
                 <!-- Esto es un ejemplo, deberá borrarse lo de abajo-->
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>fat</td>
-                  <td>
-                    <button class="btn btn-danger">Borrar</button>
-                  <button class="btn btn-info" style="margin-left: 10px">
-                    Actualizar
-                  </button>
-                  <button class="btn btn-info" style="margin-left: 10px">
-                    Detalles
-                  </button>
-                  </td>
-                </tr>
-                <!-- Fin de ejemplo -->
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>fat</td>
-                  <td>
-                    <button class="btn btn-danger">Borrar</button>
-                  <button class="btn btn-info" style="margin-left: 10px">
-                    Actualizar
-                  </button>
-                  <button class="btn btn-info" style="margin-left: 10px">
-                    Detalles
-                  </button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>fat</td>
-                  <td>
-                    <button class="btn btn-danger">Borrar</button>
-                  <button class="btn btn-info" style="margin-left: 10px">
-                    Actualizar
-                  </button>
-                  <button class="btn btn-info" style="margin-left: 10px">
-                    Detalles
-                  </button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>fat</td>
-                  <td>
-                    <button class="btn btn-danger">Borrar</button>
-                  <button class="btn btn-info" style="margin-left: 10px">
-                    Actualizar
-                  </button>
-                  <button class="btn btn-info" style="margin-left: 10px">
-                    Detalles
-                  </button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>fat</td>
-                  <td>
-                    <button class="btn btn-danger">Borrar</button>
-                  <button class="btn btn-info" style="margin-left: 10px">
-                    Actualizar
-                  </button>
-                  <button class="btn btn-info" style="margin-left: 10px">
-                    Detalles
-                  </button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>fat</td>
-                  <td>
-                    <button class="btn btn-danger">Borrar</button>
-                  <button class="btn btn-info" style="margin-left: 10px">
-                    Actualizar
-                  </button>
-                  <button class="btn btn-info" style="margin-left: 10px">
-                    Detalles
-                  </button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>fat</td>
-                  <td>
-                    <button class="btn btn-danger">Borrar</button>
-                  <button class="btn btn-info" style="margin-left: 10px">
-                    Actualizar
-                  </button>
-                  <button class="btn btn-info" style="margin-left: 10px">
-                    Detalles
-                  </button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>fat</td>
-                  <td>
-                    <button class="btn btn-danger">Borrar</button>
-                  <button class="btn btn-info" style="margin-left: 10px">
-                    Actualizar
-                  </button>
-                  <button class="btn btn-info" style="margin-left: 10px">
-                    Detalles
-                  </button>
-                  </td>
-                </tr>
-
-
+            
                     </tbody>
                   </table>
               </div>

@@ -64,7 +64,7 @@ export class LoginComponent implements OnInit {
           this.usuario.password === password.value
         ) {
           window.sessionStorage.setItem("user", JSON.stringify(this.usuario));
-
+         
           if (this.usuario.rol.idRol == 2) this.router.navigate(["/home"]);
           else this.router.navigate(["/admin"]);
         } else {
@@ -102,7 +102,7 @@ export class LoginComponent implements OnInit {
   selector: "ngbd-modal-content",
   template: `
     <div class="modal-header">
-      <h4 class="modal-title">Error en las crednciales</h4>
+      <h4 class="modal-title">Error en las credenciales</h4>
       <button
         type="button"
         class="close"
@@ -131,6 +131,4 @@ export class NgbdModalContent {
 
   constructor(public activeModal: NgbActiveModal) {}
 }
-function sleep(arg0: number) {
-  throw new Error("Function not implemented.");
-}
+

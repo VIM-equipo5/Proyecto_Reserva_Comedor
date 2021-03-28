@@ -25,6 +25,7 @@ import { DetallesCuentaComponent } from './home/modal/detalles-cuenta/detalles-c
 import { ReservasUsuarioComponent } from './home/modal/reservas-usuario/reservas-usuario.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { GestionBebidasComponent } from './Admin/gestion-bebidas/gestion-bebidas.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     CestoComponent,
     DetallesCuentaComponent,
     ReservasUsuarioComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    GestionBebidasComponent
   ],
   imports: [
     BrowserModule,
