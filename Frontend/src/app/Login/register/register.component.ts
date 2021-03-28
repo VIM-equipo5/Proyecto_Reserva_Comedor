@@ -48,6 +48,7 @@ export class RegisterComponent implements OnInit {
       (data) => {
         /* No hacemos nada con la respuesta */
         console.log(data);
+        this.router.navigate(["/"]);
       },
       (error) => {
         this.open();

@@ -22,7 +22,7 @@ export class ProductoComponent {
       backdropClass: "backdrop",
       size: "xl",
       centered: true,
-      scrollable: true
+      scrollable: true,
     });
   }
 }

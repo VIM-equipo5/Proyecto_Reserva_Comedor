@@ -1,5 +1,6 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { Usuario } from 'src/app/Login/model/usuarios';
 
 @Component({
   selector: 'app-detalles-cuenta',
@@ -14,17 +15,23 @@ import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
     `,
   ],
 })
-export class DetallesCuentaComponent{
+export class DetallesCuentaComponent implements OnInit{
+  detalle!: Usuario;
 
   constructor(private modalService: NgbModal) {}
+
+  ngOnInit(): void{
+    this.detalle = JSON.parse(window.sessionStorage.getItem("user")|| "{}" );
+  }
 
   openXl(content: any) {
     this.modalService.open(content, {
       backdropClass: "backdrop",
-      size: "xl",
-      centered: true,
-      scrollable: true
+      size: "sm",
+      centered: true
     });
   }
+
+  
 
 }

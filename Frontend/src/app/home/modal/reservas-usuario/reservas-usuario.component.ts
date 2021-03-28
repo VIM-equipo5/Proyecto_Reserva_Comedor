@@ -1,5 +1,8 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { Observable } from 'rxjs/internal/Observable';
+import { Reserva } from '../../models/Reserva';
+import { ReservaService } from '../../service/modal/reservas-usuario/reserva.service';
 
 @Component({
   selector: 'app-reservas-usuario',
@@ -14,9 +17,19 @@ import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
     `,
   ],
 })
-export class ReservasUsuarioComponent{
+export class ReservasUsuarioComponent implements OnInit{
+  reservas!: Observable<Reserva[]>;
 
-  constructor(private modalService: NgbModal) {}
+  constructor(private reservaService: ReservaService
+    ,private modalService: NgbModal) {}
+
+  ngOnInit(): void {
+    this.getAllReservas();
+  }
+
+  getAllReservas(){
+    this.reservas = this.reservaService.getReservas();
+  }
 
   openXl(content: any) {
     this.modalService.open(content, {
