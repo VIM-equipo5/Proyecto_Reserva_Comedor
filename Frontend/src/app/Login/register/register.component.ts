@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Usuario } from '../usuario/model/usuarios';
 import { UsuarioService } from '../usuario/service/usuario.service';
@@ -15,33 +16,29 @@ import { UsuarioService } from '../usuario/service/usuario.service';
 export class RegisterComponent implements OnInit {
 
   usuario: Usuario = new Usuario();
-  submitted = false;
+  registro = new FormGroup ({
+    username: new FormControl("", Validators.required),
+    password: new FormControl("", Validators.required),
+    name: new FormControl("", Validators.required),
+    lastname: new FormControl("", Validators.required),
+    dni: new FormControl("", Validators.required),
+    phone: new FormControl("", Validators.required),
+    date: new FormControl("", Validators.required),
+  });
 
   constructor(private usuarioService: UsuarioService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  nuevoUsuario(): void {
-    this.submitted = false;
-    this.usuario = new Usuario();
-  }
-
-  save() {
-    this.usuarioService.crearUsuario(this.usuario).subscribe(data => {
-      console.log(data);
-      this.usuario = new Usuario();
-      this.goToLogin();
-    },
-    error => console.log(error));
-  }
-
   onSubmit(){
-    this.submitted = true;
-    this.save();
+    this.registrarUsuario();
   }
 
-  goToLogin() {
-    this.router.navigate(['/login']);
+  registrarUsuario(){
+    debugger
+    Object.keys(this.registro.controls).forEach(key =>{
+      console.log(this.registro.controls[key].value)
+    });
   }
 }

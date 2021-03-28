@@ -1,10 +1,16 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
+import { Usuario } from "./usuario/model/usuarios";
 
 @Injectable({
   providedIn: "root",
 })
 export class LoginService {
+
+  base_url = "http://localhost:8080";
+  api = "http://localhost:8080/api";
+
   constructor(private http: HttpClient) {}
 
   peticionToken(name: String, password: String) {
@@ -15,7 +21,7 @@ export class LoginService {
       observe: "response",
     };
 
-    obs = this.http.options(`http://localhost:8080/login`, {
+    obs = this.http.options(`${this.base_url}/login`, {
       headers: headers,
     });
     return obs;
@@ -30,7 +36,11 @@ export class LoginService {
 
   getUsuario(username: String) {
     return this.http.get(
-      `http://localhost:8080/api/usuarios/nombre/${username}`
+      `${this.api}/usuarios/nombre/${username}`
     );
+  }
+
+  createUsuario(user: Usuario): Observable<Object> {
+    return this.http.post(`${this.api}`, user);
   }
 }
