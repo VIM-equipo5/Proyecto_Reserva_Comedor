@@ -9,7 +9,10 @@
 			"name": "Login",
 			"item": [
 				{
-					"name": "getTokenUser",
+					"name": "getTokenAdmin",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -26,7 +29,7 @@
 								}
 							]
 						},
-						"method": "POST",
+						"method": "GET",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -52,7 +55,7 @@
 					"response": []
 				},
 				{
-					"name": "getTokenAdmin",
+					"name": "getTokenUser",
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -69,7 +72,7 @@
 								}
 							]
 						},
-						"method": "POST",
+						"method": "OPTIONS",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -125,16 +128,6 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaW1kYSIsImV4cCI6MTYxNjQ5OTU1OX0.nS8cohDiH7Slutgxv660637KQLqVM3e383hvrZcGXI9JYqQe0qfPmAnfBDty2t6d-DE0kj3QRIucHDLWLB2fGA",
-									"type": "string"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -167,16 +160,6 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaW1kYSIsImV4cCI6MTYxNjQ5OTU1OX0.nS8cohDiH7Slutgxv660637KQLqVM3e383hvrZcGXI9JYqQe0qfPmAnfBDty2t6d-DE0kj3QRIucHDLWLB2fGA",
-									"type": "string"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -247,26 +230,32 @@
 				{
 					"name": "postBebida",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaW1kYSIsImV4cCI6MTYxNjQ5OTU1OX0.nS8cohDiH7Slutgxv660637KQLqVM3e383hvrZcGXI9JYqQe0qfPmAnfBDty2t6d-DE0kj3QRIucHDLWLB2fGA",
-									"type": "string"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"nombre\":\"nuka-cola\",\r\n    \"precioUnitario\":\"200\",\r\n    \"descripcion\":\"Esta muy fresca\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "ejemplo1",
+									"type": "text"
+								},
+								{
+									"key": "precioUnitario",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "descripcion",
+									"value": "hola",
+									"type": "text"
+								},
+								{
+									"key": "imagen",
+									"type": "file",
+									"src": "/H:/Curso Programación/Java/Workspace/Proyecto/ejemplo.jpg"
 								}
-							}
+							]
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/bebidas",
@@ -286,16 +275,6 @@
 				{
 					"name": "deleteBebida",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaW1kYSIsImV4cCI6MTYxNjQ5OTU1OX0.nS8cohDiH7Slutgxv660637KQLqVM3e383hvrZcGXI9JYqQe0qfPmAnfBDty2t6d-DE0kj3QRIucHDLWLB2fGA",
-									"type": "string"
-								}
-							]
-						},
 						"method": "DELETE",
 						"header": [],
 						"body": {
@@ -355,16 +334,6 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaW1kYSIsImV4cCI6MTYxNjQ5OTU1OX0.nS8cohDiH7Slutgxv660637KQLqVM3e383hvrZcGXI9JYqQe0qfPmAnfBDty2t6d-DE0kj3QRIucHDLWLB2fGA",
-									"type": "string"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -397,16 +366,6 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaW1kYSIsImV4cCI6MTYxNjQ5OTU1OX0.nS8cohDiH7Slutgxv660637KQLqVM3e383hvrZcGXI9JYqQe0qfPmAnfBDty2t6d-DE0kj3QRIucHDLWLB2fGA",
-									"type": "string"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -1613,7 +1572,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/pedirPlatos",
+							"raw": "http://localhost:8080/api/usuarios",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1621,7 +1580,7 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"pedirPlatos"
+								"usuarios"
 							]
 						}
 					},
@@ -1645,7 +1604,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/pedirPlatos/1",
+							"raw": "http://localhost:8080/api/usuarios/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1653,8 +1612,42 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"pedirPlatos",
-								"1"
+								"usuarios",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByNombre",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"root\",\r\n    \"password\": \"root\",\r\n    \"roles\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/usuarios/nombre/UsuarioAdmin2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios",
+								"nombre",
+								"UsuarioAdmin2"
 							]
 						}
 					},
@@ -1675,7 +1668,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/pedirPlatos/1",
+							"raw": "http://localhost:8080/api/usuarios/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1683,7 +1676,7 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"pedirPlatos",
+								"usuarios",
 								"1"
 							]
 						}
@@ -1697,7 +1690,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"cantidadBebidas\": 10,\r\n    \"reserva\": {\r\n        \"idReserva\": 3,\r\n        \"cantidadComensales\": 2,\r\n        \"precioTotal\": 28.5,\r\n        \"fechaReserva\": \"2021-03-18T19:17:22.000+00:00\",\r\n        \"fechaReservada\": \"2021-03-31T22:00:00.000+00:00\",\r\n        \"usuario\": {\r\n            \"idUsuario\": 8,\r\n            \"nombreUsuario\": \"Usuario6\",\r\n            \"contraseña\": \"NoMeRobesPorFavor\",\r\n            \"nombre\": \"Héctor\",\r\n            \"apellido\": \"Hernández\",\r\n            \"fechaNacimiento\": \"1969-03-07\",\r\n            \"telefono\": 607548652,\r\n            \"rol\": {\r\n                \"idRol\": 2,\r\n                \"nombreRol\": \"usuario\",\r\n                \"descripcion\": \"Usuario llano, con autorizacion solo para realizar reservas\"\r\n            },\r\n            \"dni\": \"H0000008\"\r\n        },\r\n        \"franjaHoraria\": {\r\n            \"idFranja\": 10,\r\n            \"capacidadMax\": 10,\r\n            \"ocupacionTotal\": 0,\r\n            \"franjaInicio\": \"001415\",\r\n            \"franjaFin\": \"001430\"\r\n        }\r\n    },\r\n    \"bebida\": {\r\n        \"idBebida\": 1,\r\n        \"nombre\": \"Refresco\",\r\n        \"precioUnitario\": 1.0,\r\n        \"imagen\": null,\r\n        \"descripcion\": \"Coca-cola, Coca-cola Zero, Fanta naranja, Fanta limón, Sprite\"\r\n    }\r\n}",
+							"raw": "{\r\n    \"nombreUsuario\": \"Usuario6\",\r\n    \"contraseña\": \"NoMeRobesPorFavor\",\r\n    \"nombre\": \"Héctor\",\r\n    \"apellido\": \"Hernández\",\r\n    \"fechaNacimiento\": \"\",\r\n    \"telefono\": 607548652,\r\n    \"rol\": {\r\n            \"idRol\": 2,\r\n            \"nombreRol\": \"usuario\",\r\n            \"descripcion\": \"Usuario llano, con autorizacion solo para realizar reservas\"\r\n        },\r\n    \"dni\": \"H0554210\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1705,7 +1698,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/pedirPlatos/",
+							"raw": "http://localhost:8080/api/usuarios/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1713,7 +1706,7 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"pedirPlatos",
+								"usuarios",
 								""
 							]
 						}
@@ -1736,7 +1729,7 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/pedirPlatos/1",
+							"raw": "http://localhost:8080/api/usuarios/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1744,7 +1737,7 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"pedirPlatos",
+								"usuarios",
 								"1"
 							]
 						}
@@ -1779,7 +1772,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaW1kYSIsImV4cCI6MTYxNjUxNTI0N30.VmvzDlsdwlnzHPe9Z8oiBlWBCkHdQ89CRpONb7uNoHUBSRrIkfSCpnOfMzZgzsdCHmuqjqCXwiLJ_3pXVKfdVw",
+				"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOaW1kYSJ9.MVf2B8gJG2ZL5iTCqANLmu4Ar7Ucqoc-fgF8B4qIpMEl7nWfdUE_tCDrfTzIHmqNrQfuzBfs9f9Dh5kTX6Fd4g",
 				"type": "string"
 			}
 		]

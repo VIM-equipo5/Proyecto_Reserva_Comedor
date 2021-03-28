@@ -1,8 +1,8 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
+import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { LoginService } from "../login.service";
-import { Rol } from "../usuario/model/rol";
 import { Usuario } from "../usuario/model/usuarios";
 
 /**
@@ -25,7 +25,11 @@ export class RegisterComponent implements OnInit {
     fechaNacimiento: new FormControl("", Validators.required),
   });
 
-  constructor(private loginService: LoginService, private router: Router) {}
+  constructor(
+    private loginService: LoginService,
+    private router: Router,
+    private modalService: NgbModal
+  ) {}
 
   ngOnInit(): void {}
 
@@ -40,12 +44,53 @@ export class RegisterComponent implements OnInit {
     });
     body = JSON.stringify(`${body.slice(0, -1)} }`);
 
-    try {
-      this.loginService.createUsuario(body).subscribe((data) => {
+    this.loginService.createUsuario(body).subscribe(
+      (data) => {
+        /* No hacemos nada con la respuesta */
         console.log(data);
-      });
-    } catch (error) {
-      console.log(error);
-    }
+      },
+      (error) => {
+        this.open();
+      }
+    );
+    
   }
+
+  open() {
+    const modalRef = this.modalService.open(NgbdModalContent, {
+      centered: true,
+    });
+  }
+}
+
+@Component({
+  selector: "ngbd-modal-content",
+  template: `
+    <div class="modal-header">
+      <h4 class="modal-title">Error al crear usuario</h4>
+      <button
+        type="button"
+        class="close"
+        aria-label="Close"
+        (click)="activeModal.dismiss('Cross click')"
+      ></button>
+    </div>
+    <div class="modal-body">
+      <p style="text-align=center">El nombre de usuario ya existe.</p>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn btn-principal"
+        (click)="activeModal.close('Close click')"
+      >
+        Cerrar
+      </button>
+    </div>
+  `,
+})
+export class NgbdModalContent {
+  @Input() name: any;
+
+  constructor(public activeModal: NgbActiveModal) {}
 }
