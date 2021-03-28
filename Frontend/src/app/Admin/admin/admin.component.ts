@@ -12,7 +12,7 @@ export class AdminComponent implements OnInit {
   main!: HTMLDivElement;
   mySidebar!: HTMLDivElement;
   openNav!: HTMLButtonElement;
-  estados = [false,false,false];
+  estados = [false,false,false,false];
 
   constructor(private router: Router) {
     
@@ -25,7 +25,7 @@ export class AdminComponent implements OnInit {
   }
   
   negarTodos(): void {
-    this.estados = [false,false,false];
+    this.estados = [false,false,false,false];
   }
   
   mostrar(idx: number): void{
@@ -46,4 +46,8 @@ export class AdminComponent implements OnInit {
     this.openNav.style.display = "none";
   }
   
+  logout(){
+    window.sessionStorage.removeItem("user");
+    this.router.navigate(["/"]);
+  }
 }

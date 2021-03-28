@@ -1,51 +1,54 @@
-.body-nav{
+.body-nav {
   background-color: #262626!important;
 }
 
-ul > li > a{
+ul>li>a {
   font-size: 20px;
-  color:white;
+  color: white;
 }
 
-ul > li > .active{
-  color:#e50076;
+ul>li>.active {
+  color: #e50076;
   font-weight: bolder;
 }
 
-.desplegable > li > a:hover{
-  color:#e50076;
+.desplegable>li>a:hover {
+  color: #e50076;
 }
 
-.desplegable > li > a {
-  color:#262626;
+.desplegable>li>a {
+  color: #262626;
 }
-
 
 .dropdown-item {
   color: black;
 }
 
-#navbarDropdown:hover{
-  color:#e50076;
+#navbarDropdown:hover {
+  color: #e50076;
 }
 
-#navbarDropdown[aria-expanded="true"]{
+#navbarDropdown[aria-expanded="true"] {
   color: #e50076;
 }
 
 .btn-nav {
   font-size: 20px;
-    color: rgb(255, 0, 0);
-    cursor: pointer;
-    text-decoration: none;
+  color: rgb(255, 0, 0);
+  cursor: pointer;
+  text-decoration: none;
 }
 
-.btn-cesto{
+.btn-cesto {
   align-self: center;
   color: #e50076;
 }
 
-.equipo{
+.equipo {
   margin-right: 20px;
   font-size: 30px;
+}
+
+.btn-logout, .btn-VIM {
+  cursor: pointer;
 }

@@ -16,6 +16,7 @@ import com.ReservaComedor.service.implementacion.FranjaHorariaServiceImpl;
  */
 
 @RestController
+@CrossOrigin(origins="*",methods= {RequestMethod.GET,RequestMethod.POST})
 @RequestMapping("/api")
 public class FranjaHorariaController {
 

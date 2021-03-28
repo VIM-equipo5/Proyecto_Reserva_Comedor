@@ -24,6 +24,7 @@ import com.ReservaComedor.service.implementacion.BebidaServiceImpl;
  */
 
 @RestController
+@CrossOrigin(origins="*",methods= {RequestMethod.GET,RequestMethod.POST})
 @RequestMapping("/api")
 public class BebidaController {
 

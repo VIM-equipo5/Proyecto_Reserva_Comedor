@@ -19,6 +19,7 @@ import com.ReservaComedor.service.implementacion.RolServiceImpl;
  */
 
 @RestController
+@CrossOrigin(origins="*",methods= {RequestMethod.GET,RequestMethod.POST})
 @RequestMapping("/api")
 public class RolController {
 

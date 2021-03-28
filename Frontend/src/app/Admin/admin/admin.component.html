@@ -13,7 +13,8 @@
     <li><a (click)="mostrar(0)">Gestión Platos</a></li>
     <li><a (click)="mostrar(1)">Gestión Reservas</a></li>
     <li><a (click)="mostrar(2)">Gestión Usuarios</a></li>
-    <li><a href="/">Logout</a></li>
+    <li><a (click)="mostrar(3)">Gestión Bebidas</a></li>
+    <li><a (click)="logout()">Logout</a></li>
   </ul>
 </div>
 
@@ -47,6 +48,9 @@
           </div>
           <div *ngIf="estados[2]">
             <app-gestion-usuarios></app-gestion-usuarios>
+          </div>
+          <div *ngIf="estados[3]">
+            <app-gestion-bebidas></app-gestion-bebidas>
           </div>
         </div>
       </div>

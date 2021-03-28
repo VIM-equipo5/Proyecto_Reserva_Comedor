@@ -19,7 +19,7 @@ import com.ReservaComedor.service.implementacion.PlatosServiceImpl;
  */
 
 @RestController
-@CrossOrigin(origins="*", methods= {RequestMethod.GET,RequestMethod.POST})
+@CrossOrigin(origins="*",methods= {RequestMethod.GET,RequestMethod.POST})
 @RequestMapping("/api")
 public class PlatosController {
 

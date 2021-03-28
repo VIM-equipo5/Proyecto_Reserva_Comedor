@@ -4,7 +4,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item equipo">
-            <a class="nav-link active ">V.I.M</a>
+            <a class="nav-link active btn-VIM" href="https://github.com/VIM-equipo5">V.I.M</a>
           </li>
           <li class="nav-item dropdown ">
             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -18,7 +18,7 @@
                 <app-reservas-usuario></app-reservas-usuario>
               </a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/login">Cerrar sesión</a></li>
+              <li><a class="dropdown-item btn-logout" (click)="logout()">Cerrar sesión</a></li>
             </ul>
           </li>
           <li class="nav-item btn-cesto">
