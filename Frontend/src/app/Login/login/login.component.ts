@@ -40,40 +40,44 @@ export class LoginComponent implements OnInit {
     if (!user.invalid && !password.invalid) {
       this.spinner.show();
       this.getUsuario(user.value).subscribe((res: any) => {
-        this.usuario.idUsuario = res[0].idUsuario;
-        this.usuario.nombreUsuario = res[0].nombreUsuario;
-        this.usuario.password = res[0].contraseña;
-        this.usuario.nombre = res[0].nombre;
-        this.usuario.apellido = res[0].apellido;
-        this.usuario.dni = res[0].dni;
-        this.usuario.fechaNacimiento = res[0].fechaNacimiento;
-        this.usuario.telefono = res[0].telefono;
-        this.usuario.rol = new Rol();
-        this.usuario.rol.idRol = res[0].rol.idRol;
-        this.usuario.rol.nombreRol = res[0].rol.nombreRol;
-        this.usuario.rol.descripcion = res[0].rol.descripcion;
+        try {
+          this.usuario.idUsuario = res[0].idUsuario;
+          this.usuario.nombreUsuario = res[0].nombreUsuario;
+          this.usuario.password = res[0].contraseña;
+          this.usuario.nombre = res[0].nombre;
+          this.usuario.apellido = res[0].apellido;
+          this.usuario.dni = res[0].dni;
+          this.usuario.fechaNacimiento = res[0].fechaNacimiento;
+          this.usuario.telefono = res[0].telefono;
+          this.usuario.rol = new Rol();
+          this.usuario.rol.idRol = res[0].rol.idRol;
+          this.usuario.rol.nombreRol = res[0].rol.nombreRol;
+          this.usuario.rol.descripcion = res[0].rol.descripcion;
+        } catch (error) {
+          this.spinner.hide();
+        }
 
         this.spinner.hide();
+        /* Verificación de las credenciales del usuario */
         if (
           this.usuario.nombreUsuario === user.value &&
           this.usuario.password === password.value
         ) {
           window.sessionStorage.setItem("user", JSON.stringify(this.usuario));
-          this.router.navigate(["/home"]);
+
+          if (this.usuario.rol.idRol == 2) this.router.navigate(["/home"]);
+          else this.router.navigate(["/admin"]);
         } else {
+          $("#inputUsername").addClass("is-invalid");
+          $("#inputPassword").addClass("is-invalid");
+          password.setValue([""]);
           this.open();
         }
       });
-
-      /*
-       * Con esto dejamos tiempo a que la petición se
-       * haga correctamente antes de usar los datos
-       */
-
-      /* Verificación de las credenciales del usuario */
-      // TO DO, no esta obteniendo bien los datos
     } else {
       /* Pintamos el campo vacio como necesario */
+      $("#inputUsername").addClass("is-invalid");
+      $("#inputPassword").addClass("is-invalid");
     }
   }
 
@@ -86,6 +90,11 @@ export class LoginComponent implements OnInit {
     const modalRef = this.modalService.open(NgbdModalContent, {
       centered: true,
     });
+  }
+
+  goToRegister() {
+    this.spinner.show();
+    this.router.navigate(["/logup"]);
   }
 }
 

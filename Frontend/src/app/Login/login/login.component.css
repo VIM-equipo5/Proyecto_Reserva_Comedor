@@ -1,7 +1,9 @@
 .body-login {
   padding-top: 20vh;
 }
-
+.enlace{
+  cursor: pointer;
+}
 .imagen {
   background: url(https://us.emedemujer.com/wp-content/uploads/sites/3/2016/09/dieta-de-las-horas-1.jpg);
   background-position: center;
