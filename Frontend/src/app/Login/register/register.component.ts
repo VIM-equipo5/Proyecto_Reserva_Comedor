@@ -2,8 +2,8 @@ import { Component, Input, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { LoginService } from "../login.service";
-import { Usuario } from "../usuario/model/usuarios";
+import { Usuario } from "../model/usuarios";
+import { LoginService } from "../service/login.service";
 
 /**
  *  Hay que pedir el token e insertarlo antes de hacer la peticion
