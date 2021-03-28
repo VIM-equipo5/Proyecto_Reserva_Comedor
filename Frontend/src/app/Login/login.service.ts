@@ -1,24 +1,36 @@
-import { HttpClient, HttpHeaders, HttpRequest } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: "root",
 })
 export class LoginService {
-  
   constructor(private http: HttpClient) {}
 
-  peticionToken(name: String, password: String): Observable<Object> {
-    const headers = { 'content-type': 'application/json',
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "POST",
-    observe: "response"}
+  peticionToken(name: String, password: String) {
+    let obs;
+    const headers = {
+      "content-type": "application/json",
+      "Access-Control-Allow-Methods": "POST",
+      observe: "response",
+    };
 
-    return this.http.post<any>(
-      `/login`,
-      JSON.stringify({ name, password }),
-      {'headers': headers}
+    obs = this.http.options(`http://localhost:8080/login`, {
+      headers: headers,
+    });
+    return obs;
+  }
+
+  //   private setSession(authResult) {
+  //     const expiresAt = moment().add(authResult.expiresIn,'second');
+
+  //     localStorage.setItem('id_token', authResult.idToken);
+  //     localStorage.setItem("expires_at", JSON.stringify(expiresAt.valueOf()) );
+  // }
+
+  getUsuario(username: String) {
+    return this.http.get(
+      `http://localhost:8080/api/usuarios/nombre/${username}`
     );
   }
 }

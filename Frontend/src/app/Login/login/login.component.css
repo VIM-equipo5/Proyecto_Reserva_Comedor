@@ -8,8 +8,18 @@
   background-size: 115%;
 }
 
-.titular{
+.titular {
   color: white;
   font-family: sans-serif;
+}
+
+.btn-block {
+  background-color: #e50076;
+  color: white;
+}
+
+.btn-block:hover {
+  background-color: white;
+  color: #e50076;
 }
 

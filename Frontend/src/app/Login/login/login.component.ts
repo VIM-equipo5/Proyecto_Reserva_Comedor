@@ -1,40 +1,127 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { LoginService } from '../login.service';
-import { Usuario } from '../usuario/model/usuarios';
-import { UsuarioService } from '../usuario/service/usuario.service';
-
+import { Component, Input, OnInit } from "@angular/core";
+import { FormArray, FormControl, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
+import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { LoginService } from "../login.service";
+import { Usuario } from "../usuario/model/usuarios";
+import { Rol } from "../usuario/model/rol";
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: "app-login",
+  templateUrl: "./login.component.html",
+  styleUrls: ["./login.component.css"],
 })
 export class LoginComponent implements OnInit {
- 
+  constructor(
+    private loginService: LoginService,
+    private router: Router,
+    private modalService: NgbModal,
+    private spinner: NgxSpinnerService
+  ) {}
 
-  constructor(private loginService: LoginService, private router: Router) { 
+  login = new FormGroup({
+    username: new FormControl("", Validators.required),
+    password: new FormControl("", Validators.required),
+  });
+
+  usuario = new Usuario();
+
+  ngOnInit(): void {}
+
+  onSubmit() {
+    this.autentificar();
   }
 
+  autentificar() {
+    const user = this.login.get("username") as FormArray,
+      password = this.login.get("password") as FormArray;
+    /* Si ambos campos son validos, buscamos credenciales */
+    if (!user.invalid && !password.invalid) {
+      this.spinner.show();
+      this.getUsuario(user.value).subscribe((res: any) => {
+        this.usuario.idUsuario = res[0].idUsuario;
+        this.usuario.nombreUsuario = res[0].nombreUsuario;
+        this.usuario.password = res[0].contraseña;
+        this.usuario.nombre = res[0].nombre;
+        this.usuario.apellido = res[0].apellido;
+        this.usuario.dni = res[0].dni;
+        this.usuario.fechaNacimiento = res[0].fechaNacimiento;
+        this.usuario.telefono = res[0].telefono;
+        this.usuario.rol = new Rol();
+        this.usuario.rol.idRol = res[0].rol.idRol;
+        this.usuario.rol.nombreRol = res[0].rol.nombreRol;
+        this.usuario.rol.descripcion = res[0].rol.descripcion;
 
-  ngOnInit(): void {
+        this.spinner.hide();
+        if (
+          this.usuario.nombreUsuario === user.value &&
+          this.usuario.password === password.value
+        ) {
+          window.sessionStorage.setItem("user", JSON.stringify(this.usuario));
+          this.router.navigate(["/home"]);
+        } else {
+          this.open();
+        }
+      });
 
+      /*
+       * Con esto dejamos tiempo a que la petición se
+       * haga correctamente antes de usar los datos
+       */
+
+      /* Verificación de las credenciales del usuario */
+      // TO DO, no esta obteniendo bien los datos
+    } else {
+      /* Pintamos el campo vacio como necesario */
+    }
   }
 
-
-  onSubmit(){
-    const token = this.getToken();
-
-    console.log(token);
+  getUsuario(username: String) {
+    /* Todas las peticiones estan abiertas. */
+    return this.loginService.getUsuario(username);
   }
-  
-  getToken() {
-    this.loginService
-    /* Crendeciales para obtener el token de nivel de usuario basico 
-      En teoría, estas credenciales no son accesible para el usuario */
-    .peticionToken("rolUsuario","NoMeRobes").subscribe(data => {
-      console.log(data);
-    },
-    error => console.log(error));
+
+  open() {
+    const modalRef = this.modalService.open(NgbdModalContent, {
+      centered: true,
+    });
   }
+}
+
+@Component({
+  selector: "ngbd-modal-content",
+  template: `
+    <div class="modal-header">
+      <h4 class="modal-title">Error en las crednciales</h4>
+      <button
+        type="button"
+        class="close"
+        aria-label="Close"
+        (click)="activeModal.dismiss('Cross click')"
+      ></button>
+    </div>
+    <div class="modal-body">
+      <p style="text-align=center">
+        El usuario o la contraseña no son correctos.
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn btn-principal"
+        (click)="activeModal.close('Close click')"
+      >
+        Cerrar
+      </button>
+    </div>
+  `,
+})
+export class NgbdModalContent {
+  @Input() name: any;
+
+  constructor(public activeModal: NgbActiveModal) {}
+}
+function sleep(arg0: number) {
+  throw new Error("Function not implemented.");
 }

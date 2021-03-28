@@ -21,6 +21,7 @@ import com.ReservaComedor.service.implementacion.UsuarioServiceImpl;
  */
 
 @RestController
+@CrossOrigin(origins="*", methods= {RequestMethod.GET})
 @RequestMapping("/api")
 public class UsuarioController {
 
@@ -46,6 +47,12 @@ public class UsuarioController {
 		System.out.println("Usuario: " + usuarioBuscado);
 		return usuarioBuscado;
 	}
+	
+	@GetMapping("/usuarios/nombre/{nombreUsuario}")
+	public List<Usuario> usuarioXNombre(@PathVariable(name="nombreUsuario") String nombreUsuario) {
+		return usuarioServiceImpl.usuarioXNombre(nombreUsuario);
+	}
+	
 	
 	@PutMapping("/usuarios/{idUsuario}")
 	public Usuario actualizarUsuario(@PathVariable(name="idUsuario")int idUsuario,@RequestBody Usuario usuario) {

@@ -1,17 +1,14 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
+import { AbstractControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home/home.component';
 import { NavbarComponent } from './home/navbar/navbar.component';
 import { LoginComponent } from './Login/login/login.component';
 import { RegisterComponent } from './Login/register/register.component';
-
-
 import { ProductoComponent } from './home/modal/producto/producto.component';
 import { Slider1Component } from './home/slider/slider1/slider1.component';
 import { Slider2Component } from './home/slider/slider2/slider2.component';
@@ -27,10 +24,7 @@ import { CestoComponent } from './home/modal/cesto/cesto.component';
 import { DetallesCuentaComponent } from './home/modal/detalles-cuenta/detalles-cuenta.component';
 import { ReservasUsuarioComponent } from './home/modal/reservas-usuario/reservas-usuario.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-
-
-
-
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 @NgModule({
@@ -61,7 +55,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
