@@ -7,7 +7,7 @@ export class Usuario {
     nombre!: String;
     apellido!: String;
     dni!: String;
-    fechaNacimiento!: String;
     telefono!: Number;
+    fechaNacimiento!: String;
     rol!: Rol;
 }

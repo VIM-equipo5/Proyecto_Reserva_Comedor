@@ -40,7 +40,8 @@ export class LoginService {
     );
   }
 
-  createUsuario(user: Usuario): Observable<Object> {
-    return this.http.post(`${this.api}`, user);
+  createUsuario(user: string): Observable<Object> {
+    const headers = {"content-type": "application/json"};
+    return this.http.post(`${this.api}/usuarios`,JSON.parse(user),{headers: headers});
   }
 }

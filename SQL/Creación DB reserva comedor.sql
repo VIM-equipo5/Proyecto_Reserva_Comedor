@@ -17,7 +17,8 @@ CREATE TABLE IF NOT EXISTS `bebidas` (
   `IdBebida` int(11) NOT NULL AUTO_INCREMENT,
   `Nombre` varchar(50) NOT NULL,
   `PrecioUnitario` decimal(10,2) NOT NULL,
-  `Imagen` blob,
+  /* Tipo cambiando de blob a varchar, 18:50 ,28 marzo 2021*/
+  `Imagen` VARCHAR(255),
   `Descripcion` text,
   PRIMARY KEY (`IdBebida`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -50,7 +51,8 @@ CREATE TABLE IF NOT EXISTS `platos` (
   `IdPlato` int(11) NOT NULL AUTO_INCREMENT,
   `Nombre` varchar(100) NOT NULL,
   `Descripcion` text,
-  `Imagen` blob,
+  /* Tipo cambiando de blob a varchar, 18:50 ,28 marzo 2021*/
+  `Imagen` varchar(255),
   `PrecioUnitario` decimal(10,2) NOT NULL,
   `Tipo` varchar(50) NOT NULL,
   `IdCategoria` int(11) NOT NULL,
@@ -64,7 +66,8 @@ CREATE TABLE IF NOT EXISTS `platos` (
 DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE IF NOT EXISTS `usuario` (
   `IdUsuario` int(11) NOT NULL AUTO_INCREMENT,
-  `NombreUsuario` varchar(100) NOT NULL,
+  /* nombreUsuario ahora es UNIQUE , 18:50 ,28 marzo 2021*/
+  `NombreUsuario` varchar(100) UNIQUE,
   `Contraseña` varchar(20) NOT NULL,
   `Nombre` varchar(50) NOT NULL,
   `Apellido` varchar(50) NOT NULL,
