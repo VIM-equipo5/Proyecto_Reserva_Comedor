@@ -1,5 +1,10 @@
 {
     "/login": {
+      "target": "http://localhost:8080/login",
+      "secure": true,
+      "changeOrigin": true
+    },
+    "/api/usuarios": {
       "target": "http://localhost:8080",
       "secure": true,
       "changeOrigin": true

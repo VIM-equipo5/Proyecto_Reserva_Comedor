@@ -27,4 +27,5 @@ public interface IUsuarioService {
 	
 	public void eliminarUsuario(int idUsuario);	//Elimina el usuario DELETE
 	
+	public List<Usuario> usuarioXNombre(String nombreUsuario);
 }

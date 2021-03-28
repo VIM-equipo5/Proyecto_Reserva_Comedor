@@ -51,5 +51,10 @@ public class UsuarioServiceImpl implements IUsuarioService {
 	public void eliminarUsuario(int idUsuario) {
 		iUsuarioDAO.deleteById(idUsuario);
 	}
+
+	@Override
+	public List<Usuario> usuarioXNombre(String nombreUsuario) {
+		return iUsuarioDAO.findBynombreUsuario(nombreUsuario);
+	}
 	
 }

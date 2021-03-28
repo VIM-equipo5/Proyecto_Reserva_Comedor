@@ -1,10 +1,13 @@
+import { Rol } from "./rol";
+
 export class Usuario {
-    nombreUsuario!: string;
-    pass!: string;
-    nombre!: string;
-    apellido!: string;
-    fechaNacimiento!: Date;
-    dni!: string;
-    telefono!: number;
-    idRol!: number;
+    idUsuario!: Number;
+    nombreUsuario!: String;
+    password!: String;
+    nombre!: String;
+    apellido!: String;
+    dni!: String;
+    telefono!: Number;
+    fechaNacimiento!: String;
+    rol!: Rol;
 }
