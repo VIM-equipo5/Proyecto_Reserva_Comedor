@@ -1,9 +1,10 @@
 package com.ReservaComedor.dao;
 
 
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
-
 import com.ReservaComedor.dto.Bebida;
+
 
 
 /**
@@ -13,5 +14,5 @@ import com.ReservaComedor.dto.Bebida;
  */
 
 public interface IBebidaDAO extends JpaRepository<Bebida, Long> {
-
+	public List<Bebida> findBynombre(String nombreBebida);
 }

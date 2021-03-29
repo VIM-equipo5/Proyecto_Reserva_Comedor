@@ -2,10 +2,8 @@ package com.ReservaComedor.controller;
 
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import com.ReservaComedor.dto.Platos;
 import com.ReservaComedor.service.implementacion.PlatosServiceImpl;
 
@@ -44,6 +42,11 @@ public class PlatosController {
 		platoBuscado = platosServiceImpl.platoXID(IdPlato);
 		System.out.println("Plato: " + platoBuscado);
 		return platoBuscado;
+	}
+	
+	@GetMapping("/platos/nombre/{nombrePlato}")
+	public List<Platos> platoXNombre(@PathVariable(name="nombrePlato") String nombrePlato) {
+		return platosServiceImpl.platoXNombre(nombrePlato);
 	}
 	
 	@PutMapping("/platos/{idPlato}")

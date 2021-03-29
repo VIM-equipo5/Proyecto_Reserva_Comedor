@@ -3,7 +3,6 @@
  */
 package com.ReservaComedor.dto;
 
-import java.sql.Blob;
 import java.util.List;
 import javax.persistence.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -27,7 +26,7 @@ public class Bebida {
 	@Column(name="PrecioUnitario")
 	private Double precioUnitario;
 	@Column(name="Imagen")
-	private Blob imagen;
+	private String imagen;
 	@Column(name="Descripcion")
 	private String descripcion;
 	
@@ -46,7 +45,7 @@ public class Bebida {
 	 * @param descripcion
 	 * @param ofrecerBebida
 	 */
-	public Bebida(Long idBebida, String nombre, Double precioUnitario, Blob imagen, String descripcion,
+	public Bebida(Long idBebida, String nombre, Double precioUnitario, String imagen, String descripcion,
 			List<OfrecerBebida> ofrecerBebida) {
 		this.idBebida = idBebida;
 		this.nombre = nombre;
@@ -101,14 +100,14 @@ public class Bebida {
 	/**
 	 * @return the imagen
 	 */
-	public Blob getImagen() {
+	public String getImagen() {
 		return imagen;
 	}
 
 	/**
 	 * @param imagen the imagen to set
 	 */
-	public void setImagen(Blob imagen) {
+	public void setImagen(String imagen) {
 		this.imagen = imagen;
 	}
 
