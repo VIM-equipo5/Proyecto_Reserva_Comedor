@@ -26,16 +26,15 @@
                 </tr>
               </thead>
               <tbody>
-                <!-- Hay que implementar que de manera recursiva
-                    se obtengan los datos y se pinten n veces-->
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Michael</td>
-                  <td>Miguel</td>
-                  <td>Sastre</td>
-                  <td>18/02/1993</td>
-                  <td>123456789T</td>
-                  <td>12346666</td>
+                <tr *ngFor="let usuario of usuarios | async">
+                  <th scope="row">{{usuario.idUsuario}}</th>
+                  <td>{{usuario.nombreUsuario}}</td>
+                  <td>{{usuario.nombre}}</td>
+                  <td>{{usuario.apellido}}</td>
+                  <td>{{usuario.fechaNacimiento}}</td>
+                  <td>{{usuario.dni}}</td>
+                  <td>{{usuario.telefono}}</td>
+                  <!--No mostramos rol, los usuarios administradores solo gestionan usuarios comunes-->
                   <td>
                     <button class="btn btn-danger">Borrar</button>
                     <button class="btn btn-info" style="margin-left: 10px">

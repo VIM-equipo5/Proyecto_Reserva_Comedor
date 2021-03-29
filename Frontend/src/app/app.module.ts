@@ -26,6 +26,7 @@ import { ReservasUsuarioComponent } from './home/modal/reservas-usuario/reservas
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { GestionBebidasComponent } from './Admin/gestion-bebidas/gestion-bebidas.component';
+import { GestionService } from './Admin/service/gestion.service';
 
 
 @NgModule({
@@ -61,7 +62,7 @@ import { GestionBebidasComponent } from './Admin/gestion-bebidas/gestion-bebidas
     ReactiveFormsModule,
     NgxSpinnerModule
   ],
-  providers: [],
+  providers: [GestionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

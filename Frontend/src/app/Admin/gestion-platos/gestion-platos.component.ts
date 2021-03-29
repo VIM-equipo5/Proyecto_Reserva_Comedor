@@ -11,7 +11,10 @@ import { Plato } from '../models/Plato';
 export class GestionPlatosComponent implements OnInit {
   platos!: Observable<Plato[]>;
 
-  constructor(private platosServices: GestionService) {}
+  constructor(private platosServices: GestionService) {
+    
+  }
+
   ngOnInit(): void {
     this.getAllPlatos();
   }
