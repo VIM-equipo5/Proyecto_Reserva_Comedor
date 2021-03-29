@@ -20,22 +20,20 @@
                   <th scope="col">Precio total</th>
                   <th scope="col">Fecha Reserva</th>
                   <th scope="col">Fecha Reservada</th>
-                  <th scope="col">Id Usuarios</th>
-                  <th scope="col">Id Franja</th>
+                  <th scope="col">Id Usuario</th>
+                  <th scope="col">Franja Horaria</th>
                   <th scope="col">Acciones</th>
                 </tr>
               </thead>
               <tbody>
-                <!-- Hay que implementar que de manera recursiva
-                    se obtengan los datos y se pinten n veces-->
-                <tr>
-                  <th scope="row">1</th>
-                  <td>10</td>
-                  <td>20</td>
-                  <td>10/02/2020</td>
-                  <td>11/02/2020</td>
-                  <td>13</td>
-                  <td>4</td>
+                <tr *ngFor="let reserva of reservas | async">
+                  <th scope="row">{{reserva.idReserva}}</th>
+                  <td>{{reserva.cantidadComensales}}</td>
+                  <td>{{reserva.precioTotal}}</td>
+                  <td>{{reserva.fechaReserva}}</td>
+                  <td>{{reserva.fechaReservada}}</td>
+                  <td>{{reserva.usuario}}</td>
+                  <td>{{reserva.franjaHoraria}}</td>
                   <td>
                     <button class="btn btn-danger">Borrar</button>
                   <button class="btn btn-info" style="margin-left: 10px">
@@ -45,7 +43,6 @@
                     Detalles
                   </button>
                   </td>
-                
                 </tr>
               </tbody>
             </table>
