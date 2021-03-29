@@ -2,10 +2,14 @@ import { Component, Input, OnInit } from "@angular/core";
 import { FormArray, FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { Usuario } from "../model/usuarios";
-import { Rol } from "../model/rol";
 import { NgxSpinnerService } from "ngx-spinner";
+
+
+/* services */
 import { LoginService } from "../service/login.service";
+/* models */
+import { Usuario } from "src/app/model/Usuarios";
+import { Rol } from "src/app/model/Rol";
 
 @Component({
   selector: "app-login",
@@ -27,7 +31,10 @@ export class LoginComponent implements OnInit {
 
   usuario = new Usuario();
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.spinner.hide();
+    window.sessionStorage.removeItem('user');
+  }
 
   onSubmit() {
     this.autentificar();

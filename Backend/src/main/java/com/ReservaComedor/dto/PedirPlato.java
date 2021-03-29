@@ -113,11 +113,9 @@ public class PedirPlato {
 
 	@Override
 	public String toString() {
-		return "PedirPlato [id=" + id + ", IdReserva=" + IdReserva + ", IdPlato=" + IdPlato + ", CantidadPlatos="
-				+ CantidadPlatos + "]";
+		return "PedirPlato [id=" + id + ", CantidadPlatos=" + CantidadPlatos + "]";
 	}
+
 	
-
-
 
 }

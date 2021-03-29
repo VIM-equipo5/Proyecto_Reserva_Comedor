@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
+
+/* services */
 import { GestionService } from '../service/gestion.service';
-import { Bebida } from '../models/Bebida';
+
+/* models */
+import { Bebida } from 'src/app/model/Bebida';
 
 @Component({
   selector: 'app-gestion-bebidas',
