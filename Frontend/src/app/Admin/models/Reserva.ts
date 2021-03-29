@@ -5,8 +5,8 @@ export class Reserva {
     idReserva!: Number;
     cantidadComensales!: Number;
     precioTotal!: Number;
-    fechaReserva!: Date;
-    fechaReservada!: Date;
+    fechaReserva!: String;
+    fechaReservada!: String;
     usuario!: Usuario;
     franjaHoraria!: FranjaHoraria;
 }
