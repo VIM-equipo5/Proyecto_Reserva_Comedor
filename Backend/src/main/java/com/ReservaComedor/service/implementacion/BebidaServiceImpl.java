@@ -51,5 +51,11 @@ public class BebidaServiceImpl implements IBebidaService {
 	public void eliminarBebida(Long idBebida) {
 		iBebidaDAO.deleteById(idBebida);
 	}
+
+	@Override
+	public List<Bebida> bebidaXNombre(String nombreBebida) {
+		// TODO Auto-generated method stub
+		return iBebidaDAO.findBynombre(nombreBebida);
+	}
 	
 }

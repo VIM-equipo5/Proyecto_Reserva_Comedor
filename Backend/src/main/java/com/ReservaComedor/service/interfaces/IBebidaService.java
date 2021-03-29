@@ -27,4 +27,6 @@ public interface IBebidaService {
 	
 	public void eliminarBebida(Long idBebida);	
 	
+	public List<Bebida> bebidaXNombre(String nombreBebida);
+	
 }

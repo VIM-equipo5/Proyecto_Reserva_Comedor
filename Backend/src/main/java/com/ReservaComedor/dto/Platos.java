@@ -1,6 +1,5 @@
 package com.ReservaComedor.dto;
 
-import java.sql.Blob;
 import java.util.List;
 
 import javax.persistence.*;
@@ -13,12 +12,12 @@ public class Platos {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "IdPlato")
 	private int IdPlato;
-	@Column(name = "Nombre")
-	private String Nombre;
+	@Column(name = "nombre")
+	private String nombre;
 	@Column(name = "Descripcion")
 	private String Descripcion;
 	@Column(name = "Imagen")
-	private Blob Imagen;
+	private String Imagen;
 	@Column(name = "PrecioUnitario")
 	private double PrecioUnitario;
 	@Column(name = "Tipo")
@@ -33,11 +32,11 @@ public class Platos {
 	public Platos(){}
 	
 	//Constructor
-	public Platos(int idPlato, String nombre, String descripcion, Blob imagen, double precioUnitario, String tipo,
+	public Platos(int idPlato, String nombre, String descripcion, String imagen, double precioUnitario, String tipo,
 			String idCategoria) {
 		super();
 		IdPlato = idPlato;
-		Nombre = nombre;
+		this.nombre = nombre;
 		Descripcion = descripcion;
 		Imagen = imagen;
 		PrecioUnitario = precioUnitario;
@@ -54,12 +53,12 @@ public class Platos {
 		IdPlato = idPlato;
 	}
 
-	public String getNombre() {
-		return Nombre;
+	public String getnombre() {
+		return nombre;
 	}
 
 	public void setNombre(String nombre) {
-		Nombre = nombre;
+		this.nombre = nombre;
 	}
 
 	public String getDescripcion() {
@@ -70,11 +69,11 @@ public class Platos {
 		Descripcion = descripcion;
 	}
 
-	public Blob getImagen() {
+	public String getImagen() {
 		return Imagen;
 	}
 
-	public void setImagen(Blob imagen) {
+	public void setImagen(String imagen) {
 		Imagen = imagen;
 	}
 
@@ -113,7 +112,7 @@ public class Platos {
 	//toString
 	@Override
 	public String toString() {
-		return "Platos [IdPlato=" + IdPlato + ", Nombre=" + Nombre + ", Descripcion=" + Descripcion + ", Imagen="
+		return "Platos [IdPlato=" + IdPlato + ", Nombre=" + nombre + ", Descripcion=" + Descripcion + ", Imagen="
 				+ Imagen + ", PrecioUnitario=" + PrecioUnitario + ", Tipo=" + Tipo + ", IdCategoria=" + IdCategoria
 				+ "]";
 	}
