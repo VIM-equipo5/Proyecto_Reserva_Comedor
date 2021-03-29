@@ -1,6 +1,9 @@
 <!-- Todos los datos deben ser sacados de la base de datos -->
 
 <ng-template #content let-modal>
+  <div class="modal-header">
+    <h1 class="modal-title">Cesto</h1>
+  </div>
   <div class="row">
     <div class="container-fluid">
       <div class="col-12 sixteen columns cart-section oflow">
@@ -8,24 +11,15 @@
         <table class="table cart-table responsive-table">
           <tbody>
             <tr class="cabecera">
-              <th>Imagen</th>
-              <th>Ítem</th>
-              <th>Descripción</th>
+              <th>Nombre</th>
               <th>Precio</th>
               <th>Cantidad</th>
               <th>Total</th>
-              <th></th>
             </tr>
 
             <!-- Item #1 -->
             <tr>
-              <td>
-                <img src="plato1.jpg" alt="" />
-              </td>
-              <td class="cart-title">
-                <a href="#">Plato1</a>
-              </td>
-              <td>Descripción</td>
+              <td>Nombre</td>
               <td>14€</td>
               <td>
                 <form action="#">
@@ -42,93 +36,6 @@
                 </form>
               </td>
               <td class="cart-total">14€</td>
-              <td>
-                <button type="button" class="btn btn-danger">Eliminar</button>
-              </td>
-            </tr>
-            <!-- Item #2 -->
-            <tr>
-              <td>
-                <img src="plato2.jpg" alt="" />
-              </td>
-              <td class="cart-title">
-                <a href="#">Plato2</a>
-              </td>
-              <td>Descripción</td>
-              <td>20€</td>
-              <td>
-                <form action="#">
-                  <div class="qtyminus"></div>
-                  <input
-                    type="number"
-                    id="quantity"
-                    name="quantity"
-                    value="1"
-                    min="1"
-                    max="10"
-                  />
-                  <div class="qtyplus"></div>
-                </form>
-              </td>
-              <td class="cart-total">20€</td>
-              <td>
-                <button type="button" class="btn btn-danger">Eliminar</button>
-              </td>
-            </tr>
-            <!-- Item #3 -->
-            <tr>
-              <td>
-                <img src="plato3.jpg" alt="" />
-              </td>
-              <td class="cart-title">
-                <a href="#">Postre</a>
-              </td>
-              <td>Descripción</td>
-              <td>10,20€</td>
-              <td>
-                <form action="#">
-                  <div class="qtyminus"></div>
-                  <input
-                    type="number"
-                    id="quantity"
-                    name="quantity"
-                    value="1"
-                    min="1"
-                    max="10"
-                  />
-                  <div class="qtyplus"></div>
-                </form>
-              </td>
-              <td class="cart-total">10,20€</td>
-              <td>
-                <button type="button" class="btn btn-danger">Eliminar</button>
-              </td>
-            </tr>
-            <!-- Item #4 -->
-            <tr>
-              <td>
-                <img src="bebida.jpg" alt="" />
-              </td>
-              <td class="cart-title">
-                <a href="#">Bebida</a>
-              </td>
-              <td>Descripción</td>
-              <td>2€</td>
-              <td>
-                <form action="#">
-                  <div class="qtyminus"></div>
-                  <input
-                    type="number"
-                    id="quantity"
-                    name="quantity"
-                    value="1"
-                    min="1"
-                    max="10"
-                  />
-                  <div class="qtyplus"></div>
-                </form>
-              </td>
-              <td class="cart-total">2€</td>
               <td>
                 <button type="button" class="btn btn-danger">Eliminar</button>
               </td>
@@ -198,7 +105,7 @@
             </tbody>
           </table>
         </div>
-     </div>
+      </div>
     </div>
   </div>
 
@@ -227,5 +134,5 @@
   </div>
 </ng-template>
 
-<!-- BOTON PARA TESTEO -->
+<!-- BOTON -->
 <div class="btn-nav" (click)="openXl(content)">Cesto</div>

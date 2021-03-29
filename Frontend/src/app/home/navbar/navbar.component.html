@@ -1,35 +1,60 @@
-
 <nav class="navbar fixed-top navbar-expand navbar-light bg-light body-nav">
-    <div class="container-fluid">
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item equipo">
-            <a class="nav-link active ">V.I.M</a>
-          </li>
-          <li class="nav-item dropdown ">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Cuenta
-            </a>
-            <ul class="dropdown-menu desplegable" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item equipo">
+          <a
+            class="nav-link active btn-VIM"
+            href="https://github.com/VIM-equipo5"
+            >V.I.M</a
+          >
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Cuenta
+          </a>
+          <ul
+            class="dropdown-menu desplegable"
+            aria-labelledby="navbarDropdown"
+          >
+            <li>
+              <a class="dropdown-item">
                 <app-detalles-cuenta></app-detalles-cuenta>
-              </a></li>
-              <li><a class="dropdown-item">
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item">
                 <app-reservas-usuario></app-reservas-usuario>
-              </a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/login">Cerrar sesión</a></li>
-            </ul>
-          </li>
-          <li class="nav-item btn-cesto">
-            <app-cesto></app-cesto>
-          </li>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Buscar plato" aria-label="Search">
-          <button class="btn  btn-principal" type="submit">Buscar</button>
-        </form>
-      </div>
+              </a>
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a class="dropdown-item btn-logout" (click)="logout()"
+                >Cerrar sesión</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item btn-cesto">
+          <app-cesto></app-cesto>
+        </li>
+      </ul>
+      <form class="d-flex" [formGroup]="buscador">
+        <input
+          formControlName="productoBuscado"
+          class="form-control me-2"
+          type="search"
+          placeholder="Buscar plato"
+          aria-label="Search"
+        />
+        <button class="btn btn-principal" (click)="buscarProducto()">Buscar</button>
+      </form>
     </div>
-  </nav>
-  
+  </div>
+</nav>

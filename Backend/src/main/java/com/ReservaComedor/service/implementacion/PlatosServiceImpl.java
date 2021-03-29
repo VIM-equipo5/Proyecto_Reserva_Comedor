@@ -51,5 +51,11 @@ public class PlatosServiceImpl implements IPlatosService {
 	public void eliminarPlato(int idPlato) {
 		iPlatosDAO.deleteById(idPlato);
 	}
+
+	@Override
+	public List<Platos> platoXNombre(String nombrePlato) {
+		// TODO Auto-generated method stub
+		return iPlatosDAO.findByNombre(nombrePlato);
+	}
 	
 }

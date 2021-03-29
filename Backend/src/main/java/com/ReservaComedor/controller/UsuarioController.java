@@ -21,7 +21,7 @@ import com.ReservaComedor.service.implementacion.UsuarioServiceImpl;
  */
 
 @RestController
-@CrossOrigin(origins="*", methods= {RequestMethod.GET,RequestMethod.POST})
+@CrossOrigin(origins="*",methods= {RequestMethod.GET,RequestMethod.POST})
 @RequestMapping("/api")
 public class UsuarioController {
 

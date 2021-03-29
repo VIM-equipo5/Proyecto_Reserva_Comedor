@@ -8,10 +8,8 @@ package com.ReservaComedor.controller;
 
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import com.ReservaComedor.dto.Bebida;
 import com.ReservaComedor.service.implementacion.BebidaServiceImpl;
 
@@ -24,6 +22,7 @@ import com.ReservaComedor.service.implementacion.BebidaServiceImpl;
  */
 
 @RestController
+@CrossOrigin(origins="*",methods= {RequestMethod.GET,RequestMethod.POST})
 @RequestMapping("/api")
 public class BebidaController {
 
@@ -48,6 +47,11 @@ public class BebidaController {
 		bebidaBuscado = bebidaServiceImpl.bebidaXID(idBebida);
 		System.out.println("Bebida: " + bebidaBuscado);
 		return bebidaBuscado;
+	}
+	
+	@GetMapping("/bebidas/nombre/{nombreBebida}")
+	public List<Bebida> bebidaXNombre(@PathVariable(name="nombreBebida") String nombreBebida) {
+		return bebidaServiceImpl.bebidaXNombre(nombreBebida);
 	}
 	
 	@PutMapping("/bebidas/{idBebida}")

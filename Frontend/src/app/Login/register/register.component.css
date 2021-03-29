@@ -8,3 +8,13 @@
     background-size: cover;
 }
 
+
+.btn-block {
+  background-color: #e50076;
+  color: white;
+}
+
+.btn-block:hover {
+  background-color: white;
+  color: #e50076;
+}

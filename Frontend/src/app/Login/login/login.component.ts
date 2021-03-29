@@ -2,10 +2,10 @@ import { Component, Input, OnInit } from "@angular/core";
 import { FormArray, FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { LoginService } from "../login.service";
-import { Usuario } from "../usuario/model/usuarios";
-import { Rol } from "../usuario/model/rol";
+import { Usuario } from "../model/usuarios";
+import { Rol } from "../model/rol";
 import { NgxSpinnerService } from "ngx-spinner";
+import { LoginService } from "../service/login.service";
 
 @Component({
   selector: "app-login",

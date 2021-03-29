@@ -24,4 +24,6 @@ public interface IPlatosService {
 	
 	public void eliminarPlato(int IdPlato);	//Elimina el plato (DELETE)
 	
+	public List<Platos> platoXNombre(String nombrePlato);
+	
 }
