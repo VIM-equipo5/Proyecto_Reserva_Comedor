@@ -1,1 +1,54 @@
-<p>gestion-bebidas works!</p>
+<div class="panel panel-primary body-gestion-platos">
+    <div class="panel-heading">
+      <div class="container"><h2>Lista de platos</h2>
+      <button class="btn btn-info" (click)="crearBebida()" style="margin-bottom: 7px">
+        Crear nuevo plato
+      </button>
+      <button class="btn btn-info" style="margin-left: 2%; margin-bottom: 7px">
+        Buscar un plato
+      </button>
+    </div>
+    </div>
+    <div class="panel-body">
+      <!-- Inicio table -->
+      <div class="container contenedor-tabla">
+        <div class="row">
+          <div class="col-12">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre Bebida</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Imágen</th>
+                    <th scope="col">Precio Unitario</th>
+                    <th scope="col">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let bebida of bebidas | async"> 
+                    <th scope="row">{{bebida.idBebida}}</th>
+                    <td>{{bebida.nombre}}</td>
+                    <td>{{bebida.descripcion}}</td>
+                    <td>{{bebida.imagen}}</td>
+                    <td>{{bebida.precioUnitario}}</td>
+                    <td>
+                      <button class="btn btn-danger">Borrar</button>
+                    <button class="btn btn-info" style="margin-left: 10px">
+                      Actualizar
+                    </button>
+                    <button class="btn btn-info" style="margin-left: 10px">
+                      Detalles
+                    </button>
+                    </td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+    <!-- Fin table -->
+    </div>
+</div>
+</div>

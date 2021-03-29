@@ -6,16 +6,38 @@ import { Observable } from 'rxjs/internal/Observable';
   providedIn: 'root'
 })
 export class GestionService {
+
   private api = "http://localhost:8080/api";
+
   constructor(private http: HttpClient) { }
 
+  /*Platos*/
   getPlatos(): Observable<any>{
     return this.http.get(`${this.api}/platos`);
   }
 
-  /*TO DO getBebidas */
+  //getPlatos(id: string): Observable<any>{
+  //  return this.http.get(`${this.api}/platos/${id}`);
+  //}
 
-  /*TO DO getReservas */
+  //postPlatos
 
-  /*TO DO getUsuarios */
+  /*Bebidas*/
+  getBebidas(): Observable<any>{
+    return this.http.get(`${this.api}/bebidas`);
+  }
+
+  //getBebidas(id: string): Observable<any>{
+  //  return this.http.get(`${this.api}/bebidas/${id}`);
+  //}
+
+  /*Reservas*/
+  getReservas(): Observable<any>{
+    return this.http.get(`${this.api}/reservas`);
+  }
+
+  /*Usuarios*/
+  getUsuarios(): Observable<any>{
+    return this.http.get(`${this.api}/usuarios`);
+  }
 }

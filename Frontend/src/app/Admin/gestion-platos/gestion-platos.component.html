@@ -20,19 +20,23 @@
                 <tr>
                   <th scope="col">Id</th>
                   <th scope="col">Nombre Plato</th>
-                  <th scope="col">Precio Unitario</th>
+                  <th scope="col">Descripción</th>
                   <th scope="col">Tipo</th>
+                  <th scope="col">Precio Unitario</th>
+                  <th scope="col">Imagen</th>
+                  <th scope="col">Categoría</th>
                   <th scope="col">Acciones</th>
                 </tr>
               </thead>
               <tbody>
-                  <!-- Hay que implementar que de manera recursiva
-                  se obtengan los datos y se pinten n veces-->
                 <tr *ngFor="let plato of platos | async"> 
                   <th scope="row">{{plato.idPlato}}</th>
                   <td>{{plato.nombre}}</td>
-                  <td>{{plato.precioUnitario}}</td>
+                  <td>{{plato.descripcion}}</td>
                   <td>{{plato.tipo}}</td>
+                  <td>{{plato.precioUnitario}}</td>
+                  <td>{{plato.imagen}}</td>
+                  <td>{{plato.categoria}}</td>
                   <td>
                     <button class="btn btn-danger">Borrar</button>
                   <button class="btn btn-info" style="margin-left: 10px">
@@ -43,15 +47,12 @@
                   </button>
                   </td>
                 </tr>
-
-                <!-- Esto es un ejemplo, deberá borrarse lo de abajo-->
-            
-                    </tbody>
-                  </table>
-              </div>
-            </div>
+                </tbody>
+              </table>
           </div>
-          <!-- Fin table -->
         </div>
       </div>
+      <!-- Fin table -->
     </div>
+  </div>
+</div>
