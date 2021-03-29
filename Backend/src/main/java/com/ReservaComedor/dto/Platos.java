@@ -53,7 +53,7 @@ public class Platos {
 		IdPlato = idPlato;
 	}
 
-	public String getnombre() {
+	public String getNombre() {
 		return nombre;
 	}
 
