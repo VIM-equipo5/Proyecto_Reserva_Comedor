@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
+
+/* services */
 import { GestionService } from '../service/gestion.service';
-import { Usuario } from '../models/Usuario';
+
+/* models */
+import { Usuario } from 'src/app/model/Usuarios';
 
 @Component({
   selector: 'app-gestion-usuarios',

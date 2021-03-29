@@ -144,6 +144,8 @@ public class Bebida {
 	@Override
 	public String toString() {
 		return "Bebida [idBebida=" + idBebida + ", nombre=" + nombre + ", precioUnitario=" + precioUnitario
-				+ ", imagen=" + imagen + ", descripcion=" + descripcion + ", ofrecerBebida=" + ofrecerBebida + "]";
+				+ ", imagen=" + imagen + ", descripcion=" + descripcion + "]";
 	}
+
+
 }

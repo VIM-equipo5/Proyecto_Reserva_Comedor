@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
+
+/* services */
 import { GestionService } from '../service/gestion.service';
-import { Reserva } from '../models/Reserva';
+
+/* models */
+import { Reserva } from 'src/app/model/Reserva';
 
 @Component({
   selector: 'app-gestion-reservas',

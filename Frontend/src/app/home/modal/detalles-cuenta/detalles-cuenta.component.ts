@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { Usuario } from 'src/app/Login/model/usuarios';
+import { Usuario } from 'src/app/model/Usuarios';
 
 @Component({
   selector: 'app-detalles-cuenta',
