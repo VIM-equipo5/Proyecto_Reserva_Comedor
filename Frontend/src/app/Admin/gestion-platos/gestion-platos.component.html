@@ -1,13 +1,18 @@
 <div class="panel panel-primary body-gestion-platos">
   <div class="panel-heading">
-    <div class="container"><h2>Lista de platos</h2>
-    <button class="btn btn-info" (click)="crearPlato()" style="margin-bottom: 7px">
-      Crear nuevo plato
-    </button>
-    <button class="btn btn-info" style="margin-left: 2%; margin-bottom: 7px">
-      Buscar un plato
-    </button>
-  </div>
+    <div class="container">
+      <h2>Lista de platos</h2>
+      <button
+        class="btn btn-info"
+        (click)="crearPlato()"
+        style="margin-bottom: 7px"
+      >
+        Crear nuevo plato
+      </button>
+      <button class="btn btn-info" style="margin-left: 2%; margin-bottom: 7px">
+        Buscar un plato
+      </button>
+    </div>
   </div>
   <div class="panel-body">
     <!-- Inicio table -->
@@ -29,26 +34,23 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let plato of platos | async"> 
-                  <th scope="row">{{plato.idPlato}}</th>
-                  <td>{{plato.nombre}}</td>
-                  <td>{{plato.descripcion}}</td>
-                  <td>{{plato.tipo}}</td>
-                  <td>{{plato.precioUnitario}}</td>
-                  <td>{{plato.imagen}}</td>
-                  <td>{{plato.categoria}}</td>
+                <tr *ngFor="let plato of platos | async">
+                  <td scope="row">{{ plato.idPlato }}</td>
+                  <td>{{ plato.nombre }}</td>
+                  <td>{{ plato.descripcion }}</td>
+                  <td>{{ plato.tipo }}</td>
+                  <td>{{ plato.precioUnitario }}</td>
+                  <td>{{ plato.imagen }}</td>
+                  <td>{{ plato.categoria.nombre}}</td>
                   <td>
                     <button class="btn btn-danger">Borrar</button>
-                  <button class="btn btn-info" style="margin-left: 10px">
-                    Actualizar
-                  </button>
-                  <button class="btn btn-info" style="margin-left: 10px">
-                    Detalles
-                  </button>
+                    <button class="btn btn-info" style="margin-left: 10px">
+                      Actualizar
+                    </button>
                   </td>
                 </tr>
-                </tbody>
-              </table>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>

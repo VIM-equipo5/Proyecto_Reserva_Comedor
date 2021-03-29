@@ -21,7 +21,9 @@
                   <th scope="col">Fecha Reserva</th>
                   <th scope="col">Fecha Reservada</th>
                   <th scope="col">Id Usuario</th>
-                  <th scope="col">Franja Horaria</th>
+                  <th scope="col">Id Franja Horaria</th>
+                  <th scope="col">Franja Horaria Inicio</th>
+                  <th scope="col">Franja Horaria Fin</th>
                   <th scope="col">Acciones</th>
                 </tr>
               </thead>
@@ -32,16 +34,12 @@
                   <td>{{reserva.precioTotal}}</td>
                   <td>{{reserva.fechaReserva}}</td>
                   <td>{{reserva.fechaReservada}}</td>
-                  <td>{{reserva.usuario}}</td>
-                  <td>{{reserva.franjaHoraria}}</td>
+                  <td>{{reserva.usuario.idUsuario}}</td>
+                  <td>{{reserva.franjaHoraria.idFranja}}</td>
+                  <td>{{reserva.franjaHoraria.franjaInicio}}</td>
+                  <td>{{reserva.franjaHoraria.franjaFin}}</td>
                   <td>
                     <button class="btn btn-danger">Borrar</button>
-                  <button class="btn btn-info" style="margin-left: 10px">
-                    Actualizar
-                  </button>
-                  <button class="btn btn-info" style="margin-left: 10px">
-                    Detalles
-                  </button>
                   </td>
                 </tr>
               </tbody>
