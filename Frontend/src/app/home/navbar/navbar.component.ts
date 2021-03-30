@@ -10,6 +10,8 @@ import { BuscadorService } from "../service/buscador/buscador.service";
   styleUrls: ["./navbar.component.css"],
 })
 export class NavbarComponent {
+  @Input()
+  public cesto!: Array<any>;
   
   constructor(
     private router: Router,

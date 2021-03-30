@@ -14,13 +14,12 @@
               <th>Nombre</th>
               <th>Precio</th>
               <th>Cantidad</th>
-              <th>Total</th>
             </tr>
 
             <!-- Item #1 -->
-            <tr>
-              <td>Nombre</td>
-              <td>14€</td>
+            <tr *ngFor="let producto of cesto">
+              <td>{{producto.nombre}}</td>
+              <td>{{producto.precioUnitario}}</td>
               <td>
                 <form action="#">
                   <div class="qtyminus"></div>
@@ -35,7 +34,6 @@
                   <div class="qtyplus"></div>
                 </form>
               </td>
-              <td class="cart-total">14€</td>
               <td>
                 <button type="button" class="btn btn-danger">Eliminar</button>
               </td>
@@ -83,7 +81,7 @@
               </tr>
               <tr>
                 <th>Precio total:</th>
-                <td>46,20€</td>
+                <td>{{totalPrecio}}</td>
               </tr>
               <tr>
                 <th>Comensales:</th>
@@ -118,6 +116,7 @@
     <button
       type="button"
       class="btn btn-principal"
+      (click)="finalizarPedido()"
       (click)="modal.close('Save click')"
     >
       Finalizar pedido

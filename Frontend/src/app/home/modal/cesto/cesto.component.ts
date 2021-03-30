@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
@@ -17,10 +17,27 @@ import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 export class CestoComponent {
   @Input()
   public cesto!: Array<any>;
+  public totalPrecio!: Number;
 
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal) {
+    this.cesto = new Array<any>();    
+  }
+
+  calcularPrecioTotal(){
+    debugger
+    let total = 0;
+    this.cesto.forEach(producto => total += producto.precioUnitario);
+    this.totalPrecio = total;
+  }
+
+  finalizarPedido(){
+    /* Peticióna la base de datos */
+    console.log("hola")
+  }
 
   openXl(content: any) {
+    if(this.cesto.length > 0)
+      this.calcularPrecioTotal();
     const modalRef = this.modalService.open(content, {
       backdropClass: "backdrop",
       size: "xl",
