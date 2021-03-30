@@ -1,5 +1,5 @@
 import { ThrowStmt } from "@angular/compiler";
-import { Component, Input, OnInit, Output } from "@angular/core";
+import { Component, Input, OnChanges, OnInit, Output, SimpleChanges } from "@angular/core";
 import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { Observable, Subject } from "rxjs";
 import { filter, take, takeWhile, toArray } from "rxjs/operators";
@@ -41,6 +41,7 @@ export class HomeComponent implements OnInit {
     this.toCesto = new Array();
   }
 
+  /* Peticiónes  */
   ngOnInit(): void {
     this.obsPlatos = this.gestionService.getPlatos();
     this.bebidas = this.gestionService.getBebidas();
@@ -60,6 +61,7 @@ export class HomeComponent implements OnInit {
     };
   }
 
+  /* Método para filtrar los platos por el tipo de categoría */
   filtrarPor(categoria: Number): Observable<Plato[]> {
     return this.obsPlatos.pipe(
       map((listaPlatos: any[]) =>
@@ -68,18 +70,19 @@ export class HomeComponent implements OnInit {
     );
   }
 
+  /* Método que agrega productos al cesto */
   onClickProducto(producto: any){
     this.toCesto.push(producto);
     console.log(this.toCesto)
-    const modalRef = this.modalService.open(CestoComponent);
-    modalRef.componentInstance.productos = this.toCesto;
   }
 
+  /* Método que invoca al modal del propio producto */
   masDestalles(producto: any) {
     this.elegido = producto;
     this.open();
   }
 
+  /* Método que invoca un modal con template de un producto */
   open() {
     const modalRef = this.modalService.open(ProductoComponent, {
       backdropClass: "backdrop",
@@ -90,6 +93,7 @@ export class HomeComponent implements OnInit {
     modalRef.componentInstance.elegido = this.elegido;
   }
 
+  /* Método que lleva a la cima de la web */
   goToTop(){
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
