@@ -30,4 +30,8 @@ export class GestionBebidasComponent implements OnInit {
     console.log("crear bebidas")
   }
 
+  buscarBebida() {
+    
+  }
+
 }

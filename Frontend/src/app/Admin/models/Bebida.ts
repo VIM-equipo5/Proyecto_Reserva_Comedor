@@ -1,5 +1,5 @@
 export class Bebida {
-    idBebida!: Number;
+    idBebida?: Number;
     nombre!: String;
     precioUnitario!: Number;
     imagen!: String;

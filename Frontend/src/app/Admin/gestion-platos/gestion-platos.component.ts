@@ -26,5 +26,9 @@ export class GestionPlatosComponent implements OnInit {
   crearPlato(){
     console.log("crear platos")
   }
+
+  buscarPlato() {
+    
+  }
   
 }
