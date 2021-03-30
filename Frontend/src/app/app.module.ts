@@ -23,14 +23,11 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { GestionBebidasComponent } from './Admin/gestion-bebidas/gestion-bebidas.component';
 import { GestionService } from './Admin/service/gestion.service';
-<<<<<<< HEAD
 import { CrearPlatoComponent } from './Admin/modal/crear-plato/crear-plato.component';
 import { CrearBebidaComponent } from './Admin/modal/crear-bebida/crear-bebida.component';
 
-=======
 import { CardsComponent } from './home/cards/cards/cards.component';
 import { DataTablesModule } from 'angular-datatables';
->>>>>>> 0db2f580dfe08711243965be3e410bb497133c3e
 
 @NgModule({
   declarations: [
@@ -51,12 +48,9 @@ import { DataTablesModule } from 'angular-datatables';
     ReservasUsuarioComponent,
     NotFoundComponent,
     GestionBebidasComponent,
-<<<<<<< HEAD
     CrearPlatoComponent,
-    CrearBebidaComponent
-=======
-    CardsComponent,
->>>>>>> 0db2f580dfe08711243965be3e410bb497133c3e
+    CrearBebidaComponent,
+    CardsComponent
   ],
   imports: [
     BrowserModule,

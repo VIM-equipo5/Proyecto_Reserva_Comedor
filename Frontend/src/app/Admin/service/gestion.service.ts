@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
-import { Bebida } from '../models/Bebida';
+import { Bebida } from 'src/app/model/Bebida';
+import { Plato } from 'src/app/model/Plato';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,17 @@ export class GestionService {
   //  return this.http.get(`${this.api}/platos/${id}`);
   //}
 
-  //postPlatos
+  eliminarPlatos(idPlato: Number) {
+    return this.http.delete(`${this.api}/platos/${idPlato}`);
+  }
+
+  actualizarPlato(idPlato: Number, platoActualizado: Plato): Observable<any> {
+    return this.http.put(`${this.api}/platos/${idPlato}`, platoActualizado);
+  }
+
+  guardarPlato(plato: Plato) {
+    return this.http.post(`${this.api}/platos`, plato);
+  }
 
   /*Bebidas*/
   getBebidas(): Observable<any>{
@@ -32,15 +43,15 @@ export class GestionService {
   //  return this.http.get(`${this.api}/bebidas/${id}`);
   //}
 
-  eliminarBebidas(idBebida: Number) {
+  eliminarBebida(idBebida: Number) {
     return this.http.delete(`${this.api}/bebidas/${idBebida}`);
   }
 
-  actualizarBebidas(idBebida: Number, bebidaActualizada: Bebida): Observable<any> {
+  actualizarBebida(idBebida: Number, bebidaActualizada: Bebida): Observable<any> {
     return this.http.put(`${this.api}/bebidas/${idBebida}`, bebidaActualizada);
   }
 
-  guardarBebidas(bebida: Bebida) {
+  guardarBebida(bebida: Bebida) {
     return this.http.post(`${this.api}/bebidas`, bebida);
   }
 

@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { Categoria } from 'src/app/model/Categoria';
+import { Plato } from 'src/app/model/Plato';
+import { GestionService } from '../../service/gestion.service';
 
 @Component({
   selector: 'app-crear-plato',
@@ -16,7 +19,7 @@ import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 })
 export class CrearPlatoComponent implements OnInit {
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, private gestionService: GestionService) { }
 
   ngOnInit(): void {
 
@@ -28,6 +31,27 @@ export class CrearPlatoComponent implements OnInit {
       size: "sm",
       centered: true
     });
+  }
+
+  plato: Plato = {
+    descripcion: '',
+    imagen: '',
+    nombre: '',
+    precioUnitario: 0,
+    idPlato: 0,
+    tipo: '',
+    idCategoria: 0
+  };
+
+  guardarNuevoPlato() {
+    delete this.plato.idPlato;
+    this.gestionService.guardarPlato(this.plato)
+    .subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.error(err)
+    )
   }
 
 }

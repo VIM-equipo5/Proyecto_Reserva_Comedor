@@ -1,12 +1,12 @@
 import { Categoria } from "./Categoria";
 
 export class Plato {
-        categoria!: Categoria;
+        categoria?: Categoria;
         descripcion!: String;
-        imagen!: String;
+        imagen?: String;
         nombre!: String;
         precioUnitario!: Number;
-        idPlato!: Number;
+        idPlato?: Number;
         tipo!: String;
         idCategoria!: Number;
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Bebida } from 'src/app/Admin/models/Bebida';
+import { Bebida } from 'src/app/model/Bebida';
 import { GestionService } from 'src/app/Admin/service/gestion.service';
 
 @Component({
@@ -16,9 +16,10 @@ import { GestionService } from 'src/app/Admin/service/gestion.service';
     `,
   ],
 })
+
 export class CrearBebidaComponent implements OnInit {
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, private gestionService: GestionService) { }
 
   ngOnInit(): void {
 
@@ -40,9 +41,15 @@ export class CrearBebidaComponent implements OnInit {
     imagen: ''
   };
 
-  //guardarNuevaBebida() {
-  //  delete this.bebida.idBebida;
-  //  this.gestion
-  //}
+  guardarNuevaBebida() {
+    delete this.bebida.idBebida;
+    this.gestionService.guardarBebida(this.bebida)
+    .subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.error(err)
+    )
+  }
 
 }
