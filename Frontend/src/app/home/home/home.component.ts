@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from "@angular/core";
-import { Observable } from "rxjs";
+import { ThrowStmt } from "@angular/compiler";
+import { Component, Input, OnInit, Output } from "@angular/core";
+import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { Observable, Subject } from "rxjs";
 import { filter, take, takeWhile, toArray } from "rxjs/operators";
 import { map } from "rxjs/operators";
 
@@ -10,6 +12,8 @@ import { GestionService } from "src/app/Admin/service/gestion.service";
 import { Bebida } from "src/app/model/Bebida";
 import { Categoria } from "src/app/model/Categoria";
 import { Plato } from "src/app/model/Plato";
+import { CestoComponent } from "../modal/cesto/cesto.component";
+import { ProductoComponent } from "../modal/producto/producto.component";
 
 @Component({
   selector: "app-home",
@@ -17,8 +21,8 @@ import { Plato } from "src/app/model/Plato";
   styleUrls: ["./home.component.css"],
 })
 export class HomeComponent implements OnInit {
-  @Input()
-  elegido!: String;
+  public elegido!: any;
+  public toCesto!: Array<any>;
 
   entrantes!: Observable<Plato[]>;
   primerosPlatos!: Observable<Plato[]>;
@@ -26,27 +30,68 @@ export class HomeComponent implements OnInit {
   postres!: Observable<Plato[]>;
   bebidas!: Observable<Bebida[]>;
   obsPlatos!: Observable<Plato[]>;
-  
-  constructor(private gestionService: GestionService) {}
+
+  dtOptions: DataTables.Settings = {};
+  dtTrigger: Subject<any> = new Subject<any>();
+
+  constructor(
+    private gestionService: GestionService,
+    private modalService: NgbModal
+  ) {
+    this.toCesto = new Array();
+  }
 
   ngOnInit(): void {
     this.obsPlatos = this.gestionService.getPlatos();
     this.bebidas = this.gestionService.getBebidas();
+    this.dtTrigger.next();
 
     this.entrantes = this.filtrarPor(1);
     this.primerosPlatos = this.filtrarPor(2);
     this.segundosPlatos = this.filtrarPor(3);
     this.postres = this.filtrarPor(4);
-    setInterval(function(){ 
-      document.getElementById("btn-hide")?.click()
-      ;}, 1000);
+    setInterval(function () {
+      document.getElementById("btn-hide")?.click();
+    }, 1000);
+
+    this.dtOptions = {
+      pagingType: "full_numbers",
+      pageLength: 2,
+    };
   }
 
   filtrarPor(categoria: Number): Observable<Plato[]> {
     return this.obsPlatos.pipe(
-        map((listaPlatos: any[]) =>
-          listaPlatos.filter((plato) => plato.categoria.idCategoria == categoria)
-        )
-      );
+      map((listaPlatos: any[]) =>
+        listaPlatos.filter((plato) => plato.categoria.idCategoria == categoria)
+      )
+    );
+  }
+
+  onClickProducto(producto: any){
+    this.toCesto.push(producto);
+    console.log(this.toCesto)
+    const modalRef = this.modalService.open(CestoComponent);
+    modalRef.componentInstance.productos = this.toCesto;
+  }
+
+  masDestalles(producto: any) {
+    this.elegido = producto;
+    this.open();
+  }
+
+  open() {
+    const modalRef = this.modalService.open(ProductoComponent, {
+      backdropClass: "backdrop",
+      size: "xl",
+      centered: true,
+      scrollable: true,
+    });
+    modalRef.componentInstance.elegido = this.elegido;
+  }
+
+  goToTop(){
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
   }
 }
