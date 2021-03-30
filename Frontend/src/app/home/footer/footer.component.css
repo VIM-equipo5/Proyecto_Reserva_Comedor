@@ -1,5 +1,8 @@
 .body-footer{
     margin-top: 40px;
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
 }
 
 .footer-background{

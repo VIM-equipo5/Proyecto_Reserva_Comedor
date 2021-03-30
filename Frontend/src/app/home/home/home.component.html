@@ -2,41 +2,55 @@
 
 <app-navbar></app-navbar>
 
+
 <!-- Page Content -->
 <div class="container body-home">
-
   <!-- Jumbotron Header -->
   <header class="jumbotron my-4 cabecera-bienvenida">
     <h1 class="display-3">Realice su reserva</h1>
-    <p class="lead">Elija los platos que deseé, elija la cantidad, los comensales y cuando desea tomar su almuerzo.</p>
-    <p class="lead">Todo ello con los aforos limitados para cuidar de su salud y optimizar su tiempo.</p>
+    <p class="lead">
+      Elija los platos que deseé, elija la cantidad, los comensales y cuando
+      desea tomar su almuerzo.
+    </p>
+    <p class="lead">
+      Todo ello con los aforos limitados para cuidar de su salud y optimizar su
+      tiempo.
+    </p>
   </header>
-  <app-producto></app-producto> 
+
   <!-- Page Features -->
+  <app-producto></app-producto>
   <div class="container">
-
-    <div class="">
-      <app-slider1></app-slider1>
+    <div class="row">
+      <div class="col-sm">
+        <h3>Entrantes</h3>
+        <app-slider [productos]="entrantes"></app-slider>
+      </div>
+      <div class="col-sm">
+        <h3>Primeros</h3>
+        <app-slider [productos]="primerosPlatos"></app-slider>
+      </div>
     </div>
-
-    <div class="">
-      <app-slider2></app-slider2>
+    <!-- /.row -->
+    <div class="row">
+      <div class="col-sm">
+        <h3>Segundos</h3>
+        <app-slider [productos]="segundosPlatos"></app-slider>
+      </div>
+      <div class="col-sm">
+        <h3>Postres</h3>
+        <app-slider [productos]="postres"></app-slider>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <h3>Bebidas</h3>
+          <app-slider [productos]="bebidas"></app-slider>
+        </div>
+      </div>
     </div>
-
-    <div class="">
-      <app-slider3></app-slider3>
-    </div>
-
-    <div class="">
-      <app-slider4></app-slider4>
-    </div>
-
-    <div class="">
-      <app-slider5></app-slider5>
-    </div>
-
   </div>
-  <!-- /.row -->
+  <!-- /.container -->
 </div>
-<!-- /.container -->
+<button id="btn-hide" style="display: none;"></button>
 <app-footer></app-footer>
+
