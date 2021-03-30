@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
@@ -32,6 +32,8 @@ export class CestoComponent {
 
   finalizarPedido(){
     /* Peticióna la base de datos */
+
+    /* Reinicio de variable local del cesto */
     console.log("hola")
   }
 
