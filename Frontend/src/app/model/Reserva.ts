@@ -1,5 +1,5 @@
-import { FranjaHoraria } from "./franjaHoraria";
-import { Usuario } from "./Usuario";
+import { Usuario } from "src/app/model/Usuarios";
+import { FranjaHoraria } from "./FranjaHoraria";
 
 export class Reserva {
     idReserva!: Number;

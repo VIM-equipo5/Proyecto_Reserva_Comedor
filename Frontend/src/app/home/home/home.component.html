@@ -1,42 +1,278 @@
 <!-- Navigation -->
 
-<app-navbar></app-navbar>
+<app-navbar [cesto]="toCesto"></app-navbar>
 
 <!-- Page Content -->
 <div class="container body-home">
-
   <!-- Jumbotron Header -->
   <header class="jumbotron my-4 cabecera-bienvenida">
     <h1 class="display-3">Realice su reserva</h1>
-    <p class="lead">Elija los platos que deseé, elija la cantidad, los comensales y cuando desea tomar su almuerzo.</p>
-    <p class="lead">Todo ello con los aforos limitados para cuidar de su salud y optimizar su tiempo.</p>
+    <p class="lead">
+      Elija los platos que deseé, elija la cantidad, los comensales y cuando
+      desea tomar su almuerzo.
+    </p>
+    <p class="lead">
+      Todo ello con los aforos limitados para cuidar de su salud y optimizar su
+      tiempo.
+    </p>
   </header>
-  <app-producto></app-producto> 
+
   <!-- Page Features -->
+
   <div class="container">
-
-    <div class="">
-      <app-slider1></app-slider1>
+    <div class="panel panel-primary body-tabla">
+      <div class="panel-heading header-tabla">
+        <div class="container"><h2>Entrantes</h2></div>
+      </div>
+      <div class="panel-body">
+        <!-- Inicio table -->
+        <div class="container contenedor-tabla">
+          <div class="row">
+            <div class="col-12">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Descripción</th>
+                      <th scope="col">Imágen</th>
+                      <th scope="col">Precio Unitario</th>
+                      <th scope="col">Mas detalles</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      class="fila"
+                      *ngFor="let entrante of entrantes | async"
+                      (click)="onClickProducto(entrante)" 
+                    >
+                      <td>{{ entrante.nombre }}</td>
+                      <td>{{ entrante.descripcion }}</td>
+                      <td><img [src]="entrante.imagen" /></td>
+                      <td>{{ entrante.precioUnitario }}</td>
+                      <td>
+                        <button
+                          (click)="masDestalles(entrante)"
+                          class="btn btn-principal"
+                          [id]="entrante.nombre"
+                        >
+                          Detalles
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- Fin table -->
+        </div>
+      </div>
     </div>
 
-    <div class="">
-      <app-slider2></app-slider2>
+    <div class="panel panel-primary body-tabla">
+      <div class="panel-heading header-tabla">
+        <div class="container"><h2>Primer Plato</h2></div>
+      </div>
+      <div class="panel-body">
+        <!-- Inicio table -->
+        <div class="container contenedor-tabla">
+          <div class="row">
+            <div class="col-12">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Descripción</th>
+                      <th scope="col">Imágen</th>
+                      <th scope="col">Precio Unitario</th>
+                      <th scope="col">Mas detalles</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      class="fila"
+                      *ngFor="let primerPlato of primerosPlatos | async"
+                      (click)="onClickProducto(primerPlato)" 
+                      [id]="primerPlato.nombre"
+                    >
+                      <td>{{ primerPlato.nombre }}</td>
+                      <td>{{ primerPlato.descripcion }}</td>
+                      <td><img [src]="primerPlato.imagen" /></td>
+                      <td>{{ primerPlato.precioUnitario }}</td>
+                      <td>
+                        <button
+                          (click)="masDestalles(primerPlato)"
+                          class="btn btn-principal"
+                        >
+                          Detalles
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- Fin table -->
+        </div>
+      </div>
     </div>
 
-    <div class="">
-      <app-slider3></app-slider3>
+    <div class="panel panel-primary body-tabla">
+      <div class="panel-heading header-tabla">
+        <div class="container"><h2>Segundo Plato</h2></div>
+      </div>
+      <div class="panel-body">
+        <!-- Inicio table -->
+        <div class="container contenedor-tabla">
+          <div class="row">
+            <div class="col-12">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Descripción</th>
+                      <th scope="col">Imágen</th>
+                      <th scope="col">Precio Unitario</th>
+                      <th scope="col">Mas detalles</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      class="fila"
+                      *ngFor="let segundoPlato of segundosPlatos | async"
+                      (click)="onClickProducto(segundoPlato)" 
+                      [id]="segundoPlato.nombre"
+                    >
+                      <td>{{ segundoPlato.nombre }}</td>
+                      <td>{{ segundoPlato.descripcion }}</td>
+                      <td><img [src]="segundoPlato.imagen" /></td>
+                      <td>{{ segundoPlato.precioUnitario }}</td>
+                      <td>
+                        <button
+                          (click)="masDestalles(segundoPlato)"
+                          class="btn btn-principal"
+                        >
+                          Detalles
+                        </button>
+                      </td>                     
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- Fin table -->
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-primary body-tabla">
+      <div class="panel-heading header-tabla">
+        <div class="container"><h2>Postre</h2></div>
+      </div>
+      <div class="panel-body">
+        <!-- Inicio table -->
+        <div class="container contenedor-tabla">
+          <div class="row">
+            <div class="col-12">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Descripción</th>
+                      <th scope="col">Imágen</th>
+                      <th scope="col">Precio Unitario</th>
+                      <th scope="col">Mas detalles</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      class="fila"
+                      *ngFor="let postre of postres | async"
+                      (click)="onClickProducto(postre)" 
+                      [id]="postre.nombre"
+                    >
+                      <td>{{ postre.nombre }}</td>
+                      <td>{{ postre.descripcion }}</td>
+                      <td><img [src]="postre.imagen" /></td>
+                      <td>{{ postre.precioUnitario }}</td>
+                      <td>
+                        <button
+                          (click)="masDestalles(postre)"
+                          class="btn btn-principal"
+                        >
+                          Detalles
+                        </button>
+                      </td>    
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- Fin table -->
+        </div>
+      </div>
     </div>
 
-    <div class="">
-      <app-slider4></app-slider4>
+    <div class="panel panel-primary body-tabla">
+      <div class="panel-heading header-tabla">
+        <div class="container"><h2>Bebidas</h2></div>
+      </div>
+      <div class="panel-body">
+        <!-- Inicio table -->
+        <div class="container contenedor-tabla">
+          <div class="row">
+            <div class="col-12">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Nombre Bebida</th>
+                      <th scope="col">Descripción</th>
+                      <th scope="col">Imágen</th>
+                      <th scope="col">Precio Unitario</th>
+                      <th scope="col">Mas detalles</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      class="fila"
+                      *ngFor="let bebida of bebidas | async"
+                      (click)="onClickProducto(bebida)" 
+                      [id]="bebida.nombre"
+                    >
+                      <td>{{ bebida.nombre }}</td>
+                      <td>{{ bebida.descripcion }}</td>
+                      <td><img [src]="bebida.imagen" /></td>
+                      <td>{{ bebida.precioUnitario }}</td>
+                      <td>
+                        <button
+                          (click)="masDestalles(bebida)"
+                          class="btn btn-principal"
+                        >
+                          Detalles
+                        </button>
+                      </td> 
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- Fin table -->
+        </div>
+      </div>     
     </div>
-
-    <div class="">
-      <app-slider5></app-slider5>
+    <div class="container btn-goToTop" >
+      <button class="btn btn-principal" (click)="goToTop()">Volver arriba</button>
     </div>
-
+    
   </div>
-  <!-- /.row -->
+  <!-- /.container -->
 </div>
-<!-- /.container -->
 <app-footer></app-footer>

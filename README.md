@@ -74,6 +74,7 @@ POST      /api/usuarios
 GET       /api/usuarios/{id}
 PUT       /api/usuarios/{id}
 DELETE    /api/usuarios/{id}
+GET       /usuarios/nombre/{nombreUsuario}
 
 Bebida
 GET       /api/bebidas
@@ -81,6 +82,7 @@ POST      /api/bebidas
 GET       /api/bebidas/{id}
 PUT       /api/bebidas/{id}
 DELETE    /api/bebidas/{id}
+GET       /bebidas/nombre/{nombreBebida}
 
 Categoria
 GET       /api/categorias
@@ -116,6 +118,7 @@ POST      /api/platos
 GET       /api/platos/{id}
 PUT       /api/platos/{id}
 DELETE    /api/platos/{id}
+GET       /platos/nombre/{nombrePlato}
 
 Reserva
 GET       /api/reservas

@@ -10,10 +10,13 @@ import { BuscadorService } from "../service/buscador/buscador.service";
   styleUrls: ["./navbar.component.css"],
 })
 export class NavbarComponent {
+  @Input()
+  public cesto!: Array<any>;
+  
   constructor(
     private router: Router,
     private buscadorService: BuscadorService,
-    private modalService: NgbModal,
+    private modalService: NgbModal
   ) {}
 
   buscador = new FormGroup({
@@ -24,29 +27,16 @@ export class NavbarComponent {
 
   buscarProducto() {
     const productoBuscado = this.buscador.get("productoBuscado") as FormArray;
-
-    this.buscadorService
-      .getProducto("platos", productoBuscado.value)
-      .subscribe((res: any) => {
-        try {
-          // Si no hay error, valor encontrado
-
-        } catch (error) {
-          // Ecc, lanzo siguiente peticion para bebidas
-
-          this.buscadorService
-            .getProducto("bebidas", productoBuscado.value)
-            .subscribe((res: any) => {
-              try{
-                // Si no hay error, valor encontrado
-
-              } catch(error){
-                // No encontrado ningun valor valido, Modal con distinto msg
-                this.open();
-              }
-            });
-        }
+    const idProducto = productoBuscado.value || "body";
+    const element =
+      document.getElementById(`${idProducto}`) ||
+      document.getElementById(`#index-body`);
+    if (element) {
+      element.scrollIntoView({
+        block: "center",
+        behavior: "smooth",
       });
+    }
   }
 
   open() {
@@ -54,13 +44,12 @@ export class NavbarComponent {
       centered: true,
     });
   }
-  
+
   logout() {
     window.sessionStorage.removeItem("user");
     this.router.navigate(["/"]);
   }
 }
-
 
 @Component({
   selector: "ngbd-modal-content",
@@ -75,9 +64,7 @@ export class NavbarComponent {
       ></button>
     </div>
     <div class="modal-body">
-      <p style="text-align=center">
-        No se ha encontrado el producto buscado.
-      </p>
+      <p style="text-align=center">No se ha encontrado el producto buscado.</p>
     </div>
     <div class="modal-footer">
       <button

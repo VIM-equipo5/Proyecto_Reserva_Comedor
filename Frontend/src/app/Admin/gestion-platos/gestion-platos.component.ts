@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
+
+/* services */
 import { GestionService } from '../service/gestion.service';
-import { Plato } from '../models/Plato';
+
+/* models */
+import { Plato } from 'src/app/model/Plato';
 
 @Component({
   selector: 'app-gestion-platos',

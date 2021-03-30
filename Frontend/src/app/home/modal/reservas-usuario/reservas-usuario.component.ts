@@ -1,13 +1,21 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { Observable } from 'rxjs/internal/Observable';
-import { Reserva } from '../../models/Reserva';
-import { ReservaService } from '../../service/modal/reservas-usuario/reserva.service';
+import { Observable } from "rxjs/internal/Observable";
+import { filter } from "rxjs/operators";
+import { map } from "rxjs/operators";
+
+
+/* services */
+import { ReservaService } from "../../service/modal/reservas-usuario/reserva.service";
+
+/* models */
+import { Reserva } from "src/app/model/Reserva";
+import { Usuario } from "src/app/model/Usuarios";
 
 @Component({
-  selector: 'app-reservas-usuario',
-  templateUrl: './reservas-usuario.component.html',
-  styleUrls: ['./reservas-usuario.component.css'],
+  selector: "app-reservas-usuario",
+  templateUrl: "./reservas-usuario.component.html",
+  styleUrls: ["./reservas-usuario.component.css"],
   encapsulation: ViewEncapsulation.None,
   styles: [
     `
@@ -17,18 +25,31 @@ import { ReservaService } from '../../service/modal/reservas-usuario/reserva.ser
     `,
   ],
 })
-export class ReservasUsuarioComponent implements OnInit{
+export class ReservasUsuarioComponent implements OnInit {
   reservas!: Observable<Reserva[]>;
 
-  constructor(private reservaService: ReservaService
-    ,private modalService: NgbModal) {}
+  constructor(
+    private reservaService: ReservaService,
+    private modalService: NgbModal
+  ) {}
 
   ngOnInit(): void {
-    this.getAllReservas();
+    this.getReservasUsuario();
   }
 
-  getAllReservas(){
-    this.reservas = this.reservaService.getReservas();
+  getReservasUsuario() {
+    let user = new Usuario();
+    user = JSON.parse(window.sessionStorage.getItem("user") || "");
+    this.reservas = this.reservaService
+      .getReservas()
+      .pipe(
+        map((listaReservas: any[]) =>
+          listaReservas.filter(
+            (reserva: { usuario: { idUsuario: Number } }) =>
+              reserva.usuario.idUsuario == user.idUsuario
+          )
+        )
+      );
   }
 
   openXl(content: any) {
@@ -36,8 +57,7 @@ export class ReservasUsuarioComponent implements OnInit{
       backdropClass: "backdrop",
       size: "xl",
       centered: true,
-      scrollable: true
+      scrollable: true,
     });
   }
-
 }

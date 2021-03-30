@@ -2,3 +2,44 @@
   margin-top: 30px;
   padding-top: 30px;
 }
+
+.title {
+  margin-top: 60px;
+}
+
+.header-tabla {
+  padding: 10px
+}
+
+.body-tabla {
+  background-color: white!important;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #262626;
+  border-width: 3px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+th, td {
+  /*use this property to disbale soft wrap*/
+  white-space: nowrap;
+  /*To make extra certain,add this css property*/
+  word-break: keep-all;
+}
+
+.fila:hover {
+  background-color: #c9c9c9!important;
+}
+
+.btn-goToTop{
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media screen and (min-width: 1200px) {
+  .body-home, .container {
+    max-width: 80vw !important;
+    
+  }
+}

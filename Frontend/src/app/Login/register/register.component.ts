@@ -2,12 +2,17 @@ import { Component, Input, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { Usuario } from "../model/usuarios";
+
+
+
+
+/* services */
 import { LoginService } from "../service/login.service";
 
-/**
- *  Hay que pedir el token e insertarlo antes de hacer la peticion
- */
+/* models */
+import { Usuario } from "src/app/model/Usuarios";
+
+
 @Component({
   selector: "app-register",
   templateUrl: "./register.component.html",

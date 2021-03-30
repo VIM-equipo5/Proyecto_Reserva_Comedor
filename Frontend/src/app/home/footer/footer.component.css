@@ -1,5 +1,8 @@
 .body-footer{
-    margin-top: 40px;
+    margin-top: 5%;
+    position: relative;
+    width: 100vw;
+    bottom: 0;
 }
 
 .footer-background{

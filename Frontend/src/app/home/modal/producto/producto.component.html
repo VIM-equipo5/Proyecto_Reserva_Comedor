@@ -1,7 +1,7 @@
-
+<!-- Template de base --> 
 <!-- Todos los datos deben ser sacados de la base de datos -->
 
-<ng-template #content let-modal>
+<ng-template  let-modal>
   <div class="modal-header">
     <h4 class="modal-title" id="modal-basic-title">
       Arroz Japones
@@ -20,25 +20,25 @@
       <div class="row">
         <div class="col-5">
           <div class="imagen-plato">
-            <img src="https://cdn6.recetasdeescandalo.com/wp-content/uploads/2020/06/Yakimeshi-o-arroz-frito-al-estilo-japones-con-pollo-y-verduras.jpg" class="img-fluid" alt="Responsive image">
+            <img [src]="elegido.imagen" class="img-fluid" alt="Responsive image">
           </div>
         </div>
         <div class="col-7">
           <div class="row">
             <div class="col-6">
               <h5>Nombre</h5>
-              <p>Arroz Japonés</p>
+              <p>{{elegido.nombre}}</p>
             </div>
             <div class="col-6">
               <h5>Tipo</h5>
-              <p>Carne</p>
+              <p>{{elegido.tipo}}</p>
               
             </div>
           </div>
           <div class="row">
             <div class="col-12 ">
               <h5>Precio Unitario</h5>
-              <p>6'75€</p>
+              <p>{{elegido.precioUnitario}}</p>
             </div>
   
           </div>
@@ -46,7 +46,7 @@
           <div class="row">
             <div class="col-12">
               <h5>Descripción</h5>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias consectetur at voluptas, aliquam eveniet dolores dicta similique maiores iusto explicabo quo libero voluptate deleniti quod, optio inventore veritatis recusandae? Cupiditate!</p>
+              <p>{{elegido.descripcion}}</p>
             </div>            
           </div>    
         </div> 
@@ -83,7 +83,5 @@
 </ng-template>
 
 
-<!-- BOTON -->
-<button class="btn btn-outline-primary mb-2 mr-2" (click)="openXl(content)">
-  BOTON DE PRUEBA MODAL
-</button>
+<!-- BOTON PARA PRUEBAS -->
+<button class="btn btn-outline-primary mb-2 mr-2" (click)="open()" style="display: none;">BOTON DE PRUEBA MODAL</button> 
