@@ -1,7 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AbstractControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,11 +10,7 @@ import { NavbarComponent } from './home/navbar/navbar.component';
 import { LoginComponent } from './Login/login/login.component';
 import { RegisterComponent } from './Login/register/register.component';
 import { ProductoComponent } from './home/modal/producto/producto.component';
-import { Slider1Component } from './home/slider/slider1/slider1.component';
-import { Slider2Component } from './home/slider/slider2/slider2.component';
-import { Slider3Component } from './home/slider/slider3/slider3.component';
-import { Slider4Component } from './home/slider/slider4/slider4.component';
-import { Slider5Component } from './home/slider/slider5/slider5.component';
+import { SliderComponent } from './home/slider/slider.component';
 import { AdminComponent } from './Admin/admin/admin.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { GestionPlatosComponent } from './Admin/gestion-platos/gestion-platos.component';
@@ -27,7 +23,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { GestionBebidasComponent } from './Admin/gestion-bebidas/gestion-bebidas.component';
 import { GestionService } from './Admin/service/gestion.service';
-
+import { CardsComponent } from './home/cards/cards/cards.component';
 
 @NgModule({
   declarations: [
@@ -37,11 +33,7 @@ import { GestionService } from './Admin/service/gestion.service';
     RegisterComponent,
     NavbarComponent,
     ProductoComponent,
-    Slider1Component,
-    Slider2Component,
-    Slider3Component,
-    Slider4Component,
-    Slider5Component,
+    SliderComponent,
     AdminComponent,
     FooterComponent,
     GestionPlatosComponent,
@@ -51,7 +43,8 @@ import { GestionService } from './Admin/service/gestion.service';
     DetallesCuentaComponent,
     ReservasUsuarioComponent,
     NotFoundComponent,
-    GestionBebidasComponent
+    GestionBebidasComponent,
+    CardsComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,7 +53,8 @@ import { GestionService } from './Admin/service/gestion.service';
     HttpClientModule,
     NgbModule,
     ReactiveFormsModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    BrowserModule,
   ],
   providers: [GestionService],
   bootstrap: [AppComponent]
