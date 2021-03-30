@@ -12,9 +12,7 @@ ul>li>.active {
   font-weight: bolder;
 }
 
-.desplegable>li>a:hover {
-  color: #e50076;
-}
+
 
 .desplegable>li>a {
   color: #262626;
@@ -22,6 +20,10 @@ ul>li>.active {
 
 .dropdown-item {
   color: black;
+}
+
+.desplegable>li>a:hover {
+  color: #e50076;
 }
 
 #navbarDropdown:hover {
@@ -44,6 +46,7 @@ ul>li>.active {
   color: #e50076;
 }
 
+
 .equipo {
   margin-right: 20px;
   font-size: 30px;
@@ -51,4 +54,13 @@ ul>li>.active {
 
 .btn-logout, .btn-VIM {
   cursor: pointer;
+}
+
+@media screen and (max-width: 425px) {
+  .oculta-elemento{
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
 }

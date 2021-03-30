@@ -2,8 +2,6 @@ import { Component, Input, OnInit, Output } from "@angular/core";
 import { FormArray, FormControl, FormGroup } from "@angular/forms";
 import { Router } from "@angular/router";
 import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { NgxSpinnerService } from "ngx-spinner";
-import { BuscadorService } from "../service/buscador/buscador.service";
 
 @Component({
   selector: "app-navbar",
@@ -13,8 +11,6 @@ import { BuscadorService } from "../service/buscador/buscador.service";
 export class NavbarComponent {
   @Input()
   public cesto!: Array<any>;
-  @Output()
-  public spinner!: NgxSpinnerService
 
   constructor(
     private router: Router,

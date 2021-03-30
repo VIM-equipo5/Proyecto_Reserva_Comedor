@@ -42,18 +42,18 @@
           </ul>
         </li>
         <li class="nav-item btn-cesto">
-          <app-cesto [cesto]="cesto" [spinner]="spinner"></app-cesto>
+          <app-cesto [cesto]="cesto"></app-cesto>
         </li>
       </ul>
-      <form class="d-flex" [formGroup]="buscador">
+      <form class="d-flex oculta-elemento" [formGroup]="buscador">
         <input
           formControlName="productoBuscado"
-          class="form-control me-2"
+          class="form-control me-2 oculta-elemento"
           type="search"
           placeholder="Buscar plato"
           aria-label="Search"
         />
-        <button class="btn btn-principal" (click)="buscarProducto()">Buscar</button>
+        <button class="btn btn-principal oculta-elemento" (click)="buscarProducto()">Buscar</button>
       </form>
     </div>
   </div>

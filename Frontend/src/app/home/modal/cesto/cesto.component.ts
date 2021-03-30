@@ -1,7 +1,6 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-cesto',
@@ -20,7 +19,6 @@ export class CestoComponent implements OnInit{
   @Input()
   public cesto!: Array<any>;
   @Input()
-  public spinner!: NgxSpinnerService;
   public totalPrecio!: Number;
   
 
@@ -35,11 +33,14 @@ export class CestoComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.spinner.hide();
+  }
+
+  borrarProductoCesto(nombre: String){
+    debugger
+    this.cesto.splice(this.cesto.findIndex(item => item.nombre == nombre),1); 
   }
 
   calcularPrecioTotal(){
-    debugger
     let total = 0;
     this.cesto.forEach(producto => total += producto.precioUnitario);
     this.totalPrecio = total;
@@ -48,7 +49,6 @@ export class CestoComponent implements OnInit{
   /* Botón finalizar pedido */
   finalizarPedido(){
     /* Obtener datos del formulario */
-    debugger
     let user = JSON.parse(window.sessionStorage.getItem('user') || "");
     console.log(user);
     user = user.replace(/{}/,'');
