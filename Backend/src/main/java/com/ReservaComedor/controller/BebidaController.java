@@ -22,7 +22,7 @@ import com.ReservaComedor.service.implementacion.BebidaServiceImpl;
  */
 
 @RestController
-@CrossOrigin(origins="*",methods= {RequestMethod.GET,RequestMethod.POST})
+@CrossOrigin(origins="*",methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE,RequestMethod.PUT})
 @RequestMapping("/api")
 public class BebidaController {
 

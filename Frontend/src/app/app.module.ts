@@ -24,6 +24,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { GestionBebidasComponent } from './Admin/gestion-bebidas/gestion-bebidas.component';
 import { GestionService } from './Admin/service/gestion.service';
 import { CardsComponent } from './home/cards/cards/cards.component';
+import { DataTablesModule } from 'angular-datatables';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { CardsComponent } from './home/cards/cards/cards.component';
     ReactiveFormsModule,
     NgxSpinnerModule,
     BrowserModule,
+    DataTablesModule
   ],
   providers: [GestionService],
   bootstrap: [AppComponent]

@@ -28,7 +28,7 @@ import com.ReservaComedor.service.implementacion.CategoriaServiceImpl;
  */
 
 @RestController
-@CrossOrigin(origins="*",methods= {RequestMethod.GET,RequestMethod.POST})
+@CrossOrigin(origins="*",methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE,RequestMethod.PUT})
 @RequestMapping("/api")
 public class CategoriaController {
 

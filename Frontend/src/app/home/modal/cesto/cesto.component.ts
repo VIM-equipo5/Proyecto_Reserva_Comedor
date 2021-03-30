@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
@@ -15,11 +15,13 @@ import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
   ],
 })
 export class CestoComponent {
+  @Input()
+  public cesto!: Array<any>;
 
   constructor(private modalService: NgbModal) {}
 
   openXl(content: any) {
-    this.modalService.open(content, {
+    const modalRef = this.modalService.open(content, {
       backdropClass: "backdrop",
       size: "xl",
       centered: true,
