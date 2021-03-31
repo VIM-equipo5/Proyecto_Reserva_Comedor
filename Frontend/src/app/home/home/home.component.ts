@@ -1,5 +1,5 @@
 import { ThrowStmt } from "@angular/compiler";
-import { Component, Input, OnChanges, OnInit, Output, SimpleChanges } from "@angular/core";
+import { Component, HostListener, Input, OnChanges, OnInit, Output, SimpleChanges } from "@angular/core";
 import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { Observable, Subject } from "rxjs";
 import { filter, take, takeWhile, toArray } from "rxjs/operators";
@@ -94,6 +94,15 @@ export class HomeComponent implements OnInit {
   }
 
   /* Método que lleva a la cima de la web */
+
+  /* No esta bien implementado */
+  onScroll(_event:any){
+    let btn = document.getElementById("btn-goToTop") as HTMLButtonElement ;
+    let bodyHome = document.getElementById("body-home") as HTMLDivElement ;
+    (bodyHome.scrollTop > 20 || bodyHome.scrollTop > 20) 
+    ? btn.style.display = "block" : btn.style.display = "none";
+  }
+
   goToTop(){
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
