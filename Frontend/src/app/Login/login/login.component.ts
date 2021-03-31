@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
   login = new FormGroup({
     username: new FormControl("", Validators.required),
     password: new FormControl("", Validators.required),
+    rememberMe: new FormControl()
   });
 
   usuario = new Usuario();
@@ -34,6 +35,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.spinner.hide();
     window.sessionStorage.removeItem('user');
+    this.login.controls['username'].setValue(window.localStorage.getItem("rememberMe")?.replace(/"/g,''));
   }
 
   onSubmit() {
@@ -42,7 +44,9 @@ export class LoginComponent implements OnInit {
 
   autentificar() {
     const user = this.login.get("username") as FormArray,
-      password = this.login.get("password") as FormArray;
+      password = this.login.get("password") as FormArray,
+      rememberMe = this.login.get("rememberMe") as FormArray;
+
     /* Si ambos campos son validos, buscamos credenciales */
     if (!user.invalid && !password.invalid) {
       this.spinner.show();
@@ -70,6 +74,12 @@ export class LoginComponent implements OnInit {
           this.usuario.nombreUsuario === user.value &&
           this.usuario.password === password.value
         ) {
+
+          if(rememberMe.value == true)
+            window.localStorage.setItem("rememberMe", JSON.stringify(this.usuario.nombreUsuario));
+          else
+            window.localStorage.removeItem("rememberMe");
+
           window.sessionStorage.setItem("user", JSON.stringify(this.usuario));
          
           if (this.usuario.rol.idRol == 2) this.router.navigate(["/home"]);

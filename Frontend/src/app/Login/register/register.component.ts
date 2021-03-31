@@ -83,7 +83,7 @@ export class RegisterComponent implements OnInit {
       }
     );
   }
-
+  
   open(titulo: String,errorMsg: String) {
     const modalRef = this.modalService.open(NgbdModalContent, {
       centered: true,

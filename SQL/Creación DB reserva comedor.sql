@@ -87,14 +87,12 @@ CREATE TABLE IF NOT EXISTS `reserva` (
   `IdReserva` int(11) NOT NULL AUTO_INCREMENT,
   `CantidadComensales` int(11) NOT NULL,
   `PrecioTotal` decimal(10,2) NOT NULL,
-  `FechaReserva` datetime NOT NULL DEFAULT current_timestamp(),
+  `FechaReserva` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   `FechaReservada` date NOT NULL,
   `IdUsuario` int(11), -- Se deja nula para poder borrar usuarios sin tener que perder reservas (para uso estadístico)
   `IdFranja` int(11), -- Se deja nula para poder modificar franjas horarias
   PRIMARY KEY (`IdReserva`),
-  FOREIGN KEY (`IdUsuario`) REFERENCES  `usuario` (`IdUsuario`)
-  ON UPDATE CASCADE
-  ON DELETE SET NULL,
+  FOREIGN KEY (`IdUsuario`) REFERENCES  `usuario` (`IdUsuario`),
   FOREIGN KEY (`IdFranja`) REFERENCES  `franjahoraria` (`IdFranja`)
   ON UPDATE CASCADE
   ON DELETE SET NULL

@@ -45,9 +45,7 @@ public class Reserva {
 	FranjaHoraria franjaHoraria;
 
 	public Reserva() {
-	}	
-	
-	
+	}
 
 	/**
 	 * @param idReserva
@@ -75,7 +73,10 @@ public class Reserva {
 		this.franjaHoraria = franjaHoraria;
 	}
 
-
+	@PrePersist
+	void fechaReserva() {
+		this.fechaReserva = new Date();
+	}
 
 	/**
 	 * @return the idUsuario
@@ -163,8 +164,6 @@ public class Reserva {
 		this.pedirPlato = pedirPlato;
 	}
 
-	
-	
 	/**
 	 * @return the ofrecerBebida
 	 */
@@ -209,14 +208,11 @@ public class Reserva {
 		this.franjaHoraria = franjaHoraria;
 	}
 
-
-
 	@Override
 	public String toString() {
 		return "Reserva [idReserva=" + idReserva + ", cantidadComensales=" + cantidadComensales + ", precioTotal="
 				+ precioTotal + ", fechaReserva=" + fechaReserva + ", fechaReservada=" + fechaReservada + ", usuario="
 				+ usuario + ", franjaHoraria=" + franjaHoraria + "]";
 	}
-
 
 }
