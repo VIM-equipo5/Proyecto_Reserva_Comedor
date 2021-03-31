@@ -27,8 +27,16 @@ export class GestionUsuariosComponent implements OnInit {
     this.usuarios = this.usuariosServices.getUsuarios();
   }
 
-  crearPlato(){
-    console.log("crear usuarios")
+  eliminarUsuario(idUsuario: Number) {
+    console.log(idUsuario);
+    this.usuariosServices.eliminarUsuario(idUsuario)
+    .subscribe(
+      res => {
+        console.log(res);
+        this.getAllUsuarios();
+      },
+      err => console.error(err)
+    )
   }
 
 }

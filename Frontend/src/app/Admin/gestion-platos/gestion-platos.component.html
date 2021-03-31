@@ -2,16 +2,19 @@
   <div class="panel-heading">
     <div class="container">
       <h2>Lista de platos</h2>
-      <button
-        class="btn btn-info"
-        (click)="crearPlato()"
-        style="margin-bottom: 7px"
-      >
-        Crear nuevo plato
+      <div class="form-row align-items-left">
+      <button class="btn btn-info" style="margin-bottom: 7px">
+        <app-crear-plato></app-crear-plato>
       </button>
-      <button class="btn btn-info" style="margin-left: 2%; margin-bottom: 7px">
-        Buscar un plato
-      </button>
+      <form class="form-inline" style="margin-left: 2%; margin-bottom: 7px">
+        <button class="btn btn-info">
+          Buscar plato
+        </button>
+        <div class="form-group">
+          <input type="text" id="buscadorPlato" class="form-control mx-sm-3" placeholder="ID del plato">
+        </div>
+      </form>
+      </div>
     </div>
   </div>
   <div class="panel-body">
@@ -35,15 +38,16 @@
               </thead>
               <tbody>
                 <tr *ngFor="let plato of platos | async">
-                  <td scope="row">{{ plato.idPlato }}</td>
+                  <th scope="row">{{ plato.idPlato }}</th>
                   <td>{{ plato.nombre }}</td>
                   <td>{{ plato.descripcion }}</td>
                   <td>{{ plato.tipo }}</td>
                   <td>{{ plato.precioUnitario }}</td>
                   <td>{{ plato.imagen }}</td>
-                  <td>{{ plato.categoria.nombre}}</td>
+                  <!--<td>{{ plato.categoria.nombre }}</td>-->
                   <td>
-                    <button class="btn btn-danger">Borrar</button>
+                    <button class="btn btn-danger" (click)="eliminarPlato(plato.idPlato!)">
+                      Borrar</button>
                     <button class="btn btn-info" style="margin-left: 10px">
                       Actualizar
                     </button>

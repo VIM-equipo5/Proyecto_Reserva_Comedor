@@ -27,8 +27,16 @@ export class GestionReservasComponent implements OnInit {
     this.reservas = this.reservasServices.getReservas();
   }
 
-  crearPlato(){
-    console.log("crear reservas")
+  eliminarReserva(idReserva: Number) {
+    console.log(idReserva);
+    this.reservasServices.eliminarReserva(idReserva)
+    .subscribe(
+      res => {
+        console.log(res);
+        this.getAllReservas();
+      },
+      err => console.error(err)
+    )
   }
 
 }

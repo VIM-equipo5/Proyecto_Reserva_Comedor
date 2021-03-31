@@ -30,8 +30,20 @@ export class GestionBebidasComponent implements OnInit {
     this.bebidas = this.bebidasServices.getBebidas();
   }
 
-  crearBebida(){
-    console.log("crear bebidas")
+  buscarBebida(idBebida: Number) {
+    this.bebidasServices.eliminarBebida(idBebida);
+  }
+
+  eliminarBebida(idBebida: Number) {
+    console.log(idBebida);
+    this.bebidasServices.eliminarBebida(idBebida)
+    .subscribe(
+      res => {
+        console.log(res);
+        this.getAllBebidas();
+      },
+      err => console.error(err)
+    )
   }
 
 }

@@ -1,9 +1,14 @@
 <div class="panel panel-primary body-gestion-reservas">
   <div class="panel-heading">
     <div class="container"><h2>Lista de reservas</h2>
-    <button class="btn btn-info" style="margin-bottom: 7px">
-      Buscar reserva por ID
-    </button>
+      <form class="form-inline" style="margin-bottom: 7px">
+        <button class="btn btn-info">
+          Buscar reserva
+        </button>
+        <div class="form-group">
+          <input type="text" id="buscadorReserva" class="form-control mx-sm-3" placeholder="ID reserva">
+        </div>
+      </form>
   </div>
 </div>
   <div class="panel-body">
@@ -39,7 +44,7 @@
                   <td>{{reserva.franjaHoraria.franjaInicio}}</td>
                   <td>{{reserva.franjaHoraria.franjaFin}}</td>
                   <td>
-                    <button class="btn btn-danger">Borrar</button>
+                    <button class="btn btn-danger" (click)="eliminarReserva(reserva.idReserva!)">Borrar</button>
                   </td>
                 </tr>
               </tbody>
