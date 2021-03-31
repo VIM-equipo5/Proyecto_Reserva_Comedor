@@ -44,7 +44,7 @@
                   <td>{{reserva.franjaHoraria.franjaInicio}}</td>
                   <td>{{reserva.franjaHoraria.franjaFin}}</td>
                   <td>
-                    <button class="btn btn-danger">Borrar</button>
+                    <button class="btn btn-danger" (click)="eliminarReserva(reserva.idReserva!)">Borrar</button>
                   </td>
                 </tr>
               </tbody>

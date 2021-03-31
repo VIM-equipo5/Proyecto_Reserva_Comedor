@@ -2,7 +2,6 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Bebida } from 'src/app/model/Bebida';
 import { GestionService } from 'src/app/Admin/service/gestion.service';
-import { GestionPlatosComponent } from '../../gestion-platos/gestion-platos.component';
 
 @Component({
   selector: 'app-crear-bebida',
@@ -52,5 +51,15 @@ export class CrearBebidaComponent implements OnInit {
       err => console.error(err)
     )
   }
+
+  /*modificarBebida() {
+    this.gestionService.actualizarBebida(this.bebida.idBebida, this.bebida)
+      .subscribe(
+        res => { 
+          console.log(res);
+        },
+        err => console.error(err)
+      )
+  }*/
 
 }

@@ -87,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `reserva` (
   `IdReserva` int(11) NOT NULL AUTO_INCREMENT,
   `CantidadComensales` int(11) NOT NULL,
   `PrecioTotal` decimal(10,2) NOT NULL,
-  `FechaReserva` datetime NOT NULL DEFAULT current_timestamp(),
+  `FechaReserva` timestamp NOT NULL DEFAULT current_timestamp,
   `FechaReservada` date NOT NULL,
   `IdUsuario` int(11), -- Se deja nula para poder borrar usuarios sin tener que perder reservas (para uso estadístico)
   `IdFranja` int(11), -- Se deja nula para poder modificar franjas horarias
@@ -104,9 +104,9 @@ DROP TABLE IF EXISTS `pedirplatos`;
 CREATE TABLE IF NOT EXISTS `pedirplatos` (
 	id INT AUTO_INCREMENT,
   `IdReserva` int(11) NOT NULL,
-  `IdPlato` int(11) NOT NULL,
+  `IdPlato` int(11),
   `CantidadPlatos` int(11) NOT NULL,
-  PRIMARY KEY(id,IdReserva,IdPlato),
+  PRIMARY KEY(id),
   FOREIGN KEY (`IdReserva`) REFERENCES  `reserva` (`IdReserva`)
   ON UPDATE CASCADE
   ON DELETE CASCADE,
@@ -119,9 +119,9 @@ DROP TABLE IF EXISTS `ofrecerbebidas`;
 CREATE TABLE IF NOT EXISTS `ofrecerbebidas` (
 	id INT AUTO_INCREMENT,
   `IdReserva` int(11) NOT NULL,
-  `IdBebida` int(11) NOT NULL,
+  `IdBebida` int(11),
   `CantidadBebidas` int(11) NOT NULL,
-  PRIMARY KEY(id,IdReserva,IdBebida),
+  PRIMARY KEY(id),
   FOREIGN KEY (`IdReserva`) REFERENCES  `reserva` (`IdReserva`)
   ON UPDATE CASCADE
   ON DELETE CASCADE,
@@ -129,4 +129,3 @@ CREATE TABLE IF NOT EXISTS `ofrecerbebidas` (
   ON UPDATE CASCADE
   ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
