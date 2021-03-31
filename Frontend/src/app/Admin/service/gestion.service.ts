@@ -13,14 +13,15 @@ export class GestionService {
 
   constructor(private http: HttpClient) { }
 
+  /* Categoria */
+  getCategoriaXId(id: Number): Observable<any>{
+    return this.http.get(`${this.api}/categorias/${id}`);
+  }
+
   /*Platos*/
   getPlatos(): Observable<any>{
     return this.http.get(`${this.api}/platos`);
   }
-
-  //getPlatos(id: string): Observable<any>{
-  //  return this.http.get(`${this.api}/platos/${id}`);
-  //}
 
   eliminarPlatos(idPlato: Number) {
     return this.http.delete(`${this.api}/platos/${idPlato}`);
@@ -39,10 +40,6 @@ export class GestionService {
     return this.http.get(`${this.api}/bebidas`);
   }
 
-  //getBebidas(id: string): Observable<any>{
-  //  return this.http.get(`${this.api}/bebidas/${id}`);
-  //}
-
   eliminarBebida(idBebida: Number) {
     return this.http.delete(`${this.api}/bebidas/${idBebida}`);
   }
@@ -56,6 +53,7 @@ export class GestionService {
   }
 
   /*Reservas*/
+
   getReservas(): Observable<any>{
     return this.http.get(`${this.api}/reservas`);
   }
@@ -65,6 +63,7 @@ export class GestionService {
   }
 
   /*Usuarios*/
+  
   getUsuarios(): Observable<any>{
     return this.http.get(`${this.api}/usuarios`);
   }

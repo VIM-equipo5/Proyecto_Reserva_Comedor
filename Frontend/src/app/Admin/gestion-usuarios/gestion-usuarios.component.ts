@@ -38,5 +38,4 @@ export class GestionUsuariosComponent implements OnInit {
       err => console.error(err)
     )
   }
-
 }

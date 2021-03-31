@@ -1,9 +1,16 @@
 .body-gestion-platos{
     background-color: white;
 }
+
 th,td{
-    /*use this property to disbale soft wrap*/
-    white-space: nowrap;
-    /*To make extra certain,add this css property*/
-    word-break: keep-all;
+    white-space: none !important;
+}
+
+td > img{
+    width: 10vw;
+    height: 10vh;
+}
+
+.btn-eliminar{
+    margin-bottom: 10px;
 }

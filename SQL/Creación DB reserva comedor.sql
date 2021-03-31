@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS `bebidas` (
   `Nombre` varchar(50) NOT NULL,
   `PrecioUnitario` decimal(10,2) NOT NULL,
   /* Tipo cambiando de blob a varchar, 18:50 ,28 marzo 2021*/
-  `Imagen` VARCHAR(255),
+  `Imagen` TEXT,
   `Descripcion` text,
   PRIMARY KEY (`IdBebida`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `platos` (
   `Nombre` varchar(100) NOT NULL,
   `Descripcion` text,
   /* Tipo cambiando de blob a varchar, 18:50 ,28 marzo 2021*/
-  `Imagen` varchar(255),
+  `Imagen` TEXT,
   `PrecioUnitario` decimal(10,2) NOT NULL,
   `Tipo` varchar(50) NOT NULL,
   `IdCategoria` int(11) NOT NULL,
@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `reserva` (
   `CantidadComensales` int(11) NOT NULL,
   `PrecioTotal` decimal(10,2) NOT NULL,
   `FechaReserva` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  `FechaReservada` date NOT NULL,
+  `FechaReservada` DATE NOT NULL,
   `IdUsuario` int(11), -- Se deja nula para poder borrar usuarios sin tener que perder reservas (para uso estadístico)
   `IdFranja` int(11), -- Se deja nula para poder modificar franjas horarias
   PRIMARY KEY (`IdReserva`),
