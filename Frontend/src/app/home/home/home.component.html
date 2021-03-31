@@ -3,7 +3,7 @@
 <app-navbar [cesto]="toCesto"></app-navbar>
 
 <!-- Page Content -->
-<div class="container body-home">
+<div id="body-home" class="container body-home">
   <!-- Jumbotron Header -->
   <header class="jumbotron my-4 cabecera-bienvenida">
     <h1 class="display-3">Realice su reserva</h1>
@@ -54,7 +54,7 @@
                         <button
                           (click)="masDestalles(entrante)"
                           class="btn btn-principal"
-                          [id]="entrante.nombre"
+                          [id]="entrante.nombre.toLowerCase()"
                         >
                           Detalles
                         </button>
@@ -95,7 +95,7 @@
                       class="fila"
                       *ngFor="let primerPlato of primerosPlatos | async"
                       (click)="onClickProducto(primerPlato)" 
-                      [id]="primerPlato.nombre"
+                      [id]="primerPlato.nombre.toLowerCase()"
                     >
                       <td>{{ primerPlato.nombre }}</td>
                       <td class="col-ocultar">{{ primerPlato.descripcion }}</td>
@@ -145,7 +145,7 @@
                       class="fila"
                       *ngFor="let segundoPlato of segundosPlatos | async"
                       (click)="onClickProducto(segundoPlato)" 
-                      [id]="segundoPlato.nombre"
+                      [id]="segundoPlato.nombre.toLowerCase()"
                     >
                       <td>{{ segundoPlato.nombre }}</td>
                       <td class="col-ocultar">{{ segundoPlato.descripcion }}</td>
@@ -194,7 +194,7 @@
                       class="fila"
                       *ngFor="let postre of postres | async"
                       (click)="onClickProducto(postre)" 
-                      [id]="postre.nombre"
+                      [id]="postre.nombre.toLowerCase()"
                     >
                       <td>{{ postre.nombre }}</td>
                       <td class="col-ocultar">{{ postre.descripcion }}</td>
@@ -244,7 +244,7 @@
                       class="fila"
                       *ngFor="let bebida of bebidas | async"
                       (click)="onClickProducto(bebida)" 
-                      [id]="bebida.nombre"
+                      [id]="bebida.nombre.toLowerCase()"
                     >
                       <td>{{ bebida.nombre }}</td>
                       <td class="col-ocultar">{{ bebida.descripcion }}</td>
@@ -268,8 +268,8 @@
         </div>
       </div>     
     </div>
-    <div class="container btn-goToTop" >
-      <button class="btn btn-principal" (click)="goToTop()">Volver arriba</button>
+    <div class="container container-btn-goToTop" >
+      <button class="btn btn-principal btn-goToTop" (click)="goToTop()">Volver arriba</button>
     </div>
     
   </div>

@@ -48,7 +48,7 @@ export class CestoComponent implements OnInit{
 
   /* Botón finalizar pedido */
   finalizarPedido(){
-    /* Obtener datos del formulario */
+    /* Obtener datos del formulario y crear objecto para la petición */
     let user = JSON.parse(window.sessionStorage.getItem('user') || "");
     console.log(user);
     user = user.replace(/{}/,'');
@@ -60,9 +60,11 @@ export class CestoComponent implements OnInit{
 
     /* Petición la base de datos */
 
-    /* Limpiar variable local del cesto y totalPrecio */
 
-    console.log("hola")
+
+    /* Limpiar variable local del cesto y totalPrecio */
+    this.cesto = [];
+    this.totalPrecio = 0;
   }
 
   openXl(content: any) {
