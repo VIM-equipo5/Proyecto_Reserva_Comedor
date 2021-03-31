@@ -1,13 +1,12 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from "@angular/core";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { Categoria } from 'src/app/model/Categoria';
-import { Plato } from 'src/app/model/Plato';
-import { GestionService } from '../../service/gestion.service';
+import { Plato } from "src/app/model/Plato";
+import { GestionService } from "../../service/gestion.service";
 
 @Component({
-  selector: 'app-crear-plato',
-  templateUrl: './crear-plato.component.html',
-  styleUrls: ['./crear-plato.component.css'],
+  selector: "app-crear-plato",
+  templateUrl: "./crear-plato.component.html",
+  styleUrls: ["./crear-plato.component.css"],
   encapsulation: ViewEncapsulation.None,
   styles: [
     `
@@ -18,40 +17,44 @@ import { GestionService } from '../../service/gestion.service';
   ],
 })
 export class CrearPlatoComponent implements OnInit {
+  @Input() getAllPlatos: any;
 
-  constructor(private modalService: NgbModal, private gestionService: GestionService) { }
+  constructor(
+    private modalService: NgbModal,
+    private gestionService: GestionService
+  ) {}
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   openXl(content: any) {
     this.modalService.open(content, {
       backdropClass: "backdrop",
       size: "sm",
-      centered: true
+      centered: true,
     });
   }
 
   plato: Plato = {
-    descripcion: '',
-    imagen: '',
-    nombre: '',
+    descripcion: "",
+    imagen: "",
+    nombre: "",
     precioUnitario: 0,
-    idPlato: 0,
-    tipo: '',
-    idCategoria: 0
+    tipo: "",
+    idCategoria: 0,
   };
 
   guardarNuevoPlato() {
-    delete this.plato.idPlato;
-    this.gestionService.guardarPlato(this.plato)
-    .subscribe(
-      res => {
-        console.log(res);
-      },
-      err => console.error(err)
-    )
+    this.gestionService
+      .getCategoriaXId(this.plato.idCategoria)
+      .subscribe((res) => {
+        this.plato.categoria = res;
+        this.gestionService.guardarPlato(this.plato).subscribe(
+          (res) => {
+            this.getAllPlatos();
+            console.log(res);
+          },
+          (err) => console.error(err)
+        );
+      },(err) => console.error(err));
   }
-
 }

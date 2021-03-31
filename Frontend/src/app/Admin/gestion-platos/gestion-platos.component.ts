@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 
 /* services */
@@ -23,7 +23,7 @@ export class GestionPlatosComponent implements OnInit {
     this.getAllPlatos();
   }
 
-  getAllPlatos(){
+  public getAllPlatos = () => {
     this.platosServices.getPlatos().subscribe((res) => {
       console.log('Res', res);
     })

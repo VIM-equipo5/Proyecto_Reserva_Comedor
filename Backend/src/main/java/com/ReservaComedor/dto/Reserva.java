@@ -23,9 +23,9 @@ public class Reserva {
 
 	private Long cantidadComensales;
 	private Double precioTotal;
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	private Date fechaReserva;
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	private Date fechaReservada;
 
 	@OneToMany

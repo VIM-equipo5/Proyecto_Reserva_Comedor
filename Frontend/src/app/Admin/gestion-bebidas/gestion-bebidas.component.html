@@ -1,59 +1,69 @@
 <div class="panel panel-primary body-gestion-platos">
-    <div class="panel-heading">
-      <div class="container">
-        <h2>Lista de bebidas</h2>
-        <div class="form-row align-items-left">
-          <button class="btn btn-info" style="margin-bottom: 7px">
-            <app-crear-bebida></app-crear-bebida>
-          </button>
-          <form class="form-inline" style="margin-left: 2%; margin-bottom: 7px">
-            <button class="btn btn-info">
-              Buscar bebida
-            </button>
-            <div class="form-group">
-              <input type="text" id="buscadorBebida" class="form-control mx-sm-3" placeholder="ID de la bebida">
-            </div>
-          </form>
-        </div>
+  <div class="panel-heading">
+    <div class="container">
+      <h2>Lista de bebidas</h2>
+      <div class="form-row align-items-left">
+        <button class="btn btn-info" style="margin-bottom: 7px">
+          <app-crear-bebida></app-crear-bebida>
+        </button>
+        <form class="form-inline" style="margin-left: 2%; margin-bottom: 7px">
+          <button class="btn btn-info">Buscar bebida</button>
+          <div class="form-group">
+            <input
+              type="text"
+              id="buscadorBebida"
+              class="form-control mx-sm-3"
+              placeholder="ID de la bebida"
+            />
+          </div>
+        </form>
       </div>
     </div>
-    <div class="panel-body">
-      <!-- Inicio table -->
-      <div class="container contenedor-tabla">
-        <div class="row">
-          <div class="col-12">
-            <div class="table-responsive">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Nombre Bebida</th>
-                    <th scope="col">Descripción</th>
-                    <th scope="col">Imágen</th>
-                    <th scope="col">Precio Unitario</th>
-                    <th scope="col">Acciones</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let bebida of bebidas | async"> 
-                    <th scope="row">{{bebida.idBebida}}</th>
-                    <td>{{bebida.nombre}}</td>
-                    <td>{{bebida.descripcion}}</td>
-                    <td>{{bebida.imagen}}</td>
-                    <td>{{bebida.precioUnitario}}</td>
-                    <td>
-                      <button class="btn btn-danger" (click)="eliminarBebida(bebida.idBebida!)">Borrar</button>
-                    <button class="btn btn-info" style="margin-left: 10px">
-                      Actualizar
-                    </button>
-                    </td>
-                  </tr>
-                </tbody>
+  </div>
+  <div class="panel-body">
+    <!-- Inicio table -->
+    <div class="container contenedor-tabla">
+      <div class="row">
+        <div class="col-12">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Id</th>
+                  <th scope="col">Nombre Bebida</th>
+                  <th scope="col">Descripción</th>
+                  <th scope="col">Imágen</th>
+                  <th scope="col">Precio Unitario</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let bebida of bebidas | async">
+                  <th scope="row">{{ bebida.idBebida }}</th>
+                  <td>{{ bebida.nombre }}</td>
+                  <td>{{ bebida.descripcion }}</td>
+                  <td><img [src]="bebida.imagen" /></td>
+                  <td>{{ bebida.precioUnitario }}</td>
+                  <td>
+                    <div class="container">
+                      <div class="row btn-eliminar"><button
+                        class="btn btn-danger"
+                        (click)="eliminarBebida(bebida.idBebida!)"
+                      >
+                        Borrar
+                      </button></div>
+                      <div class="row"><button class="btn btn-info">
+                        Actualizar
+                      </button></div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
             </table>
+          </div>
         </div>
-        </div>
+      </div>
+      <!-- Fin table -->
     </div>
-    <!-- Fin table -->
-    </div>
-</div>
+  </div>
 </div>

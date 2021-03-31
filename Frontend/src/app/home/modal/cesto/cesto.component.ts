@@ -40,11 +40,9 @@ export class CestoComponent implements OnInit {
   ngOnInit(): void {}
 
   borrarProductoCesto(nombre: String) {
-    debugger;
-    this.cesto.splice(
-      this.cesto.findIndex((item) => item.nombre == nombre),
-      1
-    );
+    this.cesto.splice(this.cesto.findIndex((item) => item.nombre == nombre),1);
+    this.totalPrecio = 0;
+    this.calcularPrecioTotal();
   }
 
   calcularPrecioTotal() {
@@ -105,8 +103,7 @@ export class CestoComponent implements OnInit {
     const modalRef = this.modalService.open(content, {
       backdropClass: "backdrop",
       size: "xl",
-      centered: true,
-      scrollable: true,
+      scrollable: true 
     });
   }
 

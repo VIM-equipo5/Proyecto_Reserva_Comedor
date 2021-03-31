@@ -1,16 +1,20 @@
 <div class="panel panel-primary body-gestion-reservas">
   <div class="panel-heading">
-    <div class="container"><h2>Lista de reservas</h2>
+    <div class="container">
+      <h2>Lista de reservas</h2>
       <form class="form-inline" style="margin-bottom: 7px">
-        <button class="btn btn-info">
-          Buscar reserva
-        </button>
+        <button class="btn btn-info">Buscar reserva</button>
         <div class="form-group">
-          <input type="text" id="buscadorReserva" class="form-control mx-sm-3" placeholder="ID reserva">
+          <input
+            type="text"
+            id="buscadorReserva"
+            class="form-control mx-sm-3"
+            placeholder="ID reserva"
+          />
         </div>
       </form>
+    </div>
   </div>
-</div>
   <div class="panel-body">
     <!-- Inicio table -->
     <div class="container contenedor-tabla">
@@ -21,7 +25,7 @@
               <thead>
                 <tr>
                   <th scope="col">Id</th>
-                  <th scope="col">Cantidad Comensales</th>
+                  <th scope="col">Comensales</th>
                   <th scope="col">Precio total</th>
                   <th scope="col">Fecha Reserva</th>
                   <th scope="col">Fecha Reservada</th>
@@ -34,17 +38,26 @@
               </thead>
               <tbody>
                 <tr *ngFor="let reserva of reservas | async">
-                  <th scope="row">{{reserva.idReserva}}</th>
-                  <td>{{reserva.cantidadComensales}}</td>
-                  <td>{{reserva.precioTotal}}</td>
-                  <td>{{reserva.fechaReserva}}</td>
-                  <td>{{reserva.fechaReservada}}</td>
-                  <td>{{reserva.usuario.idUsuario}}</td>
-                  <td>{{reserva.franjaHoraria.idFranja}}</td>
-                  <td>{{reserva.franjaHoraria.franjaInicio}}</td>
-                  <td>{{reserva.franjaHoraria.franjaFin}}</td>
+                  <th scope="row">{{ reserva.idReserva }}</th>
+                  <td>{{ reserva.cantidadComensales }}</td>
+                  <td>{{ reserva.precioTotal }}</td>
+                  <td>{{ reserva.fechaReserva}}</td>
+                  <td>{{ reserva.fechaReservada}}</td>
+                  <td>{{ reserva.usuario.idUsuario }}</td>
+                  <td>{{ reserva.franjaHoraria.idFranja }}</td>
+                  <td>{{ reserva.franjaHoraria.franjaInicio }}</td>
+                  <td>{{ reserva.franjaHoraria.franjaFin }}</td>
                   <td>
-                    <button class="btn btn-danger" (click)="eliminarReserva(reserva.idReserva!)">Borrar</button>
+                    <div class="container">
+                      <div class="row btn-eliminar">
+                        <button
+                          class="btn btn-danger"
+                          (click)="eliminarReserva(reserva.idReserva!)"
+                        >
+                          Borrar
+                        </button>
+                      </div>
+                    </div>
                   </td>
                 </tr>
               </tbody>
