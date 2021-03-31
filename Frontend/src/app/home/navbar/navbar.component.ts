@@ -1,8 +1,7 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnInit, Output } from "@angular/core";
 import { FormArray, FormControl, FormGroup } from "@angular/forms";
 import { Router } from "@angular/router";
 import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { BuscadorService } from "../service/buscador/buscador.service";
 
 @Component({
   selector: "app-navbar",
@@ -12,11 +11,10 @@ import { BuscadorService } from "../service/buscador/buscador.service";
 export class NavbarComponent {
   @Input()
   public cesto!: Array<any>;
-  
+
   constructor(
     private router: Router,
-    private buscadorService: BuscadorService,
-    private modalService: NgbModal
+    private modalService: NgbModal,
   ) {}
 
   buscador = new FormGroup({

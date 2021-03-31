@@ -10,7 +10,6 @@ import { NavbarComponent } from './home/navbar/navbar.component';
 import { LoginComponent } from './Login/login/login.component';
 import { RegisterComponent } from './Login/register/register.component';
 import { ProductoComponent } from './home/modal/producto/producto.component';
-import { SliderComponent } from './home/slider/slider.component';
 import { AdminComponent } from './Admin/admin/admin.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { GestionPlatosComponent } from './Admin/gestion-platos/gestion-platos.component';
@@ -23,7 +22,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { GestionBebidasComponent } from './Admin/gestion-bebidas/gestion-bebidas.component';
 import { GestionService } from './Admin/service/gestion.service';
-import { CardsComponent } from './home/cards/cards/cards.component';
 import { DataTablesModule } from 'angular-datatables';
 
 @NgModule({
@@ -34,7 +32,6 @@ import { DataTablesModule } from 'angular-datatables';
     RegisterComponent,
     NavbarComponent,
     ProductoComponent,
-    SliderComponent,
     AdminComponent,
     FooterComponent,
     GestionPlatosComponent,
@@ -44,8 +41,7 @@ import { DataTablesModule } from 'angular-datatables';
     DetallesCuentaComponent,
     ReservasUsuarioComponent,
     NotFoundComponent,
-    GestionBebidasComponent,
-    CardsComponent,
+    GestionBebidasComponent
   ],
   imports: [
     BrowserModule,
