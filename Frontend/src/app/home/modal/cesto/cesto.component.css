@@ -59,10 +59,6 @@ img {
 color:#e50076;
 }
 
-.cart-section {
-    
-}
-
-.cart-totals {
-
+.btn-nav:active{
+    color:white;
 }

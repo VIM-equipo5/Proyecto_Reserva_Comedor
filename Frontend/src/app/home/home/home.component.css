@@ -28,8 +28,26 @@ th, td {
   word-break: keep-all;
 }
 
+.fila > td > img{
+  width: 10vw;
+  height: 10vh;
+}
+
+.fila > td{
+  font-size: 20px;
+  white-space: break-spaces;
+}
+
 .fila:hover {
   background-color: #c9c9c9!important;
+}
+
+.fila:active{
+  background-color: #e50076!important;
+}
+
+.container-btn-goToTop{
+  text-align: center;
 }
 
 .btn-goToTop{
@@ -37,9 +55,28 @@ th, td {
   margin-top: 20px;
 }
 
+
 @media screen and (min-width: 1200px) {
   .body-home, .container {
     max-width: 80vw !important;
     
   }
+}
+
+@media screen and (max-width: 770px) {
+  .col-ocultar{
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+}
+
+@media screen and (max-width: 425px) {
+  .col-ocultar-precio{
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
 }
