@@ -26,18 +26,17 @@ export class NavbarComponent {
   buscarProducto() {
     const productoBuscado = this.buscador.get("productoBuscado") as FormArray;
     const idProducto = productoBuscado.value || "body";
-    const element =
-      document.getElementById(`${idProducto}`) ||
-      document.getElementById(`#index-body`);
+    const element = document.getElementById(`${idProducto.toLowerCase()}`);
     if (element) {
       element.scrollIntoView({
         block: "center",
         behavior: "smooth",
       });
-    }
+    } else
+      this.noEncontradoProducto();
   }
 
-  open() {
+  noEncontradoProducto() {
     const modalRef = this.modalService.open(NgbdModalContent, {
       centered: true,
     });
@@ -53,16 +52,10 @@ export class NavbarComponent {
   selector: "ngbd-modal-content",
   template: `
     <div class="modal-header">
-      <h4 class="modal-title">No encontrado.</h4>
-      <button
-        type="button"
-        class="close"
-        aria-label="Close"
-        (click)="activeModal.dismiss('Cross click')"
-      ></button>
+      <h4 class="modal-title">No encontrado</h4>
     </div>
     <div class="modal-body">
-      <p style="text-align=center">No se ha encontrado el producto buscado.</p>
+      <p style="text-align=center">El producto buscado no se ha encontrado.</p>
     </div>
     <div class="modal-footer">
       <button
