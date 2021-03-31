@@ -41,7 +41,7 @@
                   <td>{{usuario.telefono}}</td>
                   <!--No mostramos rol, los usuarios administradores solo gestionan usuarios comunes-->
                   <td>
-                    <button class="btn btn-danger">Borrar</button>
+                    <button class="btn btn-danger" (click)="eliminarUsuario(usuario.idUsuario!)">Borrar</button>
                     <button class="btn btn-info" style="margin-left: 10px">
                       Actualizar
                     </button>

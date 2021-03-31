@@ -31,4 +31,16 @@ export class GestionUsuariosComponent implements OnInit {
     console.log("crear usuarios")
   }
 
+  eliminarUsuario(idUsuario: Number) {
+    console.log(idUsuario);
+    this.usuariosServices.eliminarUsuario(idUsuario)
+    .subscribe(
+      res => {
+        console.log(res);
+        this.getAllUsuarios();
+      },
+      err => console.error(err)
+    )
+  }
+
 }

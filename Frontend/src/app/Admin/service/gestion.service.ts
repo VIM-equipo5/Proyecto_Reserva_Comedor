@@ -64,4 +64,8 @@ export class GestionService {
   getUsuarios(): Observable<any>{
     return this.http.get(`${this.api}/usuarios`);
   }
+
+  eliminarUsuario(idUsuario: Number) {
+    return this.http.delete(`${this.api}/usuarios/${idUsuario}`);
+  }
 }
