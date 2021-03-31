@@ -60,6 +60,10 @@ export class GestionService {
     return this.http.get(`${this.api}/reservas`);
   }
 
+  eliminarReserva(idReserva: Number) {
+    return this.http.delete(`${this.api}/reservas/${idReserva}`);
+  }
+
   /*Usuarios*/
   getUsuarios(): Observable<any>{
     return this.http.get(`${this.api}/usuarios`);

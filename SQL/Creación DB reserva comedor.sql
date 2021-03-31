@@ -102,9 +102,9 @@ DROP TABLE IF EXISTS `pedirplatos`;
 CREATE TABLE IF NOT EXISTS `pedirplatos` (
 	id INT AUTO_INCREMENT,
   `IdReserva` int(11) NOT NULL,
-  `IdPlato` int(11) NOT NULL,
+  `IdPlato` int(11),
   `CantidadPlatos` int(11) NOT NULL,
-  PRIMARY KEY(id,IdReserva,IdPlato),
+  PRIMARY KEY(id),
   FOREIGN KEY (`IdReserva`) REFERENCES  `reserva` (`IdReserva`)
   ON UPDATE CASCADE
   ON DELETE CASCADE,
@@ -117,9 +117,9 @@ DROP TABLE IF EXISTS `ofrecerbebidas`;
 CREATE TABLE IF NOT EXISTS `ofrecerbebidas` (
 	id INT AUTO_INCREMENT,
   `IdReserva` int(11) NOT NULL,
-  `IdBebida` int(11) NOT NULL,
+  `IdBebida` int(11),
   `CantidadBebidas` int(11) NOT NULL,
-  PRIMARY KEY(id,IdReserva,IdBebida),
+  PRIMARY KEY(id),
   FOREIGN KEY (`IdReserva`) REFERENCES  `reserva` (`IdReserva`)
   ON UPDATE CASCADE
   ON DELETE CASCADE,
@@ -127,4 +127,3 @@ CREATE TABLE IF NOT EXISTS `ofrecerbebidas` (
   ON UPDATE CASCADE
   ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
