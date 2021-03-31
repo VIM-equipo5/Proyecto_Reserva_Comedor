@@ -44,8 +44,7 @@ import { DataTablesModule } from 'angular-datatables';
     ReservasUsuarioComponent,
     NotFoundComponent,
     GestionBebidasComponent,
-    CrearPlatoComponent,
-    CrearBebidaComponent
+    CrearPlatoComponent
   ],
   imports: [
     BrowserModule,
