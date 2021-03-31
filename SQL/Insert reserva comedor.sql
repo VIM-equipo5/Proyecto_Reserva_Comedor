@@ -73,18 +73,18 @@ INSERT INTO usuario (NombreUsuario, Contraseña, Nombre, Apellido, FechaNacimien
 ("Usuario18","NoMeRobesPorFavor","Terry","Tan","1974-11-20",'T0000020',622196324,2);
 
 INSERT INTO franjahoraria (CapacidadMax,OcupacionTotal,FranjaInicio,FranjaFin) VALUES
-(10,0,1200,1215),
-(10,0,1215,1230),
-(10,0,1230,1245),
-(10,0,1245,1300),
-(10,0,1300,1315),
-(10,0,1315,1330),
-(10,0,1330,1345),
-(10,0,1345,1400),
-(10,0,1400,1415),
-(10,0,1415,1430),
-(10,0,1430,1445),
-(10,0,1445,1500);
+(10,0,120000,121500),
+(10,0,121500,123000),
+(10,0,123000,124500),
+(10,0,124500,130000),
+(10,0,130000,131500),
+(10,0,131500,133000),
+(10,0,133000,134500),
+(10,0,134500,140000),
+(10,0,140000,141500),
+(10,0,141500,143000),
+(10,0,143000,144500),
+(10,0,144500,150000);
 
 INSERT INTO reserva (CantidadComensales, PrecioTotal, FechaReservada, idUsuario, idFranja) VALUES 
 (3, 54, '2021-04-01',3,7),

@@ -35,8 +35,15 @@ export class GestionPlatosComponent implements OnInit {
   }
 
   eliminarPlato(idPlato: Number) {
-    this.platosServices.eliminarPlatos(idPlato);
-    this.getAllPlatos();
+    console.log(idPlato);
+    this.platosServices.eliminarPlatos(idPlato)
+    .subscribe(
+      res => {
+        console.log(res);
+        this.getAllPlatos();
+      },
+      err => console.error(err)
+    )
   }
   
 }

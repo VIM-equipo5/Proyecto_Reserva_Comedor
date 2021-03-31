@@ -8,13 +8,10 @@
       </button>
       <form class="form-inline" style="margin-left: 2%; margin-bottom: 7px">
         <button class="btn btn-info">
-          Buscar un plato
+          Buscar plato
         </button>
         <div class="form-group">
-          <input type="text" id="buscadorPlato" class="form-control mx-sm-3">
-          <small id="buscadorAyuda" class="text-muted">
-            Usar ID del plato
-          </small>
+          <input type="text" id="buscadorPlato" class="form-control mx-sm-3" placeholder="ID del plato">
         </div>
       </form>
       </div>
@@ -50,8 +47,7 @@
                   <!--<td>{{ plato.categoria.nombre }}</td>-->
                   <td>
                     <button class="btn btn-danger" (click)="eliminarPlato(plato.idPlato!)">
-                      Borrar
-                    </button>
+                      Borrar</button>
                     <button class="btn btn-info" style="margin-left: 10px">
                       Actualizar
                     </button>

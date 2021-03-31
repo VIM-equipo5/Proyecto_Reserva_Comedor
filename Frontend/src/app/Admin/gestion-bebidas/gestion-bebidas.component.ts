@@ -35,8 +35,15 @@ export class GestionBebidasComponent implements OnInit {
   }
 
   eliminarBebida(idBebida: Number) {
-    this.bebidasServices.eliminarBebida(idBebida);
-    this.getAllBebidas();
+    console.log(idBebida);
+    this.bebidasServices.eliminarBebida(idBebida)
+    .subscribe(
+      res => {
+        console.log(res);
+        this.getAllBebidas();
+      },
+      err => console.error(err)
+    )
   }
 
 }
