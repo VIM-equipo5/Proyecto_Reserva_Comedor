@@ -1,0 +1,35 @@
+<ng-template #modalCrearBebida let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Añadir nueva bebida</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <input type="text" name="nombre" [(ngModel)]="bebida.nombre" placeholder="Nombre" class="form-control" autofocus>
+        </div>
+        <div class="form-group">
+          <textarea name="descripcion" [(ngModel)]="bebida.descripcion" rows="2" placeholder="Descripción" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+          <input type="number" name="precio" [(ngModel)]="bebida.precioUnitario" placeholder="Precio" class="form-control">
+        </div>
+        <div class="form-group">
+          <input type="url" name="URL imagen" [(ngModel)]="bebida.imagen" placeholder="URL" class="form-control">
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <!---->
+      <button type="button" class="btn btn-principal" (click)="guardarNuevaBebida()" (click)="modal.close()">Guardar</button>
+      <button type="button" class="btn btn-principal" (click)="modal.close()">Descartar</button>
+    </div>
+  </ng-template>
+  
+  <!-- Botón situado en la barra de navegación -->
+<div class="btn-nav-desplegable" (click)="openXl(modalCrearBebida)">
+  Crear nueva bebida
+</div>
+  

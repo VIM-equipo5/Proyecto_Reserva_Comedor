@@ -24,11 +24,26 @@ export class GestionPlatosComponent implements OnInit {
   }
 
   getAllPlatos(){
+    this.platosServices.getPlatos().subscribe((res) => {
+      console.log('Res', res);
+    })
     this.platos = this.platosServices.getPlatos();
   }
 
-  crearPlato(){
-    console.log("crear platos")
+  buscarPlato() {
+    
+  }
+
+  eliminarPlato(idPlato: Number) {
+    console.log(idPlato);
+    this.platosServices.eliminarPlatos(idPlato)
+    .subscribe(
+      res => {
+        console.log(res);
+        this.getAllPlatos();
+      },
+      err => console.error(err)
+    )
   }
   
 }
