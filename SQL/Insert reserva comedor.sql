@@ -70,7 +70,8 @@ INSERT INTO usuario (NombreUsuario, Contraseña, Nombre, Apellido, FechaNacimien
 ("Usuario15","NoMeRobesPorFavor","Qamra","Quesille","1999-09-19",'Q0000017',617999129,2),
 ("Usuario16","NoMeRobesPorFavor","Rodrigo","Requena","1972-04-28",'R0000018',632646656,2),
 ("Usuario17","NoMeRobesPorFavor","Sandra","Sandoval","2000-02-01",'S0000019',647802020,2),
-("Usuario18","NoMeRobesPorFavor","Terry","Tan","1974-11-20",'T0000020',622196324,2);
+("Usuario18","NoMeRobesPorFavor","Terry","Tan","1974-11-20",'T0000020',622196324,2),
+("Jose","123456","Jose","Marín","1980-01-01",'A0000020',607543432,1);
 
 INSERT INTO franjahoraria (CapacidadMax,OcupacionTotal,FranjaInicio,FranjaFin) VALUES
 (10,0,1200,1215),
