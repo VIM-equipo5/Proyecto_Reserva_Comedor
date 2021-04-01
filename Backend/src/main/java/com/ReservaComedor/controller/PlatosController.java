@@ -64,7 +64,6 @@ public class PlatosController {
 		platoSeleccionado.setImagen(plato.getImagen());
 		platoSeleccionado.setPrecioUnitario(plato.getPrecioUnitario());
 		platoSeleccionado.setTipo(plato.getTipo());
-		platoSeleccionado.setIdCategoria(plato.getIdCategoria());
 		
 		platoActualizado = platosServiceImpl.actualizarPlato(platoSeleccionado);
 		

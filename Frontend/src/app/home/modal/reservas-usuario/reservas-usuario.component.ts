@@ -34,7 +34,7 @@ export class ReservasUsuarioComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getReservasUsuario();
+    
   }
 
   getReservasUsuario() {
@@ -46,18 +46,20 @@ export class ReservasUsuarioComponent implements OnInit {
         map((listaReservas: any[]) =>
           listaReservas.filter(
             (reserva: { usuario: { idUsuario: Number } }) =>
-              reserva.usuario.idUsuario == user.idUsuario
+          reserva.usuario !== null && reserva.usuario.idUsuario == user.idUsuario
           )
         )
       );
   }
 
   openXl(content: any) {
+    this.getReservasUsuario();
     this.modalService.open(content, {
       backdropClass: "backdrop",
       size: "xl",
       centered: true,
       scrollable: true,
     });
+    
   }
 }

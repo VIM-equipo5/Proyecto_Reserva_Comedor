@@ -1,23 +1,21 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/internal/Observable';
+import { Component, Input, OnInit } from "@angular/core";
+import { Observable } from "rxjs/internal/Observable";
 
 /* services */
-import { GestionService } from '../service/gestion.service';
+import { GestionService } from "../service/gestion.service";
 
 /* models */
-import { Plato } from 'src/app/model/Plato';
+import { Plato } from "src/app/model/Plato";
 
 @Component({
-  selector: 'app-gestion-platos',
-  templateUrl: './gestion-platos.component.html',
-  styleUrls: ['./gestion-platos.component.css']
+  selector: "app-gestion-platos",
+  templateUrl: "./gestion-platos.component.html",
+  styleUrls: ["./gestion-platos.component.css"],
 })
 export class GestionPlatosComponent implements OnInit {
   platos!: Observable<Plato[]>;
 
-  constructor(private platosServices: GestionService) {
-    
-  }
+  constructor(private platosServices: GestionService) {}
 
   ngOnInit(): void {
     this.getAllPlatos();
@@ -25,25 +23,19 @@ export class GestionPlatosComponent implements OnInit {
 
   public getAllPlatos = () => {
     this.platosServices.getPlatos().subscribe((res) => {
-      console.log('Res', res);
-    })
+      console.log("Res", res);
+    });
     this.platos = this.platosServices.getPlatos();
-  }
-
-  buscarPlato() {
-    
-  }
+  };
 
   eliminarPlato(idPlato: Number) {
     console.log(idPlato);
-    this.platosServices.eliminarPlatos(idPlato)
-    .subscribe(
-      res => {
+    this.platosServices.eliminarPlatos(idPlato).subscribe(
+      (res) => {
         console.log(res);
         this.getAllPlatos();
       },
-      err => console.error(err)
-    )
+      (err) => console.error(err)
+    );
   }
-  
 }

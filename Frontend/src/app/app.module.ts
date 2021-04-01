@@ -25,6 +25,9 @@ import { GestionService } from './Admin/service/gestion.service';
 import { CrearPlatoComponent } from './Admin/modal/crear-plato/crear-plato.component';
 import { CrearBebidaComponent } from './Admin/modal/crear-bebida/crear-bebida.component';
 import { DataTablesModule } from 'angular-datatables';
+import { ActualizarBebidaComponent } from './Admin/modal/actualizar-bebida/actualizar-bebida.component';
+import { ActualizarPlatoComponent } from './Admin/modal/actualizar-plato/actualizar-plato.component';
+import { ActualizarUsuarioComponent } from './Admin/modal/actualizar-usuario/actualizar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,10 @@ import { DataTablesModule } from 'angular-datatables';
     NotFoundComponent,
     GestionBebidasComponent,
     CrearPlatoComponent,
-    CrearBebidaComponent
+    CrearBebidaComponent,
+    ActualizarBebidaComponent,
+    ActualizarPlatoComponent,
+    ActualizarUsuarioComponent
   ],
   imports: [
     BrowserModule,

@@ -3,8 +3,8 @@
     <div class="container">
       <h2>Lista de bebidas</h2>
       <div class="form-row align-items-left">
-        <button class="btn btn-info" style="margin-bottom: 7px">
-          <app-crear-bebida></app-crear-bebida>
+        <button class="btn btn-principal" style="margin-bottom: 7px">
+          <app-crear-bebida [getAllBebidas]="getAllBebidas"></app-crear-bebida>
         </button>
         <form class="form-inline" style="margin-left: 2%; margin-bottom: 7px">
           <button class="btn btn-info">Buscar bebida</button>
@@ -46,15 +46,20 @@
                   <td>{{ bebida.precioUnitario }}</td>
                   <td>
                     <div class="container">
-                      <div class="row btn-eliminar"><button
-                        class="btn btn-danger"
-                        (click)="eliminarBebida(bebida.idBebida!)"
-                      >
-                        Borrar
-                      </button></div>
-                      <div class="row"><button class="btn btn-info">
-                        Actualizar
-                      </button></div>
+                      <div class="row btn-eliminar">
+                        <button
+                          class="btn  btn-danger"
+                          (click)="eliminarBebida(bebida.idBebida!)"
+                        >
+                          Borrar
+                        </button>
+                      </div>
+                      <div class="row">
+                        <app-actualizar-bebida
+                          [getAllBebidas]="getAllBebidas"
+                          [bebida]="bebida"
+                        ></app-actualizar-bebida>
+                      </div>
                     </div>
                   </td>
                 </tr>
