@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { Bebida } from 'src/app/model/Bebida';
 import { Plato } from 'src/app/model/Plato';
+import { Usuario } from 'src/app/model/Usuarios';
 
 @Injectable({
   providedIn: 'root'
@@ -66,6 +67,10 @@ export class GestionService {
   
   getUsuarios(): Observable<any>{
     return this.http.get(`${this.api}/usuarios`);
+  }
+
+  actualizarUsuario(idUsuario: Number, usuarioActualizado: Usuario): Observable<any> {
+    return this.http.put(`${this.api}/usuarios/${idUsuario}`, usuarioActualizado);
   }
 
   eliminarUsuario(idUsuario: Number) {

@@ -1,0 +1,31 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Modificar plato</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <input type="text" name="nombre" [(ngModel)]="usuarioActualizado.nombre" placeholder="Nombre" class="form-control" autofocus>
+        </div>
+        <div class="form-group">
+          <textarea name="apellido" [(ngModel)]="usuarioActualizado.apellido" rows="2" placeholder="Apellido" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+          <input type="number" name="telefono" [(ngModel)]="usuarioActualizado.telefono" placeholder="telefono" class="form-control">
+        </div>
+        <div class="form-group">
+          <input type="text" name="dni" [(ngModel)]="usuarioActualizado.dni" placeholder="dni" class="form-control">
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-principal" (click)="modificarUsuario()" (click)="modal.close()">Guardar</button>
+      <button type="button" class="btn btn-principal" (click)="modal.close()">Descartar</button>
+    </div>
+</ng-template>
+
+<!-- Botón de llamada del modal-->
+<button class="btn btn-success" (click)="openModal(content)">Actualizar</button>

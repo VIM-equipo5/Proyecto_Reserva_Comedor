@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Bebida } from 'src/app/model/Bebida';
 import { GestionService } from 'src/app/Admin/service/gestion.service';
@@ -18,7 +18,7 @@ import { GestionService } from 'src/app/Admin/service/gestion.service';
 })
 
 export class CrearBebidaComponent implements OnInit {
-
+  @Input() getAllBebidas: any;
   constructor(private modalService: NgbModal, private gestionService: GestionService) { }
 
   ngOnInit(): void {
@@ -34,7 +34,6 @@ export class CrearBebidaComponent implements OnInit {
   }
 
   bebida: Bebida = {
-    idBebida: 0,
     nombre: '',
     descripcion: '',
     precioUnitario: 0,
@@ -42,24 +41,14 @@ export class CrearBebidaComponent implements OnInit {
   };
 
   guardarNuevaBebida() {
-    delete this.bebida.idBebida;
     this.gestionService.guardarBebida(this.bebida)
     .subscribe(
       res => {
+        this.getAllBebidas();
         console.log(res);
       },
       err => console.error(err)
     )
   }
-
-  /*modificarBebida() {
-    this.gestionService.actualizarBebida(this.bebida.idBebida, this.bebida)
-      .subscribe(
-        res => { 
-          console.log(res);
-        },
-        err => console.error(err)
-      )
-  }*/
 
 }

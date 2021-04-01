@@ -23,7 +23,7 @@ export class GestionReservasComponent implements OnInit {
     this.getAllReservas();
   }
 
-  getAllReservas(){
+  public getAllReservas = () => {
     this.reservas = this.reservasServices.getReservas();
   }
 

@@ -3,17 +3,20 @@
     <div class="container">
       <h2>Lista de platos</h2>
       <div class="form-row align-items-left">
-      <button class="btn btn-info" style="margin-bottom: 7px">
-        <app-crear-plato [getAllPlatos]="getAllPlatos"></app-crear-plato>
-      </button>
-      <form class="form-inline" style="margin-left: 2%; margin-bottom: 7px">
-        <button class="btn btn-info">
-          Buscar plato
+        <button class="btn btn-principal" style="margin-bottom: 7px">
+          <app-crear-plato [getAllPlatos]="getAllPlatos"></app-crear-plato>
         </button>
-        <div class="form-group">
-          <input type="text" id="buscadorPlato" class="form-control mx-sm-3" placeholder="ID del plato">
-        </div>
-      </form>
+        <form class="form-inline" style="margin-left: 2%; margin-bottom: 7px">
+          <button class="btn btn-info">Buscar plato</button>
+          <div class="form-group">
+            <input
+              type="text"
+              id="buscadorPlato"
+              class="form-control mx-sm-3"
+              placeholder="ID del plato"
+            />
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -42,18 +45,23 @@
                   <td>{{ plato.descripcion }}</td>
                   <td>{{ plato.tipo }}</td>
                   <td>{{ plato.precioUnitario }}</td>
-                  <td><img [src]="plato.imagen"></td>
+                  <td><img [src]="plato.imagen" /></td>
                   <td>
                     <div class="container">
-                      <div class="row btn-eliminar"><button
-                        class="btn btn-danger"
-                        (click)="eliminarPlato(plato.idPlato!)"
-                      >
-                        Borrar
-                      </button></div>
-                      <div class="row"><button class="btn btn-info">
-                        Actualizar
-                      </button></div>
+                      <div class="row btn-eliminar">
+                        <button
+                          class="btn btn-danger"
+                          (click)="eliminarPlato(plato.idPlato!)"
+                        >
+                          Borrar
+                        </button>
+                      </div>
+                      <div class="row">
+                        <app-actualizar-plato
+                        [getAllPlatos]="getAllPlatos"
+                          [plato]="plato"
+                        ></app-actualizar-plato>
+                      </div>
                     </div>
                   </td>
                 </tr>

@@ -48,9 +48,12 @@
                       >
                         Borrar
                       </button></div>
-                      <div class="row"><button class="btn btn-info">
-                        Actualizar
-                      </button></div>
+                      <div class="row">
+                        <app-actualizar-usuario
+                          [getAllUsuarios]="getAllUsuarios"
+                          [usuario]="usuario"
+                        ></app-actualizar-usuario>
+                      </div>
                     </div>
                   </td>
                 </tr>
