@@ -1,18 +1,17 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Plato } from 'src/app/model/Plato';
-import { GestionService } from '../../service/gestion.service';
+import { Component, Input, OnInit } from "@angular/core";
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { Plato } from "src/app/model/Plato";
+import { GestionService } from "../../service/gestion.service";
 
 @Component({
-  selector: 'app-actualizar-plato',
-  templateUrl: './actualizar-plato.component.html',
-  styleUrls: ['./actualizar-plato.component.css']
+  selector: "app-actualizar-plato",
+  templateUrl: "./actualizar-plato.component.html",
+  styleUrls: ["./actualizar-plato.component.css"],
 })
 export class ActualizarPlatoComponent implements OnInit {
   @Input() plato!: Plato;
   @Input() getAllPlatos: any;
 
-  idPlato!: Number;
   platoActualizado: Plato = {
     descripcion: "",
     imagen: "",
@@ -25,10 +24,9 @@ export class ActualizarPlatoComponent implements OnInit {
   constructor(
     private gestionService: GestionService,
     private modalService: NgbModal
-  ) { }
+  ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   openModal(content: any) {
     (this.platoActualizado.nombre = this.plato.nombre),
@@ -44,7 +42,6 @@ export class ActualizarPlatoComponent implements OnInit {
   }
 
   modificarPlato() {
-    this.platoActualizado.nombre = this.plato.nombre;
     this.gestionService
       .actualizarPlato(this.plato.idPlato || 0, this.platoActualizado)
       .subscribe(
@@ -56,5 +53,4 @@ export class ActualizarPlatoComponent implements OnInit {
         }
       );
   }
-
 }

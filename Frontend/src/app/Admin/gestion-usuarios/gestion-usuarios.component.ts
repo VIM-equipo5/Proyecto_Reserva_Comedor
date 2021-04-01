@@ -13,17 +13,17 @@ import { Usuario } from 'src/app/model/Usuarios';
   styleUrls: ['./gestion-usuarios.component.css']
 })
 export class GestionUsuariosComponent implements OnInit {
-  usuarios!: Observable<Usuario[]>;
+  usuarios!: Observable<any[]>;
 
   constructor(private usuariosServices: GestionService) {
     
-  }onstructor() { }
+  }
 
   ngOnInit(): void {
     this.getAllUsuarios();
   }
 
-  getAllUsuarios(){
+  public getAllUsuarios = () => {
     this.usuarios = this.usuariosServices.getUsuarios();
   }
 
