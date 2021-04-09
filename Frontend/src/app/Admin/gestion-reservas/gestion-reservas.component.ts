@@ -17,7 +17,7 @@ export class GestionReservasComponent implements OnInit {
 
   constructor(private reservasServices: GestionService) {
     
-  }onstructor() { }
+  }
 
   ngOnInit(): void {
     this.getAllReservas();
