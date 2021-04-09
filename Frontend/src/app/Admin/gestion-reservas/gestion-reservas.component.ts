@@ -17,7 +17,7 @@ export class GestionReservasComponent implements OnInit {
 
   constructor(private reservasServices: GestionService) {
     
-  }onstructor() { }
+  }
 
   ngOnInit(): void {
     this.getAllReservas();
@@ -28,7 +28,6 @@ export class GestionReservasComponent implements OnInit {
   }
 
   eliminarReserva(idReserva: Number) {
-    debugger
     console.log(idReserva);
     this.reservasServices.eliminarReserva(idReserva)
     .subscribe(
